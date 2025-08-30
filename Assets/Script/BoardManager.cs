@@ -132,7 +132,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
     {
         tiles = new Tile[width, height];
         float offX = -((width - 1) * tileSize) / 2f;
-        float offY = -((height - 1) * tileSize) / 2f;
+        float offY = -((height - 1) * tileSize) / 2f - 1.7f;
 
         for (int x = 0; x < width; x++)
         for (int y = 0; y < height; y++)

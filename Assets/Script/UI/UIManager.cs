@@ -19,47 +19,74 @@ public class UIManager : MonoBehaviour
         lastID = -1;
     }
 
-    private void Update() {
+    private void Update()
+    {
         if (_codex.activeInHierarchy && Input.GetKey(KeyCode.Escape))
             CloseCodex();
     }
 
-    public void TryOpenCodex() {
+    public void TryOpenCodex()
+    {
         if (!_codex.activeInHierarchy)
             OpenCodex();
     }
 
-    private void OpenCodex() {
+    private void OpenCodex()
+    {
         _mainCanva.SetActive(false);
         _codex.SetActive(true);
         _personnagesPrinc[0].SetActive(true);
     }
 
-    private void CloseCodex() {
-        for (int i = 0; i < _personnagesSecond.Length; i++) {
+    private void CloseCodex()
+    {
+        for (int i = 0; i < _personnagesSecond.Length; i++)
+        {
             _personnagesSecond[i].SetActive(false);
         }
-        for (int i = 0; i < _personnagesPrinc.Length; i++) {
+        for (int i = 0; i < _personnagesPrinc.Length; i++)
+        {
             _personnagesPrinc[i].SetActive(false);
         }
         _codex.SetActive(false);
         _mainCanva.SetActive(true);
     }
 
-    public void TryOpenEvoOgun(int id) {
+    public void TryOpenEvoOgun(int id)
+    {
 
-        if (lastID == id) {
+        if (lastID == id)
+        {
             OpenEvoOgun(false, id);
             lastID = -1;
-        } else {
-            if(lastID != -1)
+        }
+        else
+        {
+            if (lastID != -1)
                 OpenEvoOgun(false, lastID);
             OpenEvoOgun(true, id);
             lastID = id;
         }
     }
 
-    private void OpenEvoOgun(bool active, int id) {
+    private void OpenEvoOgun(bool active, int id)
+    {
         _OgounEvo[id].SetActive(active);
+    }
+    public void TryOpenEvoBS(int id) {
+
+        if (lastID == id) {
+            OpenEvoBS(false, id);
+            lastID = -1;
+        } else {
+            if(lastID != -1)
+                OpenEvoBS(false, lastID);
+            OpenEvoBS(true, id);
+            lastID = id;
+        }
+    }
+
+    private void OpenEvoBS(bool active, int id) {
+        _BSEvo[id].SetActive(active);
     }
 }
