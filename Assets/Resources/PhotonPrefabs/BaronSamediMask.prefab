@@ -152,6 +152,8 @@ MonoBehaviour:
   isRed: 0
   sourcePrefab: {fileID: 0}
   position: {x: 0, y: 0}
+  poTiles: []
+  awardOncePerTile: 1
 --- !u!114 &8957815954401513615
 MonoBehaviour:
   m_ObjectHideFlags: 0

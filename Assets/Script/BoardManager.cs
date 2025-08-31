@@ -58,6 +58,22 @@ public class BoardManager : MonoBehaviourPunCallbacks
         new Vector2Int(5, 7)
     };
 
+    // ─────────────────────────────────────────────────────────────
+    // Baron — cases violettes qui donnent +PO (une seule fois/case)
+    // ─────────────────────────────────────────────────────────────
+    [Header("Baron — cases bonus PO (xy plateau)")]
+    [Tooltip("Cases qui rapportent des PO au Baron lorsqu’une pièce BLEUE termine dessus (une seule fois par case).")]
+    public List<Vector2Int> baronBonusTiles = new List<Vector2Int> {
+        new Vector2Int(1,4), new Vector2Int(3,4),
+        new Vector2Int(5,4), new Vector2Int(7,4)
+    };
+    [Tooltip("PO gagnés par case (par défaut 1).")]
+    public int baronBonusPerTile = 1;
+
+    // cases déjà déclenchées (clé “x#y”), master-only
+    private HashSet<string> _baronClaimedKeys = new HashSet<string>();
+    private string Key(Vector2Int p) => p.x + "#" + p.y;
+
     private Tile[,] tiles;
 
     // Rituel 2 (vol de coup)
@@ -122,7 +138,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
         if (room == null) return;
         if (room.CustomProperties == null || !room.CustomProperties.ContainsKey(ROOM_PROP_STEAL))
         {
-            var tb = new Hashtable { { ROOM_PROP_STEAL, -1 } };
+            var tb = new ExitGames.Client.Photon.Hashtable { { ROOM_PROP_STEAL, -1 } };
             room.SetCustomProperties(tb);
         }
     }
@@ -132,7 +148,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
     {
         tiles = new Tile[width, height];
         float offX = -((width - 1) * tileSize) / 2f;
-        float offY = -((height - 1) * tileSize) / 2f - 1.7f;
+        float offY = -((height - 1) * tileSize) / 2f -1.7f;
 
         for (int x = 0; x < width; x++)
         for (int y = 0; y < height; y++)
@@ -479,7 +495,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
             }
         }
 
-        // ─── APPLICATION : extraKills → move → pushes → auraSentinelle ─────
+        // ─── APPLICATION : extraKills → move → (bonus Baron) → pushes → aura ─────
         if (extraVictimIds != null && extraVictimIds.Count > 0)
         {
             photonView.RPC(nameof(RPC_ApplyExtraVictims_All),
@@ -492,6 +508,9 @@ public class BoardManager : MonoBehaviourPunCallbacks
             RpcTarget.All,
             pieceViewId, from.x, from.y, to.x, to.y, victimAtDest ? victimAtDest.photonView.ViewID : 0
         );
+
+        // 🟣 BONUS BARON : créditer PO si une pièce BLEUE foule une case violette (une fois par case)
+        TryAwardBaronBonusOnLanding(to, p.isRed);
 
         if (rav != null && ( (pushIds?.Count ?? 0) + (pushKillIds?.Count ?? 0) ) > 0)
         {
@@ -578,6 +597,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
         TurnManager.Instance.RequestEndTurn();
     }
 
+    // Applique le déplacement (tous)
     [PunRPC]
     private void RPC_ApplyMove_All(int pieceId, int fromX, int fromY, int toX, int toY, int victimId)
     {
@@ -1017,5 +1037,46 @@ public class BoardManager : MonoBehaviourPunCallbacks
         if (p == null || !p.isRed) return false;
         if (RitualSystem.Instance == null) return false;
         return RitualSystem.Instance.IsOgounPassiveBoostActive();
+    }
+
+    // ───────────────────────────────────────────────────────────────────
+    // 🟣 BONUS BARON — implémentation
+    // ───────────────────────────────────────────────────────────────────
+    private void TryAwardBaronBonusOnLanding(Vector2Int landingPos, bool moverIsRed)
+    {
+        if (!PhotonNetwork.IsMasterClient) return;      // autorité Master
+        if (moverIsRed) return;                         // uniquement pièces BLEUES
+        if (baronBonusTiles == null || baronBonusTiles.Count == 0) return;
+
+        // la case fait-elle partie du set ?
+        for (int i = 0; i < baronBonusTiles.Count; i++)
+        {
+            if (baronBonusTiles[i] == landingPos)
+            {
+                string k = Key(landingPos);
+                if (_baronClaimedKeys.Contains(k)) return; // déjà prise → rien
+
+                _baronClaimedKeys.Add(k);
+
+                // créditer le Baron (bleu)
+                var mask = FindBlueBaronMask();
+                if (mask != null && baronBonusPerTile > 0)
+                {
+                    // Suppose une méthode AddShadowPoints(int). Si ton API diffère, dis-le moi.
+                    mask.AddShadowPoints(baronBonusPerTile);
+                    Debug.Log($"[BARON][PO] +{baronBonusPerTile} PO (case {landingPos.x},{landingPos.y})");
+                }
+                return;
+            }
+        }
+    }
+
+    private BaronSamediMaskPiece FindBlueBaronMask()
+    {
+        var masks = Object.FindObjectsByType<BaronSamediMaskPiece>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        foreach (var m in masks)
+            if (m != null && m.isRed == false)
+                return m;
+        return null;
     }
 }

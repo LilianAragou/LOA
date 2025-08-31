@@ -82,6 +82,8 @@ MonoBehaviour:
   - RPC_SetOgounMarkedVisual
   - RPC_ActivateOgounBoostClient
   - RPC_RequestOgounBoost_Master
+  - RPC_AddShadowPoints
+  - RPC_RequestAddShadowPoints_Master
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

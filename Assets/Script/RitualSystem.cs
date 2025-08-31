@@ -5,9 +5,15 @@ using Photon.Realtime;
 using ExitGames.Client.Photon;
 using System.Linq;
 using System.Collections.Generic;
-using TMPro;
 
-
+/// <summary>
+/// Système de rituels :
+///  - Baron : Résurrection, Vol de Coup (steal), PO (via masque)
+///  - Ogoun : Marque (rituel 1), Boost passif de mouvement (rituel 2), extra-coup géré côté BoardManager
+///  - Verrou d'équipe (évolutions et rituels bloqués pendant N tours globaux)
+///  - Gestion PR locales (Points de rituel)
+///  - Intégration Carreaux PO : gain de PO lorsque les conditions sont réunies (appel depuis BoardManager)
+/// </summary>
 public class RitualSystem : MonoBehaviourPun
 {
     public static RitualSystem Instance { get; private set; }
@@ -26,7 +32,6 @@ public class RitualSystem : MonoBehaviourPun
     [Header("Boutons (Ogoun)")]
     public Button btnOgounMark;   // Rituel #1 (marquer)
     public Button btnOgounBoost;  // Rituel #2 (boost passif)
-    public Button btnPassTurn2;
 
     [Header("Coûts (PR / PO)")]
     public int costResurrectPO     = 3; // Points d’ombre (Baron)
@@ -41,15 +46,12 @@ public class RitualSystem : MonoBehaviourPun
     [Header("Points de rituel (locaux au client)")]
     public int maxRitualPoints = 3;
     private int currentRitualPoints;
-    public TextMeshProUGUI ritualText;
-
 
     private bool isSpawnMode = false;     // Baron: choix de la case de résurrection
-
     private BaronSamediMaskPiece currentMask; // masque actif côté Baron
 
+    // Vol de coup
     public bool IsStealActive { get; private set; } = false;
-
     const string ROOM_PROP_STEAL = "STEAL_TEAM"; // -1 inactif, 0 red, 1 blue
 
     // Détection d’équipe locale
@@ -75,7 +77,6 @@ public class RitualSystem : MonoBehaviourPun
     // ========= Verrou d’actions (évo/rituels) =========
     // 3 tours “globaux” = décrémenté à CHAQUE début de tour (rouge OU bleu).
     int[] teamLockGlobalTurns = new int[2]; // [0]=rouge, [1]=bleu
-
     public bool IsTeamLocked(int team)
         => team >= 0 && team < 2 && teamLockGlobalTurns[team] > 0;
 
@@ -83,8 +84,7 @@ public class RitualSystem : MonoBehaviourPun
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-        if (ritualText != null)
-            ritualText.text = $"PR : {maxRitualPoints}";
+
         SafeSetActive(panelOgoun, false);
         SafeSetActive(panelBaron, false);
         SafeSetActive(ritualPanel, false);
@@ -98,8 +98,7 @@ public class RitualSystem : MonoBehaviourPun
         if (btnResurrect)  btnResurrect.onClick.AddListener(OnResurrectClicked);
         if (btnStealMove)  btnStealMove.onClick.AddListener(OnStealMoveClicked);
         if (btnPassTurn)   btnPassTurn.onClick.AddListener(OnPassTurnClicked);
-        if (btnPassTurn2)   btnPassTurn2.onClick.AddListener(OnPassTurnClicked);
-        if (btnOgounMark) btnOgounMark.onClick.AddListener(OnOgounMarkClicked);
+        if (btnOgounMark)  btnOgounMark.onClick.AddListener(OnOgounMarkClicked);
         if (btnOgounBoost) btnOgounBoost.onClick.AddListener(OnOgounBoostClicked);
 
         // Events
@@ -110,8 +109,9 @@ public class RitualSystem : MonoBehaviourPun
             TurnManager.Instance.OnTurnEnd      += OnTurnEnded;
             TurnManager.Instance.OnMatchStarted += OnMatchStarted;
 
-            TurnManager.Instance.OnPieceCaptured  += OnAnyPieceCaptured;  // Master only
-            TurnManager.Instance.OnPieceDestroyed += OnAnyPieceDestroyed; // Master only
+            // Master only (mais on se souscrit partout, les méthodes recheckent Master)
+            TurnManager.Instance.OnPieceCaptured  += OnAnyPieceCaptured;
+            TurnManager.Instance.OnPieceDestroyed += OnAnyPieceDestroyed;
         }
 
         EnsureRoomPropInitialized();
@@ -120,8 +120,6 @@ public class RitualSystem : MonoBehaviourPun
 
         ApplyPanelVisibility();
         UpdateButtonStates();
-
-        Debug.Log($"[Ritual] Init: myTeam={myTeam} PR={currentRitualPoints}/{maxRitualPoints}");
     }
 
     void OnDestroy()
@@ -190,9 +188,6 @@ public class RitualSystem : MonoBehaviourPun
     public void SetCurrentMask(BaronSamediMaskPiece mask) { currentMask = mask; UpdateButtonStates(); }
     public void SetCurrentMask(Piece maskPiece)           { SetCurrentMask(maskPiece as BaronSamediMaskPiece); }
 
-    // (Compat ancien flux InputManager)
-    public bool IsInOgounMarkMode() => false;
-
     // ─────────────────────────────────────────────
     // Gestion du tour
     // ─────────────────────────────────────────────
@@ -204,10 +199,9 @@ public class RitualSystem : MonoBehaviourPun
             if (ogounMark.active)
             {
                 ogounMark.turnsLeft = Mathf.Max(0, ogounMark.turnsLeft - 1);
-                Debug.Log($"[Ritual] OnTurnStart(OGOUN): marque turnsLeft={ogounMark.turnsLeft}");
                 if (ogounMark.turnsLeft == 0)
                 {
-                    Debug.Log("[Ritual] Fin de marque → retrait du visuel");
+                    // fin de marque → retirer le visuel
                     photonView.RPC(nameof(RPC_ApplyMarkedVisual), RpcTarget.All, ogounMark.targetViewId, false);
                     ClearOgounMarkLocal();
                 }
@@ -216,12 +210,8 @@ public class RitualSystem : MonoBehaviourPun
             if (ogounBoost.active)
             {
                 ogounBoost.turnsLeft = Mathf.Max(0, ogounBoost.turnsLeft - 1);
-                Debug.Log($"[Ritual] OnTurnStart(OGOUN): boost turnsLeft={ogounBoost.turnsLeft}");
                 if (ogounBoost.turnsLeft == 0)
-                {
                     ogounBoost.active = false;
-                    Debug.Log("[Ritual] Boost expiré.");
-                }
             }
         }
 
@@ -235,8 +225,6 @@ public class RitualSystem : MonoBehaviourPun
 
         ApplyPanelVisibility();
         UpdateButtonStates();
-
-        Debug.Log($"[Ritual] TurnStart: currentPlayer={TurnManager.Instance?.CurrentPlayer} lockR={teamLockGlobalTurns[0]} lockB={teamLockGlobalTurns[1]}");
     }
 
     void OnTurnChanged()
@@ -245,7 +233,6 @@ public class RitualSystem : MonoBehaviourPun
         if (myTeam == 1 && currentMask == null) currentMask = FindMyBaronMask();
         ApplyPanelVisibility();
         UpdateButtonStates();
-        Debug.Log($"[Ritual] TurnChanged → myTeam={myTeam}");
     }
 
     void OnMatchStarted()
@@ -254,16 +241,12 @@ public class RitualSystem : MonoBehaviourPun
         if (myTeam == 1) currentMask = FindMyBaronMask();
         ApplyPanelVisibility();
         UpdateButtonStates();
-        Debug.Log("[Ritual] MatchStarted");
     }
 
     void OnTurnEnded()
     {
         isSpawnMode = false;
         BoardManager.Instance?.ClearHighlights();
-
-        // Sécurité UX : on sort d’un éventuel mode marquage côté Input
-        InputManager.Instance?.ExitOgounMarkMode();
 
         // si le vol de tour ne s'applique pas à MON équipe au prochain tour, on le coupe
         bool keepSteal = false;
@@ -296,9 +279,9 @@ public class RitualSystem : MonoBehaviourPun
         if (currentRitualPoints < costResurrectRitual) return;
 
         isSpawnMode = true;
+        // feedback visuel
         BoardManager.Instance?.ShowAdjacentTiles(currentMask.currentGridPos);
         InputManager.Instance?.EnterSpawnMode();
-        Debug.Log("[BARON] Mode résurrection activé (choix de case adjacente).");
     }
 
     public void ConfirmSpawn(Vector2Int pos)
@@ -345,7 +328,6 @@ public class RitualSystem : MonoBehaviourPun
 
         photonView.RPC(nameof(RPC_EndSpawnModeClient), RpcTarget.All);
         TurnManager.Instance.RequestEndTurn();
-        Debug.Log($"[BARON] Résurrection validée en {target}.");
     }
 
     [PunRPC]
@@ -354,10 +336,7 @@ public class RitualSystem : MonoBehaviourPun
         isSpawnMode = false;
         BoardManager.Instance?.ClearHighlights();
         currentRitualPoints = Mathf.Max(0, currentRitualPoints - costResurrectRitual);
-        if (ritualText != null)
-            ritualText.text = $"PR : {currentRitualPoints}";
         UpdateButtonStates();
-        Debug.Log($"[BARON] PR dépensés ({costResurrectRitual}). Restant={currentRitualPoints}");
     }
 
     [PunRPC]
@@ -383,7 +362,6 @@ public class RitualSystem : MonoBehaviourPun
 
         photonView.RPC(nameof(RPC_RequestSteal_Master), RpcTarget.MasterClient, myTeam);
         tm.RequestEndTurn(); // passe le tour immédiatement
-        Debug.Log("[BARON] Rituel 'Vol de coup' demandé (tour passé).");
     }
 
     [PunRPC]
@@ -402,7 +380,6 @@ public class RitualSystem : MonoBehaviourPun
         room.SetCustomProperties(tb);
 
         photonView.RPC(nameof(RPC_ActivateStealClient), RpcTarget.All, requesterTeam);
-        Debug.Log($"[BARON] Vol de coup ARMÉ pour team={requesterTeam}");
     }
 
     [PunRPC]
@@ -411,11 +388,8 @@ public class RitualSystem : MonoBehaviourPun
         if (TurnManager.Instance != null && TurnManager.Instance.MyTeam == teamAllowed)
         {
             currentRitualPoints = Mathf.Max(0, currentRitualPoints - costStealMoveRitual);
-            if (ritualText != null)
-            ritualText.text = $"PR : {currentRitualPoints}";
             IsStealActive = true;
             InputManager.Instance?.EnterStealMode();
-            Debug.Log($"[BARON] Vol de coup ACTIF (team={teamAllowed}). PR restants={currentRitualPoints}");
         }
         UpdateButtonStates();
     }
@@ -425,7 +399,6 @@ public class RitualSystem : MonoBehaviourPun
     {
         CancelStealModeLocal();
         UpdateButtonStates();
-        Debug.Log("[BARON] Vol de coup terminé.");
     }
 
     void CancelStealModeLocal()
@@ -450,7 +423,6 @@ public class RitualSystem : MonoBehaviourPun
         if (ogounMark.active && ogounMark.turnsLeft > 0) return;
 
         var candidates = ComputeValidOgounMarkTargets();
-        Debug.Log($"[OGOUN] Rituel #1 (marque) – candidats valides: {candidates.Count}");
         if (candidates.Count == 0) return;
 
         // On laisse l’InputManager gérer l’UX (surlignages + clic)
@@ -467,7 +439,6 @@ public class RitualSystem : MonoBehaviourPun
         if (target == null || target.photonView == null) return;
         if (!IsValidOgounMarkTarget(target)) return;
 
-        Debug.Log($"[OGOUN] ConfirmOgounMark → demande Master sur ViewID={target.photonView.ViewID}");
         photonView.RPC(nameof(RPC_RequestOgounMark_Master), RpcTarget.MasterClient, target.photonView.ViewID);
     }
 
@@ -498,7 +469,6 @@ public class RitualSystem : MonoBehaviourPun
 
         // Passe le tour tout de suite
         TurnManager.Instance.RequestEndTurn();
-        Debug.Log($"[OGOUN] Master → marque acceptée sur ViewID={targetViewId}, tour passé.");
     }
 
     [PunRPC]
@@ -517,12 +487,7 @@ public class RitualSystem : MonoBehaviourPun
 
         // dépense PR seulement pour Ogoun local
         if (TurnManager.Instance != null && TurnManager.Instance.MyTeam == requesterTeam)
-        {
             currentRitualPoints = Mathf.Max(0, currentRitualPoints - costOgounMarkRitual);
-            if (ritualText != null)
-            ritualText.text = $"PR : {currentRitualPoints}";
-            Debug.Log($"[OGOUN] PR -{costOgounMarkRitual} (marque). Restant={currentRitualPoints}");
-        }
 
         UpdateButtonStates();
         Debug.Log($"[OGOUN] Marque activée sur ViewID={targetViewId} (2 tours d’Ogoun).");
@@ -598,7 +563,6 @@ public class RitualSystem : MonoBehaviourPun
         if (team < 0 || team > 1) return;
         teamLockGlobalTurns[team] = Mathf.Max(teamLockGlobalTurns[team], turns);
         UpdateButtonStates();
-        Debug.Log($"[LOCK] Team {team} verrouillée pour {turns} tours globaux.");
     }
 
     // ─────────────────────────────────────────────
@@ -614,7 +578,6 @@ public class RitualSystem : MonoBehaviourPun
         if (ogounBoost.active && ogounBoost.turnsLeft > 0) return; // déjà actif
 
         photonView.RPC(nameof(RPC_RequestOgounBoost_Master), RpcTarget.MasterClient);
-        Debug.Log("[OGOUN] Demande Master: rituel #2 (boost passif).");
     }
 
     [PunRPC]
@@ -635,7 +598,6 @@ public class RitualSystem : MonoBehaviourPun
 
         // Passe le tour immédiatement
         TurnManager.Instance.RequestEndTurn();
-        Debug.Log("[OGOUN] Master → boost activé, tour passé.");
     }
 
     [PunRPC]
@@ -645,12 +607,7 @@ public class RitualSystem : MonoBehaviourPun
         ogounBoost.turnsLeft = Mathf.Max(0, turns);
 
         if (TurnManager.Instance != null && TurnManager.Instance.MyTeam == requesterTeam)
-        {
             currentRitualPoints = Mathf.Max(0, currentRitualPoints - costOgounBoostRitual);
-            if (ritualText != null)
-            ritualText.text = $"PR : {currentRitualPoints}";
-            Debug.Log($"[OGOUN] PR -{costOgounBoostRitual} (boost). Restant={currentRitualPoints}");
-        }
 
         UpdateButtonStates();
         Debug.Log($"[OGOUN] Boost passif activé ({turns} tours d’Ogoun).");
@@ -661,10 +618,7 @@ public class RitualSystem : MonoBehaviourPun
     /// </summary>
     public bool IsOgounPassiveBoostActive()
     {
-        bool active = ogounBoost.active && ogounBoost.turnsLeft > 0;
-        // Debug verbose ponctuel utile quand ça semble “inactif”
-        // Debug.Log($"[OGOUN] IsOgounPassiveBoostActive? {active} (turnsLeft={ogounBoost.turnsLeft})");
-        return active;
+        return ogounBoost.active && ogounBoost.turnsLeft > 0;
     }
 
     // ─────────────────────────────────────────────
@@ -716,12 +670,7 @@ public class RitualSystem : MonoBehaviourPun
         if (tm == null || !tm.Started || !tm.IsMyTurn) return;
 
         if (currentRitualPoints < maxRitualPoints)
-        {
             currentRitualPoints++;
-            if (ritualText != null)
-            ritualText.text = $"PR : {currentRitualPoints}";
-            Debug.Log($"[Ritual] PassTurn → +1 PR (now {currentRitualPoints}/{maxRitualPoints})");
-        }
 
         tm.RequestEndTurn();
         UpdateButtonStates();
@@ -767,11 +716,7 @@ public class RitualSystem : MonoBehaviourPun
 
             if (btnResurrect) btnResurrect.interactable = false;
             if (btnStealMove) btnStealMove.interactable = false;
-            if (btnPassTurn2)  btnPassTurn2.interactable  = started && myTurn && currentRitualPoints < maxRitualPoints;
-            if (btnPassTurn)  btnPassTurn.interactable  = false;
-
-            // Debug compact
-            // Debug.Log($"[UI] Ogoun buttons: Mark={btnOgounMark?.interactable} Boost={btnOgounBoost?.interactable} Pass={btnPassTurn?.interactable}");
+            if (btnPassTurn)  btnPassTurn.interactable  = started && myTurn && currentRitualPoints < maxRitualPoints;
             return;
         }
 
@@ -793,12 +738,55 @@ public class RitualSystem : MonoBehaviourPun
 
         if (btnPassTurn)
             btnPassTurn.interactable = started && myTurn && currentRitualPoints < maxRitualPoints;
-        if (btnPassTurn2)
-            btnPassTurn2.interactable = false;
+
         if (btnOgounMark)  btnOgounMark.interactable  = false;
         if (btnOgounBoost) btnOgounBoost.interactable = false;
+    }
 
-        // Debug compact
-        // Debug.Log($"[UI] Baron buttons: Res={btnResurrect?.interactable} Steal={btnStealMove?.interactable} Pass={btnPassTurn?.interactable}");
+    // ─────────────────────────────────────────────
+    // ★★★ Carreaux PO (gain de PO côté Baron) ★★★
+    // Appelée par le BoardManager (MAÎTRE) quand une condition de carreau PO est remplie.
+    // amount par défaut = +1
+    // ─────────────────────────────────────────────
+    public void AwardBaronShadowPoints(int amount = 1)
+    {
+        if (amount <= 0) return;
+
+        // Si on est MAÎTRE (ou offline), on pousse directement le RPC.
+        if (!PhotonNetwork.InRoom || PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC(nameof(RPC_AddShadowPoints), RpcTarget.All, false /*blue team*/, amount);
+        }
+        else
+        {
+            // Sécurité : côté client non-maître, on demande au maître de valider.
+            photonView.RPC(nameof(RPC_RequestAddShadowPoints_Master), RpcTarget.MasterClient, amount);
+        }
+    }
+
+    [PunRPC]
+    private void RPC_RequestAddShadowPoints_Master(int amount, PhotonMessageInfo info)
+    {
+        if (!PhotonNetwork.IsMasterClient) return;
+        if (amount <= 0) return;
+        // Validation additionnelle côté maître possible ici si besoin…
+        photonView.RPC(nameof(RPC_AddShadowPoints), RpcTarget.All, false /*blue team*/, amount);
+    }
+
+    [PunRPC]
+    private void RPC_AddShadowPoints(bool isRedTeam, int amount)
+    {
+        if (amount <= 0) return;
+
+        var barons = Object.FindObjectsByType<BaronSamediMaskPiece>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        foreach (var b in barons)
+        {
+            if (b.isRed == isRedTeam)
+            {
+                b.AddShadowPoints(amount);
+                Debug.Log($"[RitualSystem] +{amount} PO pour équipe {(isRedTeam ? "ROUGE" : "BLEUE")} (carreau PO). Total masque={b.GetShadowPoints()}");
+                break;
+            }
+        }
     }
 }

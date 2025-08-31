@@ -209,7 +209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &41517274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3744,17 +3744,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413325277}
   m_CullTransparentMesh: 1
---- !u!114 &417591572 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6642285615562257688, guid: 6a10e6c412dba2b448a47428f3123be2, type: 3}
-  m_PrefabInstance: {fileID: 1511659598}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &428069711
 GameObject:
   m_ObjectHideFlags: 0
@@ -9422,7 +9411,6 @@ MonoBehaviour:
   btnPassTurn: {fileID: 737328951}
   btnOgounMark: {fileID: 1924306033}
   btnOgounBoost: {fileID: 1511659603}
-  btnPassTurn2: {fileID: 417591572}
   costResurrectPO: 3
   costResurrectRitual: 1
   costStealMoveRitual: 3
@@ -9430,7 +9418,6 @@ MonoBehaviour:
   costOgounBoostRitual: 3
   maxUnitsPerTeam: 7
   maxRitualPoints: 3
-  ritualText: {fileID: 115087484}
 --- !u!114 &1110324459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14827,6 +14814,12 @@ MonoBehaviour:
   - {x: 6, y: 8}
   - {x: 3, y: 7}
   - {x: 5, y: 7}
+  baronBonusTiles:
+  - {x: 1, y: 4}
+  - {x: 3, y: 4}
+  - {x: 5, y: 4}
+  - {x: 7, y: 4}
+  baronBonusPerTile: 1
 --- !u!4 &1684964876
 Transform:
   m_ObjectHideFlags: 0
@@ -15434,7 +15427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1783459826
 MonoBehaviour:
   m_ObjectHideFlags: 0
