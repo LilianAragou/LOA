@@ -21,7 +21,7 @@ public class VictorySystem : MonoBehaviourPun
         if (victoryPanel) victoryPanel.SetActive(false);
     }
 
-    void OnEnable()
+    void Start()
     {
         if (TurnManager.Instance != null)
         {
@@ -53,16 +53,15 @@ public class VictorySystem : MonoBehaviourPun
     private void TryHandleMaskDeath(Piece victim)
     {
         if (gameOver || victim == null) return;
-
         // Masques :
         // - Rouge = Ogoun_Mask
         // - Bleu  = BaronSamediMaskPiece
-        if (victim.isRed && victim is MaskPiece)
+        if (victim is BaronSamediMaskPiece)
         {
             // Le masque BLEU est mort -> Victoire ROUGE
             ShowVictoryAll(redWinsText);
         }
-        else if (!victim.isRed && victim is MaskPiece)
+        else if (victim is Ogoun_Mask)
         {
             // Le masque ROUGE est mort -> Victoire BLEUE
             ShowVictoryAll(blueWinsText);

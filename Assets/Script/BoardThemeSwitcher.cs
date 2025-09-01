@@ -42,7 +42,7 @@ public class BoardThemeSwitcher : MonoBehaviour
     // On n’active le SFX qu’après le premier vrai changement de tour (donc après la 1ère action)
     bool sfxArmedAfterFirstChange = false;
 
-    void OnEnable()
+    void Start()
     {
         if (TurnManager.Instance != null)
         {

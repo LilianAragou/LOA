@@ -6,10 +6,10 @@ using System.Collections.Generic;
 public class BaronSamediMaskPiece : MaskPiece
 {
     [Header("UI")]
-    private TMP_Text shadowPointsText;
+    public TextMeshProUGUI shadowPointsText;
 
     // Compteur de Points d'Ombre
-    private int shadowPoints = 0;
+    public int shadowPoints = 0;
     private int cost = 0;
 
     public Vector2Int position;
@@ -33,13 +33,14 @@ public class BaronSamediMaskPiece : MaskPiece
     protected override void Start()
     {
         base.Start();
-
+        if (!IsMyPiece(FindFirstObjectByType<BaronSamediMaskPiece>()))
+        shadowPointsText.text = "";
         // S'abonner aux événements de capture et destruction
-        if (TurnManager.Instance != null)
-        {
-            TurnManager.Instance.OnPieceCaptured  += OnSpiritCaptured;
-            TurnManager.Instance.OnPieceDestroyed += OnSpiritDestroyed;
-        }
+            if (TurnManager.Instance != null)
+            {
+                TurnManager.Instance.OnPieceCaptured += OnSpiritCaptured;
+                TurnManager.Instance.OnPieceDestroyed += OnSpiritDestroyed;
+            }
 
         position = currentGridPos;
         RebuildPoTileSet();
@@ -100,14 +101,22 @@ public class BaronSamediMaskPiece : MaskPiece
         }
         else
         {
+            UpdateShadowUI();
             SpendShadowPoints(-amount); // délègue aux dépenses
         }
     }
 
     private void UpdateShadowUI()
     {
-        if (shadowPointsText != null)
+        if (!IsMyPiece(FindFirstObjectByType<BaronSamediMaskPiece>()))
+            shadowPointsText.text = "";
+        else if (shadowPointsText != null)
             shadowPointsText.text = $"PO : {shadowPoints}";
+    }
+    bool IsMyPiece(Piece p)
+    {
+        int myTeam = TurnManager.Instance != null ? TurnManager.Instance.MyTeam : 0; // 0=rouge, 1=bleu
+        return (myTeam == 0 && p.isRed) || (myTeam == 1 && !p.isRed);
     }
 
     public int GetUpgradeCost() => cost; // où `cost` est le PO requis pour évoluer

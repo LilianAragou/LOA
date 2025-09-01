@@ -47,7 +47,7 @@ public class TurnManager : MonoBehaviourPunCallbacks
         var mask = FindFirstObjectByType<BaronSamediMaskPiece>();
         if (POtext != null)
         {
-            POtext.text = $"PO: test";
+            POtext.text = $"PO: 0";
         }
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
@@ -283,19 +283,20 @@ public class TurnManager : MonoBehaviourPunCallbacks
         var room = PhotonNetwork.CurrentRoom;
         if (room == null) return;
 
-        int team  = GetIntProp(KEY_TURN_TEAM, 0);
-        int index = GetIntProp(KEY_TURN_IDX,  1);
+        int team = GetIntProp(KEY_TURN_TEAM, 0);
+        int index = GetIntProp(KEY_TURN_IDX, 1);
 
-        int nextTeam  = (team == 0) ? 1 : 0;
+        int nextTeam = (team == 0) ? 1 : 0;
         int nextIndex = Mathf.Max(1, index + 1);
 
         Debug.Log($"[TurnManager] EndTurn: {team} → {nextTeam} (turn #{nextIndex})");
-        
+
 
         room.SetCustomProperties(new Hashtable {
             { KEY_TURN_TEAM, nextTeam },
             { KEY_TURN_IDX,  nextIndex }
         });
+        
     }
 
     #endregion
@@ -313,11 +314,7 @@ public class TurnManager : MonoBehaviourPunCallbacks
         var mask = FindFirstObjectByType<BaronSamediMaskPiece>();
         if (POtext != null)
         {
-            POtext.text = $"PO: test";
-        }
-        else
-        {
-            POtext.text = "PO: error";
+            POtext.text = $"PO: {mask?.GetShadowPoints()}";
         }
     }
 
