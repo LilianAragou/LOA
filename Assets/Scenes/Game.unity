@@ -2398,13 +2398,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 785761901}
   - {fileID: 1959840108}
   - {fileID: 327010654}
   - {fileID: 127133162}
   - {fileID: 1551515882}
   - {fileID: 1314319681}
   - {fileID: 1593380484}
+  - {fileID: 785761901}
   m_Father: {fileID: 1783459829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6719,6 +6719,7 @@ MonoBehaviour:
   costOgounBoostRitual: 3
   maxUnitsPerTeam: 7
   maxRitualPoints: 3
+  ritualPointsText: {fileID: 2034863627}
 --- !u!114 &1110324459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9774,7 +9775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   POtext: {fileID: 0}
-  turnText: {fileID: 2034863627}
+  turnText: {fileID: 0}
 --- !u!4 &1659188037
 Transform:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using Photon.Realtime;
 using ExitGames.Client.Photon;
 using System.Linq;
 using System.Collections.Generic;
+using TMPro;
 
 /// <summary>
 /// Système de rituels :
@@ -46,6 +47,7 @@ public class RitualSystem : MonoBehaviourPun
     [Header("Points de rituel (locaux au client)")]
     public int maxRitualPoints = 3;
     private int currentRitualPoints;
+    public TextMeshProUGUI ritualPointsText;
 
     private bool isSpawnMode = false;     // Baron: choix de la case de résurrection
     private BaronSamediMaskPiece currentMask; // masque actif côté Baron
@@ -93,9 +95,10 @@ public class RitualSystem : MonoBehaviourPun
     void Start()
     {
         currentRitualPoints = maxRitualPoints;
+        UpdateTextRitualPoints();
 
         // Hook UI
-        if (btnResurrect)  btnResurrect.onClick.AddListener(OnResurrectClicked);
+        if (btnResurrect) btnResurrect.onClick.AddListener(OnResurrectClicked);
         if (btnStealMove)  btnStealMove.onClick.AddListener(OnStealMoveClicked);
         if (btnPassTurn)   btnPassTurn.onClick.AddListener(OnPassTurnClicked);
         if (btnOgounMark)  btnOgounMark.onClick.AddListener(OnOgounMarkClicked);
@@ -120,6 +123,10 @@ public class RitualSystem : MonoBehaviourPun
 
         ApplyPanelVisibility();
         UpdateButtonStates();
+    }
+    void UpdateTextRitualPoints()
+    {
+        ritualPointsText.text = $"PR: {currentRitualPoints}/{maxRitualPoints}";
     }
 
     void OnDestroy()
@@ -337,6 +344,7 @@ public class RitualSystem : MonoBehaviourPun
         BoardManager.Instance?.ClearHighlights();
         currentRitualPoints = Mathf.Max(0, currentRitualPoints - costResurrectRitual);
         UpdateButtonStates();
+        UpdateTextRitualPoints();
     }
 
     [PunRPC]
@@ -392,6 +400,7 @@ public class RitualSystem : MonoBehaviourPun
             InputManager.Instance?.EnterStealMode();
         }
         UpdateButtonStates();
+        UpdateTextRitualPoints();
     }
 
     [PunRPC]
@@ -490,6 +499,7 @@ public class RitualSystem : MonoBehaviourPun
             currentRitualPoints = Mathf.Max(0, currentRitualPoints - costOgounMarkRitual);
 
         UpdateButtonStates();
+        UpdateTextRitualPoints();
         Debug.Log($"[OGOUN] Marque activée sur ViewID={targetViewId} (2 tours d’Ogoun).");
     }
 
@@ -610,6 +620,7 @@ public class RitualSystem : MonoBehaviourPun
             currentRitualPoints = Mathf.Max(0, currentRitualPoints - costOgounBoostRitual);
 
         UpdateButtonStates();
+        UpdateTextRitualPoints();
         Debug.Log($"[OGOUN] Boost passif activé ({turns} tours d’Ogoun).");
     }
 
@@ -674,6 +685,7 @@ public class RitualSystem : MonoBehaviourPun
 
         tm.RequestEndTurn();
         UpdateButtonStates();
+        UpdateTextRitualPoints();
     }
 
     // ─────────────────────────────────────────────
