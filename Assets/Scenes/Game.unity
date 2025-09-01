@@ -5411,8 +5411,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -88.71887}
-  m_SizeDelta: {x: 1120, y: 177.4379}
+  m_AnchoredPosition: {x: 0, y: -60}
+  m_SizeDelta: {x: 1120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785761902
 MonoBehaviour:
@@ -9825,6 +9825,7 @@ GameObject:
   - component: {fileID: 1684964875}
   - component: {fileID: 1684964878}
   - component: {fileID: 1684964877}
+  - component: {fileID: 1684964879}
   m_Layer: 0
   m_Name: BoardManager
   m_TagString: Untagged
@@ -9949,6 +9950,23 @@ MonoBehaviour:
   randomClips: []
   sfxVolume: 1
   randomPitch: 0
+--- !u!114 &1684964879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684964874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951ecb95056675f449937346e9e1a1a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  targetCamera: {fileID: 0}
+  boardRoot: {fileID: 0}
+  keepPiecesUpright: 1
+  uprightSearchRoot: {fileID: 1684964876}
 --- !u!114 &1685046744 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7118270991604709064, guid: c5647d4b1acbba744b585fc0f2cbb8d3, type: 3}
@@ -12390,7 +12408,7 @@ Transform:
   m_GameObject: {fileID: 2049155600}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0908577, y: 1.129442, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
