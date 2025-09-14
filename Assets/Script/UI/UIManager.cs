@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject[] _OgounEvo;
     [SerializeField] private GameObject[] _BSEvo;
+    [SerializeField] private GameObject SurrendPanel;
 
     private int lastID;
 
@@ -21,11 +22,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (_codex.activeInHierarchy && Input.GetKey(KeyCode.Escape))
-        {
-            CloseCodex();
-        }
-        else if (Input.GetKey(KeyCode.Escape) && !_codex.activeInHierarchy)
+        if (!_codex.activeInHierarchy && Input.GetKey(KeyCode.Escape))
         {
             OpenSurrender();
         }
@@ -52,7 +49,7 @@ public class UIManager : MonoBehaviour
         _personnagesPrinc[0].SetActive(true);
     }
 
-    private void CloseCodex()
+    public void CloseCodex()
     {
         for (int i = 0; i < _personnagesSecond.Length; i++)
         {
