@@ -4888,7 +4888,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &737328951 stripped
+--- !u!224 &737328954 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8118479847530978190, guid: 6a10e6c412dba2b448a47428f3123be2, type: 3}
+  m_PrefabInstance: {fileID: 6737184170192921347}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &737328955 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6642285615562257688, guid: 6a10e6c412dba2b448a47428f3123be2, type: 3}
   m_PrefabInstance: {fileID: 6737184170192921347}
@@ -4899,11 +4904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &737328954 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8118479847530978190, guid: 6a10e6c412dba2b448a47428f3123be2, type: 3}
-  m_PrefabInstance: {fileID: 6737184170192921347}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &737954335
 GameObject:
   m_ObjectHideFlags: 0
@@ -6997,9 +6997,10 @@ MonoBehaviour:
   ritualPanel: {fileID: 0}
   btnResurrect: {fileID: 2083346908}
   btnStealMove: {fileID: 1687548699}
-  btnPassTurn: {fileID: 737328951}
+  btnPassTurnBaron: {fileID: 737328955}
   btnOgounMark: {fileID: 1924306033}
   btnOgounBoost: {fileID: 1511659603}
+  btnPassTurnOgoun: {fileID: 1731515872}
   costResurrectPO: 3
   costResurrectRitual: 1
   costStealMoveRitual: 3
@@ -7634,7 +7635,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2897349061454785336, guid: 9c64abc0e3ff2be459d6fe7c55be06dc, type: 3}
+  m_Sprite: {fileID: 884540577531281723, guid: 0b5392c3675a42844a0f479e19f1d9b6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8587,6 +8588,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420088999}
   m_CullTransparentMesh: 1
+--- !u!1 &1441637072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1441637074}
+  - component: {fileID: 1441637073}
+  - component: {fileID: 1441637075}
+  m_Layer: 0
+  m_Name: RoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1441637073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441637072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71eb34479d58374aafa40a12349b8d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1441637074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441637072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1049.6472, y: 504.50983, z: -1.7133044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1441637075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441637072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 7
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1442452402
 GameObject:
   m_ObjectHideFlags: 0
@@ -10667,6 +10735,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1731515872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6642285615562257688, guid: 6a10e6c412dba2b448a47428f3123be2, type: 3}
+  m_PrefabInstance: {fileID: 1511659598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1755415696
 GameObject:
   m_ObjectHideFlags: 0
@@ -11520,6 +11599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d020b6b011c7f4646a6bdabf2265e318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redWinsText: Victoire des rouges
+  blueWinsText: Victoire des bleus
+  message: 
 --- !u!4 &1946399336
 Transform:
   m_ObjectHideFlags: 0
@@ -12420,7 +12502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: 0}
+  m_AnchoredPosition: {x: -300, y: 22.8}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2034863627
@@ -13908,6 +13990,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1783459829}
   - {fileID: 519420032}
   - {fileID: 530137879}
   - {fileID: 619394802}
@@ -13920,4 +14003,4 @@ SceneRoots:
   - {fileID: 1110324457}
   - {fileID: 526332563}
   - {fileID: 1946399336}
-  - {fileID: 1783459829}
+  - {fileID: 1441637074}

@@ -59,34 +59,12 @@ public class VictorySystem : MonoBehaviourPun
         if (victim is BaronSamediMaskPiece)
         {
             // Le masque BLEU est mort -> Victoire ROUGE
-            ShowVictoryAll(redWinsText);
+            FindObjectOfType<RoomManager>().MakeEveryoneLeave(redWinsText);
         }
         else if (victim is Ogoun_Mask)
         {
             // Le masque ROUGE est mort -> Victoire BLEUE
-            ShowVictoryAll(blueWinsText);
+            FindObjectOfType<RoomManager>().MakeEveryoneLeave(blueWinsText);
         }
-    }
-
-    private void ShowVictoryAll(string message)
-    {
-        if (gameOver) return;
-        gameOver = true;
-
-        if (photonView != null && PhotonNetwork.InRoom)
-            photonView.RPC(nameof(RPC_ShowVictory), RpcTarget.All, message);
-        else
-            RPC_ShowVictory(message); // offline
-    }
-
-    [PunRPC]
-    private void RPC_ShowVictory(string message)
-    {
-        if (victoryText)  victoryText.text = message;
-        if (victoryPanel) victoryPanel.SetActive(true);
-
-        // (Optionnel) : geler les interactions ici si tu veux
-        // InputManager.Instance?.DisableAllInputs();
-        // TurnManager.Instance?.StopMatch(); // seulement si tu as un tel hook
     }
 }

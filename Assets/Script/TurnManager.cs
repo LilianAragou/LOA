@@ -51,7 +51,6 @@ public class TurnManager : MonoBehaviourPunCallbacks
         }
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     #region Public API
