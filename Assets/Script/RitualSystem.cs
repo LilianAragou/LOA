@@ -28,11 +28,12 @@ public class RitualSystem : MonoBehaviourPun
     [Header("Boutons (Baron)")]
     public Button btnResurrect;
     public Button btnStealMove;
-    public Button btnPassTurn;
+    public Button btnPassTurnBaron;
 
     [Header("Boutons (Ogoun)")]
     public Button btnOgounMark;   // Rituel #1 (marquer)
     public Button btnOgounBoost;  // Rituel #2 (boost passif)
+    public Button btnPassTurnOgoun;
 
     [Header("Coûts (PR / PO)")]
     public int costResurrectPO     = 3; // Points d’ombre (Baron)
@@ -100,20 +101,21 @@ public class RitualSystem : MonoBehaviourPun
         // Hook UI
         if (btnResurrect) btnResurrect.onClick.AddListener(OnResurrectClicked);
         if (btnStealMove)  btnStealMove.onClick.AddListener(OnStealMoveClicked);
-        if (btnPassTurn)   btnPassTurn.onClick.AddListener(OnPassTurnClicked);
+        if (btnPassTurnBaron)   btnPassTurnBaron.onClick.AddListener(OnPassTurnClicked);
         if (btnOgounMark)  btnOgounMark.onClick.AddListener(OnOgounMarkClicked);
         if (btnOgounBoost) btnOgounBoost.onClick.AddListener(OnOgounBoostClicked);
+        if (btnPassTurnOgoun)   btnPassTurnOgoun.onClick.AddListener(OnPassTurnClicked);
 
         // Events
         if (TurnManager.Instance != null)
         {
-            TurnManager.Instance.OnTurnStart    += OnTurnStarted;
-            TurnManager.Instance.OnTurnChanged  += OnTurnChanged;
-            TurnManager.Instance.OnTurnEnd      += OnTurnEnded;
+            TurnManager.Instance.OnTurnStart += OnTurnStarted;
+            TurnManager.Instance.OnTurnChanged += OnTurnChanged;
+            TurnManager.Instance.OnTurnEnd += OnTurnEnded;
             TurnManager.Instance.OnMatchStarted += OnMatchStarted;
 
             // Master only (mais on se souscrit partout, les méthodes recheckent Master)
-            TurnManager.Instance.OnPieceCaptured  += OnAnyPieceCaptured;
+            TurnManager.Instance.OnPieceCaptured += OnAnyPieceCaptured;
             TurnManager.Instance.OnPieceDestroyed += OnAnyPieceDestroyed;
         }
 
@@ -728,7 +730,7 @@ public class RitualSystem : MonoBehaviourPun
 
             if (btnResurrect) btnResurrect.interactable = false;
             if (btnStealMove) btnStealMove.interactable = false;
-            if (btnPassTurn)  btnPassTurn.interactable  = started && myTurn && currentRitualPoints < maxRitualPoints;
+            if (btnPassTurnOgoun)  btnPassTurnOgoun.interactable  = started && myTurn && currentRitualPoints < maxRitualPoints;
             return;
         }
 
@@ -748,10 +750,10 @@ public class RitualSystem : MonoBehaviourPun
                                       && currentRitualPoints >= costStealMoveRitual
                                       && !IsStealActive;
 
-        if (btnPassTurn)
-            btnPassTurn.interactable = started && myTurn && currentRitualPoints < maxRitualPoints;
+        if (btnPassTurnBaron)  btnPassTurnBaron.interactable  = started && myTurn && currentRitualPoints < maxRitualPoints;
+            
 
-        if (btnOgounMark)  btnOgounMark.interactable  = false;
+        if (btnOgounMark) btnOgounMark.interactable = false;
         if (btnOgounBoost) btnOgounBoost.interactable = false;
     }
 

@@ -11,11 +11,11 @@ public class DevoreurDAmesPiece : Piece
     private static readonly Vector2Int[] DevourOffsets = new Vector2Int[]
     {
         // vertical ±4 et ±2
-        new Vector2Int(0,  4), new Vector2Int(0, -4),
         new Vector2Int(0,  2), new Vector2Int(0, -2),
 
         // horizontal ±2
         new Vector2Int( 2, 0), new Vector2Int(-2, 0),
+        new Vector2Int( 4, 0), new Vector2Int(-4, 0),
 
         // diagonales ±3
         new Vector2Int( 3,  3), new Vector2Int( 3, -3),
