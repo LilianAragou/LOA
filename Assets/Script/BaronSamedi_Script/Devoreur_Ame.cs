@@ -1,82 +1,75 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// Dévoreur d’Âme — Baron Samedi
+/// - Déplacement : 1 case orthogonale vers une case vide (pas de capture orthogonale).
+/// - Capture : saut (leap) uniquement vers les cases du motif suivant, SI la case d’arrivée
+///            est occupée par un ennemi : (0,±4), (0,±2), (±2,0), (±3,±3).
 public class DevoreurDAmesPiece : Piece
 {
-    // Bonus de portée diagonale (max 3)
-    private int diagBonus = 0;
-
-    // À la capture, on augmente le bonus (max 3)
-    protected override void OnCapture(Piece victim)
+    // Offsets relatifs autorisés pour la capture (motif exact demandé)
+    private static readonly Vector2Int[] DevourOffsets = new Vector2Int[]
     {
-        diagBonus = Mathf.Min(3, diagBonus + 1);
-    }
+        // vertical ±4 et ±2
+        new Vector2Int(0,  4), new Vector2Int(0, -4),
+        new Vector2Int(0,  2), new Vector2Int(0, -2),
 
-    // Les déplacements : orthogonaux et diagonales, avec bonuses
+        // horizontal ±2
+        new Vector2Int( 2, 0), new Vector2Int(-2, 0),
+
+        // diagonales ±3
+        new Vector2Int( 3,  3), new Vector2Int( 3, -3),
+        new Vector2Int(-3,  3), new Vector2Int(-3, -3),
+    };
+
     public override List<Vector2Int> GetAvailableMoves(BoardManager board)
     {
-        
         var moves = new List<Vector2Int>();
+        var o = currentGridPos;
 
-        // 1) Orthogonaux : baseRange = 1, + tempRangeBonus
-        int orthoRange = GetEffectiveRange(1);
-        Vector2Int[] orthos = {
-            Vector2Int.up, Vector2Int.down,
-            Vector2Int.left, Vector2Int.right
-        };
-        foreach (var dir in orthos)
+        // 1) Déplacements simples : 1 case orthogonale vers une case VIDE
+        Vector2Int[] ortho = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
+        foreach (var d in ortho)
         {
-            for (int dist = 1; dist <= orthoRange; dist++)
-            {
-                Vector2Int np = currentGridPos + dir * dist;
-                Tile t = board.GetTileAt(np);
-                if (t == null) break; // hors plateau
-
-                if (!t.isOccupied)
-                {
-                    moves.Add(np);
-                }
-                else
-                {
-                    var other = t.currentOccupant?.GetComponent<Piece>();
-                    if (other != null && IsEnemy(other))
-                        moves.Add(np);
-                    break; // arrêt sur collision
-                }
-            }
+            var p = o + d;
+            var t = board.GetTileAt(p);
+            if (t == null) continue;
+            if (t.currentOccupant == null) // vide -> autorisé
+                moves.Add(p);
         }
 
-        // 2) Diagonales : baseRange = diagBonus, + tempRangeBonus
-        int diagRange = GetEffectiveRange(diagBonus);
-        if (diagRange > 0)
+        // 2) Captures spéciales : uniquement si la case d’arrivée contient un ennemi
+        foreach (var off in DevourOffsets)
         {
-            Vector2Int[] diags = {
-                new Vector2Int(1,  1), new Vector2Int( 1, -1),
-                new Vector2Int(-1,  1), new Vector2Int(-1, -1)
-            };
-            foreach (var dir in diags)
-            {
-                for (int dist = 1; dist <= diagRange; dist++)
-                {
-                    Vector2Int np = currentGridPos + dir * dist;
-                    Tile t = board.GetTileAt(np);
-                    if (t == null) break; // hors plateau
+            var p = o + off;
+            var t = board.GetTileAt(p);
+            if (t == null) continue;
 
-                    if (!t.isOccupied)
-                    {
-                        moves.Add(np);
-                    }
-                    else
-                    {
-                        var other = t.currentOccupant?.GetComponent<Piece>();
-                        if (other != null && IsEnemy(other))
-                            moves.Add(np);
-                        break; // arrêt sur collision
-                    }
+            if (t.currentOccupant != null)
+            {
+                var other = t.currentOccupant.GetComponent<Piece>();
+                if (other != null && IsEnemy(other))
+                {
+                    // NB: BoardManager interdira de toute façon la capture d'une Sentinelle
+                    moves.Add(p); // on "saute" sur la case ennemie et on la capture
                 }
             }
         }
 
         return moves;
     }
+
+#if UNITY_EDITOR
+    // Gizmo pratique pour visualiser le motif de capture autour de la pièce
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(0.6f, 0f, 1f, 0.5f);
+        var basePos = Application.isPlaying ? (Vector3)transform.position : transform.position;
+        foreach (var off in DevourOffsets)
+        {
+            var p = basePos + new Vector3(off.x, off.y, 0f);
+            Gizmos.DrawWireCube(p, Vector3.one * 0.85f);
+        }
+    }
+#endif
 }
