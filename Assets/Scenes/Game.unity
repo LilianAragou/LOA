@@ -9966,7 +9966,6 @@ MonoBehaviour:
   boardRoot: {fileID: 0}
   keepPiecesUpright: 1
   uprightSearchRoot: {fileID: 1684964876}
-  debugText: {fileID: 0}
 --- !u!114 &1685046744 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7118270991604709064, guid: c5647d4b1acbba744b585fc0f2cbb8d3, type: 3}
