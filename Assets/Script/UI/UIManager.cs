@@ -22,7 +22,21 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         if (_codex.activeInHierarchy && Input.GetKey(KeyCode.Escape))
+        {
             CloseCodex();
+        }
+        else if (Input.GetKey(KeyCode.Escape) && !_codex.activeInHierarchy)
+        {
+            OpenSurrender();
+        }
+    }
+    public void OpenSurrender()
+    {
+        SurrendPanel.SetActive(true);
+    }
+    public void CloseSurrender()
+    {
+        SurrendPanel.SetActive(false);
     }
 
     public void TryOpenCodex()
