@@ -935,6 +935,12 @@ public class BoardManager : MonoBehaviourPunCallbacks
         string tn = p.GetType().Name;
         return tn == "Cavalier_Fulgurant" || (tn.Contains("Cavalier") && tn.Contains("Fulgurant"));
     }
+    private bool IsManieurDeLames(Piece p)
+    {
+        if (p == null) return false;
+        string tn = p.GetType().Name;
+        return tn == "Manieur_De_Lames" || (tn.Contains("Manieur") && tn.Contains("Lames"));
+    }
 
     // ───────────────────────────────────────────────────────────────────
     // 🔥 RITUEL #2 OGOUN : wrapper utilisé UNIQUEMENT pour l’extra-coup
@@ -963,74 +969,104 @@ public class BoardManager : MonoBehaviourPunCallbacks
         var result = new HashSet<Vector2Int>(moves);
 
         bool isCavalier = IsCavalierFulgurant(piece);
+        bool isManieur = IsManieurDeLames(piece);
 
-        foreach (var m in moves)
+        // Cas spécial : Manieur de Lames
+        if (isManieur)
         {
-            var delta = m - origin;
-            int adx = Mathf.Abs(delta.x);
-            int ady = Mathf.Abs(delta.y);
+            Vector2Int[] offsets = {
+                new Vector2Int(2, 2),
+                new Vector2Int(2, -2),
+                new Vector2Int(-2, 2),
+                new Vector2Int(-2, -2)
+            };
 
-            // n’étend que les directions 1-pas (ortho/diag)
-            if (adx <= 1 && ady <= 1 && (adx + ady) > 0)
+            foreach (var off in offsets)
             {
-                int dx = Mathf.Clamp(delta.x, -1, 1);
-                int dy = Mathf.Clamp(delta.y, -1, 1);
+                var target = origin + off;
+                var tile = GetTileAt(target);
+                if (tile == null) continue;
 
-                var step1 = origin + new Vector2Int(dx, dy);         // = m pour un pas de 1
-                var step2 = origin + new Vector2Int(dx * 2, dy * 2); // +1 supplémentaire
-
-                var t1 = GetTileAt(step1);
-                var t2 = GetTileAt(step2);
-                if (t1 == null || t2 == null) continue;
-
-                string occ1 = t1.currentOccupant ? t1.currentOccupant.name : "null";
-                string occ2 = t2.currentOccupant ? t2.currentOccupant.name : "null";
-
-                // Destination de l’extra-coup doit être vide (pas de capture)
-                if (t2.currentOccupant != null)
+                // Case finale doit être vide
+                if (tile.currentOccupant == null)
                 {
-                    Debug.Log($"[OGOUN][BoostCalc] step2 occupée -> skip dir({dx},{dy}) step2={step2} occ2={occ2}");
-                    continue;
-                }
-
-                if (isCavalier)
-                {
-                    // Autorise le "saut" si la case intermédiaire n'est pas un ALLIÉ
-                    bool block = false;
-                    if (t1.currentOccupant != null)
-                    {
-                        var inter = t1.currentOccupant.GetComponent<Piece>();
-                        if (inter != null && inter.isRed == piece.isRed) block = true;
-                    }
-                    if (!block)
-                    {
-                        result.Add(step2);
-                        Debug.Log($"[OGOUN][BoostCalc] +1 OK (Cavalier) origin={origin} dir({dx},{dy}) step1={step1} occ1={occ1} step2={step2}");
-                    }
-                    else
-                    {
-                        Debug.Log($"[OGOUN][BoostCalc] +1 REFUS (Cavalier): allié sur step1 {step1}");
-                    }
+                    result.Add(target);
+                    Debug.Log($"[OGOUN][BoostCalc] +Manieur OK origin={origin} target={target}");
                 }
                 else
                 {
-                    // Autres pièces : pas de saut → step1 doit être vide
-                    if (t1.currentOccupant == null)
-                    {
-                        result.Add(step2);
-                        Debug.Log($"[OGOUN][BoostCalc] +1 OK origin={origin} dir({dx},{dy}) step1={step1} step2={step2}");
-                    }
-                    else
-                    {
-                        Debug.Log($"[OGOUN][BoostCalc] +1 REFUS: step1 occupée ({occ1})");
-                    }
+                    Debug.Log($"[OGOUN][BoostCalc] +Manieur REFUS occupée par {tile.currentOccupant.name} en {target}");
                 }
+            }
+
+            return new List<Vector2Int>(result);
+        }
+
+        // Cas spécial : Cavalier Fulgurant
+        if (isCavalier)
+        {
+            Vector2Int[] ortho = {
+                new Vector2Int(1,0), new Vector2Int(-1,0),
+                new Vector2Int(0,1), new Vector2Int(0,-1)
+            };
+
+            foreach (var d in ortho)
+            {
+                var target = origin + d;
+                var t = GetTileAt(target);
+                if (t == null) continue;
+
+                bool block = false;
+                if (t.currentOccupant != null)
+                {
+                    var inter = t.currentOccupant.GetComponent<Piece>();
+                    if (inter != null && inter.isRed == piece.isRed)
+                        block = true; // allié = bloqué
+                }
+
+                if (!block && t.currentOccupant == null)
+                {
+                    result.Add(target);
+                    Debug.Log($"[OGOUN][BoostCalc] Cavalier +1 Ortho OK origin={origin} target={target}");
+                }
+                else
+                {
+                    Debug.Log($"[OGOUN][BoostCalc] Cavalier REFUS sur {target}");
+                }
+            }
+
+            return new List<Vector2Int>(result);
+        }
+
+        // Cas général : chaque coup normal est prolongé de +1 dans sa direction
+        foreach (var m in moves)
+        {
+            var delta = m - origin;
+
+            int dx = Mathf.Clamp(delta.x, -1, 1);
+            int dy = Mathf.Clamp(delta.y, -1, 1);
+            if (dx == 0 && dy == 0) continue;
+
+            var stepNext = m + new Vector2Int(dx, dy);
+            var tNext = GetTileAt(stepNext);
+            if (tNext == null) continue;
+
+            if (tNext.currentOccupant == null)
+            {
+                result.Add(stepNext);
+                Debug.Log($"[OGOUN][BoostCalc] +1 général OK origin={origin} baseMove={m} stepNext={stepNext}");
+            }
+            else
+            {
+                Debug.Log($"[OGOUN][BoostCalc] +1 général REFUS occupée par {tNext.currentOccupant.name} en {stepNext}");
             }
         }
 
         Debug.Log($"[OGOUN][BoostCalc] resultCount={result.Count}");
         return new List<Vector2Int>(result);
     }
+
+
 
     private bool IsOgounPassiveBoostActiveFor(Piece p)
     {

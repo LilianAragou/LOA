@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Devoreur_Ame 1_0: 884540577531281723
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -26,15 +26,16 @@ public class EGareDesProfondeursPiece : Piece
     public override List<Vector2Int> GetAvailableMoves(BoardManager board)
     {
         var moves = new List<Vector2Int>();
+        var o = currentGridPos;
 
-        // 1) Orthogonal jusqu’à 2
-        int orthoRange = 2;
+        // 1) Orthogonal jusqu’à 2 (+ buff éventuel)
         Vector2Int[] orthos = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
         foreach (var dir in orthos)
         {
-            for (int d = 1; d <= orthoRange; d++)
+            int range = GetEffectiveRangeInDirection(dir, 2); // base = 2
+            for (int d = 1; d <= range; d++)
             {
-                var np = currentGridPos + dir * d;
+                var np = o + dir * d;
                 var t  = board.GetTileAt(np);
                 if (t == null) break;
 
@@ -48,7 +49,7 @@ public class EGareDesProfondeursPiece : Piece
             }
         }
 
-        // 2) Diagonales bonus = floor(PO / 5)
+        // 2) Diagonales bonus = floor(PO / 5) (+ buff éventuel)
         int shadowPoints = baron != null ? baron.GetShadowPoints() : 0;
         int diagBonus    = shadowPoints / 5;
 
@@ -60,9 +61,10 @@ public class EGareDesProfondeursPiece : Piece
             };
             foreach (var dir in diags)
             {
-                for (int d = 1; d <= diagBonus; d++)
+                int range = GetEffectiveRangeInDirection(dir, diagBonus);
+                for (int d = 1; d <= range; d++)
                 {
-                    var np = currentGridPos + dir * d;
+                    var np = o + dir * d;
                     var t  = board.GetTileAt(np);
                     if (t == null) break;
 
@@ -78,5 +80,14 @@ public class EGareDesProfondeursPiece : Piece
         }
 
         return moves;
+    }
+
+    protected override bool UsesDirection(Vector2Int dir)
+    {
+        // L’Égaré utilise orthos + diags (pour que le buff puisse s’appliquer aux deux)
+        return dir == Vector2Int.up || dir == Vector2Int.down ||
+               dir == Vector2Int.left || dir == Vector2Int.right ||
+               dir == new Vector2Int(1,1)  || dir == new Vector2Int(1,-1) ||
+               dir == new Vector2Int(-1,1) || dir == new Vector2Int(-1,-1);
     }
 }

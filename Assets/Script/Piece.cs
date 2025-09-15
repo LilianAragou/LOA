@@ -110,6 +110,10 @@ public abstract class Piece : MonoBehaviourPun, IPunInstantiateMagicCallback
     public void TempIncreaseRange(int amount) => tempRangeBonus += amount;
     public void TempResetRange()              => tempRangeBonus = 0;
     protected int GetEffectiveRange(int baseRange) => baseRange + tempRangeBonus;
+    protected virtual bool UsesDirection(Vector2Int dir) => false;
+
+    protected virtual int GetEffectiveRangeInDirection(Vector2Int dir, int baseRange) 
+        => baseRange;
 
     public void TryMoveTo(Vector2Int targetPos)
     {
