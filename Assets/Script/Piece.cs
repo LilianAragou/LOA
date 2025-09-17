@@ -12,7 +12,7 @@ public abstract class Piece : MonoBehaviourPun, IPunInstantiateMagicCallback
     private int tempRangeBonus = 0;
 
     protected virtual void OnTurnStart() { }
-    protected virtual void OnTurnEnd()   { TempResetRange(); }
+    protected virtual void OnTurnEnd()   {}
     protected virtual void OnCapture(Piece victim) { }
     protected virtual void OnAllyDeath(Piece ally) { }
 
@@ -109,7 +109,11 @@ public abstract class Piece : MonoBehaviourPun, IPunInstantiateMagicCallback
     public Vector2Int GetPosition()  => currentGridPos;
     public void TempIncreaseRange(int amount) => tempRangeBonus += amount;
     public void TempResetRange()              => tempRangeBonus = 0;
-    protected int GetEffectiveRange(int baseRange) => baseRange + tempRangeBonus;
+    protected int GetEffectiveRange(int baseRange)
+    {
+        Debug.Log($"[Range] Base: {baseRange}, TempBonus: {tempRangeBonus}");
+        return baseRange + tempRangeBonus;
+    }
     protected virtual bool UsesDirection(Vector2Int dir) => false;
 
     protected virtual int GetEffectiveRangeInDirection(Vector2Int dir, int baseRange) 

@@ -236,7 +236,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
 
         // ❌ PAS de boost ici : déplacement normal
         var moves = piece.GetAvailableMoves(this);
-        Debug.Log($"[Moves] ShowPossibleMoves for {piece.name} @ {piece.currentGridPos} -> {moves.Count} cases (boost ignoré)");
+        Debug.Log($"[Moves] ShowPossibleMoves for {piece.name} @ {piece.currentGridPos} -> {moves.Count} cases (boost de)");
         foreach (var m in moves)
         {
             var t = GetTileAt(m);

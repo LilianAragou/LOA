@@ -32,7 +32,7 @@ public class DevoreurDAmesPiece : Piece
         Vector2Int[] ortho = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
         foreach (var d in ortho)
         {
-            int range = GetEffectiveRangeInDirection(d, 1); // base = 1, buff peut donner +1
+            int range = GetEffectiveRange(1); // base = 1, buff peut donner +1
             for (int dist = 1; dist <= range; dist++)
             {
                 var p = o + d * dist;

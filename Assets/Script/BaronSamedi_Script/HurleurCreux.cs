@@ -9,7 +9,7 @@ public class HurleurCreuxPiece : Piece
     protected override void OnAllyDeath(Piece ally)
     {
         // Seulement si c'est un véritable allié
-        if (ally == this || ally.isRed != isRed) 
+        if (ally == this || ally.isRed != isRed)
             return;
 
         // Distance Chebyshev pour tester ≤2 cases
@@ -46,9 +46,6 @@ public class HurleurCreuxPiece : Piece
                 buffDurations.Add(ally, 3);
                 ally.TempIncreaseRange(1);
             }
-
-            // On rafraîchit immédiatement son highlight
-            BoardManager.Instance.ShowPossibleMoves(ally);
         }
     }
 
@@ -63,13 +60,14 @@ public class HurleurCreuxPiece : Piece
                 buffDurations.Remove(ally);
                 continue;
             }
-
+            Debug.Log($"Buff duration for {ally.name}: {buffDurations[ally]}");
             buffDurations[ally]--;
             if (buffDurations[ally] <= 0)
             {
                 buffDurations.Remove(ally);
                 ally.TempResetRange();
             }
+            Debug.Log($"Buff duration after turnStart for {ally.name}: {buffDurations[ally]}");
         }
     }
 

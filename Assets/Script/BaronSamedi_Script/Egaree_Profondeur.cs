@@ -32,7 +32,7 @@ public class EGareDesProfondeursPiece : Piece
         Vector2Int[] orthos = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
         foreach (var dir in orthos)
         {
-            int range = GetEffectiveRangeInDirection(dir, 2); // base = 2
+            int range = GetEffectiveRange(2); // base = 2
             for (int d = 1; d <= range; d++)
             {
                 var np = o + dir * d;
@@ -61,7 +61,7 @@ public class EGareDesProfondeursPiece : Piece
             };
             foreach (var dir in diags)
             {
-                int range = GetEffectiveRangeInDirection(dir, diagBonus);
+                int range = GetEffectiveRange(diagBonus);
                 for (int d = 1; d <= range; d++)
                 {
                     var np = o + dir * d;
