@@ -105,6 +105,9 @@ public class BoardManager : MonoBehaviourPunCallbacks
 
         if (TurnManager.Instance != null)
             TurnManager.Instance.OnTurnStart += ResetFreeMoveState;
+
+        // 🟣 Afficher les cases bonus Baron au lancement
+        RefreshBaronBonusHighlights();
     }
 
     void OnDestroy()
@@ -151,21 +154,21 @@ public class BoardManager : MonoBehaviourPunCallbacks
         float offY = -((height - 1) * tileSize) / 2f;
 
         for (int x = 0; x < width; x++)
-        for (int y = 0; y < height; y++)
-        {
-            Vector2 pos = new Vector2(x * tileSize + offX, y * tileSize + offY);
-            var go = Instantiate(tilePrefab, pos, Quaternion.identity, transform);
-            var tile = go.GetComponent<Tile>();
-            tile.gridPos = new Vector2Int(x, y);
-            tiles[x, y] = tile;
-
-            if (coordTextPrefab != null)
+            for (int y = 0; y < height; y++)
             {
-                var txt = Instantiate(coordTextPrefab, pos, Quaternion.identity, go.transform)
-                          .GetComponent<TextMeshPro>();
-                txt.text = $"{(char)('A' + x)}{y + 1}";
+                Vector2 pos = new Vector2(x * tileSize + offX, y * tileSize + offY);
+                var go = Instantiate(tilePrefab, pos, Quaternion.identity, transform);
+                var tile = go.GetComponent<Tile>();
+                tile.gridPos = new Vector2Int(x, y);
+                tiles[x, y] = tile;
+
+                if (coordTextPrefab != null)
+                {
+                    var txt = Instantiate(coordTextPrefab, pos, Quaternion.identity, go.transform)
+                              .GetComponent<TextMeshPro>();
+                    txt.text = $"{(char)('A' + x)}{y + 1}";
+                }
             }
-        }
     }
 
     // ─── Spawn réseau (bufferisé) ─────────────────────────────────────
@@ -250,7 +253,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
         ClearHighlights();
 
         bool boost = IsOgounPassiveBoostActiveFor(piece);
-        Debug.Log($"[OGOUN] ShowFreeMoveTargets piece={piece.name} team={(piece.isRed?0:1)} boostActive={boost}");
+        Debug.Log($"[OGOUN] ShowFreeMoveTargets piece={piece.name} team={(piece.isRed ? 0 : 1)} boostActive={boost}");
 
         // ✅ Le boost ne s’applique qu’à l’extra-coup
         var moves = GetFreeMoveTargetsConsideringBoost(piece);
@@ -268,7 +271,11 @@ public class BoardManager : MonoBehaviourPunCallbacks
         for (int x = 0; x < width; x++)
         for (int y = 0; y < height; y++)
             tiles[x, y].ResetHighlight();
+
+        // Réafficher les cases bonus en violet (si encore actives)
+        RefreshBaronBonusHighlights();
     }
+
 
     // ─── Déplacement ARBITRÉ PAR LE MASTER ────────────────────────────
     public void MovePiece(Piece piece, Vector2Int targetPos)
@@ -294,12 +301,12 @@ public class BoardManager : MonoBehaviourPunCallbacks
         if (p == null) return;
 
         Vector2Int from = p.currentGridPos;
-        Vector2Int to   = new Vector2Int(toX, toY);
+        Vector2Int to = new Vector2Int(toX, toY);
 
         // Équipes / tour
         int requesterTeam = info.Sender != null && info.Sender.IsMasterClient ? 0 : 1;
-        int pieceTeam     = p.isRed ? 0 : 1;
-        int currentTeam   = TurnManager.Instance.CurrentPlayer;
+        int pieceTeam = p.isRed ? 0 : 1;
+        int currentTeam = TurnManager.Instance.CurrentPlayer;
 
         // Rituel 2 (steal) actif ?
         int steal = -1;
@@ -311,7 +318,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
         bool isNormal = (steal == -1) && (requesterTeam == currentTeam) && (pieceTeam == requesterTeam);
 
         // ✅ Seul l'équipe qui a déclenché STEAL peut jouer, et uniquement en déplaçant une pièce de l'équipe adverse
-        bool isSteal  = (steal == requesterTeam) && (currentTeam != requesterTeam) && (pieceTeam == currentTeam);
+        bool isSteal = (steal == requesterTeam) && (currentTeam != requesterTeam) && (pieceTeam == currentTeam);
 
         bool isExtraFreeMove = (!isSteal) && (freeMoveTeam == pieceTeam && freeMovePieceId != 0);
         Debug.Log($"[Move-MASTER] steal={steal} reqTeam={requesterTeam} pieceTeam={pieceTeam} curTeam={currentTeam} isNormal={isNormal} isSteal={isSteal} isExtraFreeMove={isExtraFreeMove} from={from} to={to}");
@@ -331,14 +338,14 @@ public class BoardManager : MonoBehaviourPunCallbacks
         if (!legalMoves.Contains(to)) { Debug.Log("[Move-MASTER] Rejeté: destination non légale"); return; }
 
         Tile fromTile = GetTileAt(from);
-        Tile toTile   = GetTileAt(to);
+        Tile toTile = GetTileAt(to);
         if (fromTile == null || toTile == null) return;
 
         // Pendant l'extra-coup: même pièce, case vide uniquement
         if (isExtraFreeMove)
         {
             if (freeMovePieceId != pieceViewId) { Debug.Log("[Move-MASTER] Rejeté: freeMovePieceId différent"); return; }
-            if (toTile.currentOccupant != null)  { Debug.Log("[Move-MASTER] Rejeté: case destination occupée pendant free-move"); return; }
+            if (toTile.currentOccupant != null) { Debug.Log("[Move-MASTER] Rejeté: case destination occupée pendant free-move"); return; }
         }
 
         // Capture à la case d'arrivée ?
@@ -400,7 +407,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
             {
                 if (!InBounds(pos)) return false;
                 if (pos == from) return true;                 // départ libéré
-                if (pos == to)   return false;                // destination occupée par Ravageur
+                if (pos == to) return false;                // destination occupée par Ravageur
                 if (victimAtDest != null && victimAtDest.currentGridPos == pos) return true;
                 if (extraVictimPositions != null && extraVictimPositions.Contains(pos)) return true;
                 var t = GetTileAt(pos);
@@ -512,7 +519,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
         // 🟣 BONUS BARON : créditer PO si une pièce BLEUE foule une case violette (une fois par case)
         TryAwardBaronBonusOnLanding(to, p.isRed);
 
-        if (rav != null && ( (pushIds?.Count ?? 0) + (pushKillIds?.Count ?? 0) ) > 0)
+        if (rav != null && ((pushIds?.Count ?? 0) + (pushKillIds?.Count ?? 0)) > 0)
         {
             photonView.RPC(nameof(RPC_ApplyRavageurPush_All),
                            RpcTarget.All,
@@ -608,7 +615,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
         if (p == null) return;
 
         Tile fromTile = GetTileAt(new Vector2Int(fromX, fromY));
-        Tile toTile   = GetTileAt(new Vector2Int(toX, toY));
+        Tile toTile = GetTileAt(new Vector2Int(toX, toY));
         if (fromTile == null || toTile == null) return;
 
         // Capture à l'arrivée (si présente)
@@ -771,8 +778,8 @@ public class BoardManager : MonoBehaviourPunCallbacks
 
         // Équipe / tour
         int requesterTeam = info.Sender != null && info.Sender.IsMasterClient ? 0 : 1;
-        int pieceTeam     = piece.isRed ? 0 : 1;
-        int currentTeam   = TurnManager.Instance.CurrentPlayer;
+        int pieceTeam = piece.isRed ? 0 : 1;
+        int currentTeam = TurnManager.Instance.CurrentPlayer;
 
         // Évolution autorisée uniquement à son tour et sur ses propres pièces
         if (!(requesterTeam == currentTeam && requesterTeam == pieceTeam)) return;
@@ -1114,5 +1121,23 @@ public class BoardManager : MonoBehaviourPunCallbacks
             if (m != null && m.isRed == false)
                 return m;
         return null;
+    }
+    // ─── Visuel permanent des cases bonus du Baron ───────────────────────
+    public void RefreshBaronBonusHighlights()
+    {
+        if (baronBonusTiles == null || baronBonusTiles.Count == 0) return;
+
+        foreach (var pos in baronBonusTiles)
+        {
+            string key = Key(pos);
+            if (_baronClaimedKeys.Contains(key)) continue; // déjà consommée → normale
+
+            var tile = GetTileAt(pos);
+            if (tile != null)
+            {
+                // Violet permanent tant qu’elle n’a pas été activée
+                tile.Highlight(Color.magenta);
+            }
+        }
     }
 }
