@@ -153,7 +153,7 @@ MonoBehaviour:
   isRed: 0
   sourcePrefab: {fileID: 0}
   shadowPointsText: {fileID: 6470724952075810235}
-  shadowPoints: 4
+  shadowPoints: 0
   position: {x: 4, y: 8}
   poTiles:
   - {x: 0, y: 0}

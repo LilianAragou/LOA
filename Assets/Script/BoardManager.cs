@@ -1099,18 +1099,28 @@ public class BoardManager : MonoBehaviourPunCallbacks
                 string k = Key(landingPos);
                 if (_baronClaimedKeys.Contains(k)) return; // déjà prise → rien
 
-                _baronClaimedKeys.Add(k);
+                photonView.RPC(nameof(RPC_ConsumeBaronTile), RpcTarget.All, landingPos.x, landingPos.y);
 
-                // créditer le Baron (bleu)
-                var mask = FindBlueBaronMask();
-                if (mask != null && baronBonusPerTile > 0)
-                {
-                    // Suppose une méthode AddShadowPoints(int). Si ton API diffère, dis-le moi.
-                    mask.AddShadowPoints(baronBonusPerTile);
-                    Debug.Log($"[BARON][PO] +{baronBonusPerTile} PO (case {landingPos.x},{landingPos.y})");
-                }
                 return;
             }
+        }
+    }
+    [PunRPC]
+    private void RPC_ConsumeBaronTile(int x, int y)
+    {
+        string k = Key(new Vector2Int(x, y));
+        _baronClaimedKeys.Add(k);
+
+        var tile = GetTileAt(new Vector2Int(x, y));
+        if (tile != null)
+            tile.ResetHighlight(); // elle redevient normale
+
+        var mask = FindBlueBaronMask();
+        if (mask != null && baronBonusPerTile > 0)
+        {
+            // Suppose une méthode AddShadowPoints(int). Si ton API diffère, dis-le moi.
+            mask.AddShadowPoints(baronBonusPerTile);
+            Debug.Log($"[BARON][PO] +{baronBonusPerTile} PO)");
         }
     }
 

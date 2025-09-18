@@ -85,6 +85,7 @@ MonoBehaviour:
   - RPC_AddShadowPoints
   - RPC_RequestAddShadowPoints_Master
   - ForceLeaveRoom
+  - RPC_ConsumeBaronTile
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
