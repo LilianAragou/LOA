@@ -40,7 +40,7 @@ public class RevenantPiece : Piece
         if (endingPlayer == (isRed ? 0 : 1))
         {
             teamTurnsWithoutCapture++;
-            if (teamTurnsWithoutCapture >= 2)
+            if (teamTurnsWithoutCapture >= 3)
             {
                 Explode();
             }

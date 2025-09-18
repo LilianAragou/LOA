@@ -391,7 +391,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
             }
         }
 
-        // ─── RAVAGEUR : préparer pushes/kills post-move ─────────────────
+        // ─── RAVAGEUR : pousser uniquement dans la direction du mouvement ─────────────────
         List<int> pushIds = null;
         List<Vector2Int> pushTargets = null;
         List<int> pushKillIds = null;
@@ -407,52 +407,41 @@ public class BoardManager : MonoBehaviourPunCallbacks
             {
                 if (!InBounds(pos)) return false;
                 if (pos == from) return true;                 // départ libéré
-                if (pos == to) return false;                // destination occupée par Ravageur
+                if (pos == to) return false;                  // destination occupée par Ravageur
                 if (victimAtDest != null && victimAtDest.currentGridPos == pos) return true;
                 if (extraVictimPositions != null && extraVictimPositions.Contains(pos)) return true;
                 var t = GetTileAt(pos);
                 return t != null && t.currentOccupant == null;
             }
 
-            Vector2Int[] neigh = {
-                new Vector2Int(-1,-1), new Vector2Int(0,-1), new Vector2Int(1,-1),
-                new Vector2Int(-1, 0),                      new Vector2Int(1, 0),
-                new Vector2Int(-1, 1), new Vector2Int(0, 1), new Vector2Int(1, 1)
-            };
+            Vector2Int dirMove = new Vector2Int(
+                Mathf.Clamp(to.x - from.x, -1, 1),
+                Mathf.Clamp(to.y - from.y, -1, 1)
+            );
 
-            foreach (var d in neigh)
+            if (dirMove != Vector2Int.zero)
             {
-                var ePos = to + d;
+                var ePos = to + dirMove;
                 var t = GetTileAt(ePos);
-                if (t == null || t.currentOccupant == null) continue;
-
-                var enemy = t.currentOccupant.GetComponent<Piece>();
-                if (enemy == null || enemy.isRed == p.isRed) continue;
-
-                // Sentinelle : indestructible et non poussable
-                if (enemy is Sentinelle_Ecarlate) continue;
-
-                // déjà tué par effet
-                if (victimAtDest != null && enemy == victimAtDest) continue;
-                if (extraVictimIds != null && enemy.photonView != null && extraVictimIds.Contains(enemy.photonView.ViewID)) continue;
-
-                Vector2Int dir = new Vector2Int(Mathf.Clamp(d.x, -1, 1), Mathf.Clamp(d.y, -1, 1));
-                var target = ePos + dir;
-
-                if (!InBounds(target))
+                if (t != null && t.currentOccupant != null)
                 {
-                    if (enemy.photonView != null) pushKillIds.Add(enemy.photonView.ViewID);
-                }
-                else if (!IsEmptyAfter(target))
-                {
-                    if (enemy.photonView != null) pushKillIds.Add(enemy.photonView.ViewID);
-                }
-                else
-                {
-                    if (enemy.photonView != null)
+                    var enemy = t.currentOccupant.GetComponent<Piece>();
+                    if (enemy != null && enemy.isRed != p.isRed && !(enemy is Sentinelle_Ecarlate))
                     {
-                        pushIds.Add(enemy.photonView.ViewID);
-                        pushTargets.Add(target);
+                        Vector2Int target = ePos + dirMove;
+
+                        if (!InBounds(target) || !IsEmptyAfter(target))
+                        {
+                            if (enemy.photonView != null) pushKillIds.Add(enemy.photonView.ViewID);
+                        }
+                        else
+                        {
+                            if (enemy.photonView != null)
+                            {
+                                pushIds.Add(enemy.photonView.ViewID);
+                                pushTargets.Add(target);
+                            }
+                        }
                     }
                 }
             }
@@ -506,9 +495,9 @@ public class BoardManager : MonoBehaviourPunCallbacks
         if (extraVictimIds != null && extraVictimIds.Count > 0)
         {
             photonView.RPC(nameof(RPC_ApplyExtraVictims_All),
-                           RpcTarget.All,
-                           pieceViewId,
-                           extraVictimIds.ToArray());
+                        RpcTarget.All,
+                        pieceViewId,
+                        extraVictimIds.ToArray());
         }
 
         photonView.RPC(nameof(RPC_ApplyMove_All),
@@ -522,19 +511,19 @@ public class BoardManager : MonoBehaviourPunCallbacks
         if (rav != null && ((pushIds?.Count ?? 0) + (pushKillIds?.Count ?? 0)) > 0)
         {
             photonView.RPC(nameof(RPC_ApplyRavageurPush_All),
-                           RpcTarget.All,
-                           pieceViewId,
-                           pushIds?.ToArray() ?? new int[0],
-                           PackX(pushTargets ?? new List<Vector2Int>()).ToArray(),
-                           PackY(pushTargets ?? new List<Vector2Int>()).ToArray(),
-                           pushKillIds?.ToArray() ?? new int[0]);
+                        RpcTarget.All,
+                        pieceViewId,
+                        pushIds?.ToArray() ?? new int[0],
+                        PackX(pushTargets ?? new List<Vector2Int>()).ToArray(),
+                        PackY(pushTargets ?? new List<Vector2Int>()).ToArray(),
+                        pushKillIds?.ToArray() ?? new int[0]);
         }
 
         if (sentKillIds.Count > 0)
         {
             photonView.RPC(nameof(RPC_ApplySentinelAuraKills_All),
-                           RpcTarget.All,
-                           sentKillIds.ToArray());
+                        RpcTarget.All,
+                        sentKillIds.ToArray());
         }
 
         // ─── FIN DE LOGIQUE DE TOUR / OGOUN ─────────────────────────────
@@ -603,6 +592,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
         photonView.RPC(nameof(RPC_EndFreeMove), RpcTarget.All);
         TurnManager.Instance.RequestEndTurn();
     }
+
 
     // Applique le déplacement (tous)
     [PunRPC]

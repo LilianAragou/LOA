@@ -21,7 +21,7 @@ public class FlammeViolettePiece : Piece
         
         // Récupère l'instance de BaronSamediMaskPiece (il y en a une par équipe, ou une seule selon ton setup)
         var baron = FindFirstObjectByType<BaronSamediMaskPiece>();
-        if (baron != null)
+        if (baron != null && TurnManager.Instance.CurrentPlayer == 1)
         {
             baron.GainShadowPoint();
         }
