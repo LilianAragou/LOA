@@ -12,7 +12,6 @@ public class DevoreurDAmesPiece : Piece
     {
         // vertical ±2 et ±4
         new Vector2Int(0,  2), new Vector2Int(0, -2),
-        new Vector2Int(0,  4), new Vector2Int(0, -4),
 
         // horizontal ±2 et ±4
         new Vector2Int( 2, 0), new Vector2Int(-2, 0),
