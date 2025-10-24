@@ -52,15 +52,35 @@ public class TurnManager : MonoBehaviourPunCallbacks
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
     }
+    #if UNITY_EDITOR
+    private void Update() {
+        CurrentPlayer = GetIntProp(KEY_RED_ACTOR, 0);
+    }
+    #endif
 
     #region Public API
 
-    public bool RoomReady =>
-        PhotonNetwork.InRoom &&
-        PhotonNetwork.CurrentRoom != null &&
-        PhotonNetwork.CurrentRoom.PlayerCount >= 2;
+    public bool RoomReady
+{
+    get
+    {
+#if UNITY_EDITOR
+        // En mode éditeur, on considère toujours que la "room" est prête
+        return true;
+#else
+        return PhotonNetwork.InRoom &&
+               PhotonNetwork.CurrentRoom != null &&
+               PhotonNetwork.CurrentRoom.PlayerCount >= 2;
+#endif
+    }
+}
 
-    public bool Started => GetBoolProp(KEY_STARTED, false);
+#if UNITY_EDITOR
+        public bool Started => GetBoolProp(KEY_STARTED, true);
+#else
+        public bool Started => GetBoolProp(KEY_STARTED, false);
+#endif
+    
 
     public bool IsMyTurn
     {
