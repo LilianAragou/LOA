@@ -51,7 +51,9 @@ public class TurnManager : MonoBehaviourPunCallbacks
     {
         inRoom = PhotonNetwork.CurrentRoom.PlayerCount;
         if (inRoomText != null)
+        {
             inRoomText.text = $"Online : {inRoom}";
+        }
     }
     #region Public API
 

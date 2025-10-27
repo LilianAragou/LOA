@@ -1,0 +1,38 @@
+===== Session start 2025-10-27T17:38:41.7453451+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:38:41.755] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-27_17-38-41.txt
+[17:38:42.691] WARNING: [0.0] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/27/2025 16:38:42 UTC
+[17:38:45.088] WARNING: Pas de room précédente pour rematch !
+[17:38:45.131] LOG: [RoomController] Connecting to Photon...
+[17:38:45.584] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[17:38:45.585] LOG: [Launcher] Connexion en cours...
+[17:38:46.175] LOG: [3.486] SupportLogger OnConnected().
+[17:38:46.176] WARNING: [3.487] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "0d9d1609-0eed-4c73-be2c-67c69cfa591f" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 17227 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/27/2025 16:38:46 UTC
+[17:38:46.263] LOG: [3.575] SupportLogger OnConnectedToMaster().
+[17:38:46.266] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:38:46.267] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[17:38:46.269] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:38:46.315] LOG: [3.627] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[17:38:46.316] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[17:38:46.317] LOG: [RoomController] JoinedLobby => READY
+[17:38:46.318] LOG: [3.630] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+===== Session end 2025-10-27T17:38:48.0680074+01:00 =====
