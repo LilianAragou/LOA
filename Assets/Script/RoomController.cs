@@ -20,23 +20,10 @@ public class RoomController : MonoBehaviourPunCallbacks
     private bool isReady;         // prêt (connecté + dans un lobby)
     private bool isOpInFlight;    // opération Create/Join en cours (anti double-clic)
 
-#if UNITY_EDITOR
-    private bool editorSingleplayer = true; // Active le mode solo auto dans l’éditeur
-#endif
 
     // ---------- LIFECYCLE ----------
     private void Awake()
     {
-#if UNITY_EDITOR
-        if (editorSingleplayer)
-        {
-            Debug.Log("[RoomController] Lancement en mode SINGLEPLAYER (Unity Editor)");
-            // Charge directement la scène de jeu sans passer par Photon
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
-            return;
-        }
-#endif
-
         if (autoSyncScene) PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = Application.version;
 
