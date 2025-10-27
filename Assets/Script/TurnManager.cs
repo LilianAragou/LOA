@@ -15,6 +15,8 @@ public class TurnManager : MonoBehaviourPunCallbacks
     public int CurrentPlayer { get; private set; } = 0;
     public int TurnIndex { get; private set; } = 1;
     public TextMeshProUGUI turnText;
+    public int inRoom = 0;
+    public TextMeshProUGUI inRoomText;
 
     // Events
     public event Action OnTurnChanged;
@@ -45,7 +47,12 @@ public class TurnManager : MonoBehaviourPunCallbacks
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
     }
-
+    void Update()
+    {
+        inRoom = PhotonNetwork.CurrentRoom.PlayerCount;
+        if (inRoomText != null)
+            inRoomText.text = $"Online : {inRoom}";
+    }
     #region Public API
 
     public bool RoomReady

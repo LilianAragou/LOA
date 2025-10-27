@@ -1,0 +1,19 @@
+===== Session start 2025-10-27T17:05:49.9869798+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:05:49.997] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-27_17-05-49.txt
+[17:05:51.590] WARNING: [0.0] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/27/2025 16:05:51 UTC
+[17:05:51.595] LOG: [InputManager] Start: BoardManager found = True
+[17:05:51.613] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+TurnManager.Start () (at Assets/Script/TurnManager.cs:52)
+
+[17:06:33.028] WARNING: Assets\Script\SceneManager.cs(22,9): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+[17:06:33.029] WARNING: Assets\Script\RoomController.cs(46,29): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+[17:06:33.030] WARNING: Assets\Script\VictorySystem.cs(62,13): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+[17:06:33.030] WARNING: Assets\Script\VictorySystem.cs(67,13): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+[17:06:33.031] WARNING: Assets\Script\TurnManager.cs(130,9): warning CS0162: Unreachable code detected
+[17:06:33.031] WARNING: Assets\Script\TurnManager.cs(306,9): warning CS0162: Unreachable code detected
+[17:06:33.031] WARNING: Assets\Script\BoardPerspective.cs(20,9): warning CS0414: The field 'BoardPerspective.lastTeam' is assigned but its value is never used
