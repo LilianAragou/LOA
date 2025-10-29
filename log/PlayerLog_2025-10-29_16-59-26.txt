@@ -1,0 +1,12 @@
+===== Session start 2025-10-29T16:59:26.1401673+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\matth\Documents\GitHub\Loa2\LOA\log
+PersistentDataPath: C:/Users/matth/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[16:59:26.146] LOG: [FileLogger] Logging to: C:\Users\matth\Documents\GitHub\Loa2\LOA\log\PlayerLog_2025-10-29_16-59-26.txt
+[16:59:26.161] LOG: [RoomController] Connecting to Photon...
+[16:59:26.434] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/29/2025 15:59:26 UTC
+[16:59:26.437] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[16:59:26.437] LOG: [Launcher] Connexion en cours...
+===== Session end 2025-10-29T16:59:27.7205015+01:00 =====

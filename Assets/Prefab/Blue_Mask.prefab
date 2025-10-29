@@ -149,3 +149,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGridPos: {x: 0, y: 0}
   isRed: 0
+  sourcePrefab: {fileID: 0}

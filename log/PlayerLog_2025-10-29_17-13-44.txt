@@ -1,0 +1,57 @@
+===== Session start 2025-10-29T17:13:44.9039496+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\matth\Documents\GitHub\Loa2\LOA\log
+PersistentDataPath: C:/Users/matth/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:13:44.910] LOG: [FileLogger] Logging to: C:\Users\matth\Documents\GitHub\Loa2\LOA\log\PlayerLog_2025-10-29_17-13-44.txt
+[17:13:44.949] LOG: [RoomController] Connecting to Photon...
+[17:13:45.212] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/29/2025 16:13:45 UTC
+[17:13:45.216] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[17:13:45.216] LOG: [Launcher] Connexion en cours...
+[17:13:46.621] LOG: [1.410] SupportLogger OnConnected().
+[17:13:46.622] WARNING: [1.410] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "26ba7c45-957f-41e6-9dc9-fc7e3d27ca51" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 28115 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/29/2025 16:13:46 UTC
+[17:13:46.699] LOG: [1.487] SupportLogger OnConnectedToMaster().
+[17:13:46.699] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:13:46.700] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[17:13:46.700] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:13:48.531] LOG: [3.319] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[17:13:48.532] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[17:13:48.532] LOG: [RoomController] JoinedLobby => READY
+[17:13:48.535] LOG: [3.323] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 1
+[17:13:50.855] LOG: [RoomController] CreateRoom('aaad') sent=True
+[17:13:51.167] LOG: [5.956] SupportLogger OnCreatedRoom(Room: 'aaad' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.21:5056
+[17:13:51.170] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[17:13:51.171] LOG: [5.959] SupportLogger OnJoinedRoom(Room: 'aaad' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.21:5056
+[17:13:51.172] LOG: [RoomController] Room rejointe ✅
+[17:13:51.598] LOG: [InputManager] Start: BoardManager found = True
+[17:13:51.605] EXCEPTION: IndexOutOfRangeException: Index was outside the bounds of the array.
+BoardManager.SpawnNetworkOne (System.String prefabKey, UnityEngine.Vector2Int coord, System.Boolean isRed) (at Assets/Script/BoardManager.cs:186)
+BoardManager.SpawnPiecesNetwork () (at Assets/Script/BoardManager.cs:178)
+BoardManager.Start () (at Assets/Script/BoardManager.cs:102)
+
+[17:13:51.606] LOG: [6.394] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:13:51.606] LOG: [6.395] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:14:04.090] WARNING: Disconnecting PUN due to recompile. Exit PlayMode.
+[17:14:04.093] LOG: [18.881] SupportLogger OnLeftRoom().
+[17:14:04.093] LOG: Joueur sorti de la room !
+[17:14:04.095] LOG: [18.883] SupportLogger OnDisconnected(DisconnectByClientLogic).
+[17:14:04.095] WARNING: [18.884] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "26ba7c45-957f-41e6-9dc9-fc7e3d27ca51" AuthType: None AuthMode: Auth PayloadEncryption State: Disconnected PeerID: 48764 NameServer: ns.photonengine.io Current Server: 85.234.65.21:5056 IP: 85.234.65.21:5056 Region: eu 10/29/2025 16:14:04 UTC
+[17:14:04.098] LOG: [18.884] SupportLogger Rtt(variance): 25(12). Since receive: 844ms. Longest send: 1ms. Stats elapsed: 13sec.
+Longest delta between Send: 172ms Dispatch: 12485ms. Longest callback OnEv: 255=5ms OnResp: 227=3ms. Calls of Send: 253 Dispatch: 23. Ping min/max: 19/200
+===== Session end 2025-10-29T17:14:04.4463380+01:00 =====

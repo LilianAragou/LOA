@@ -1,0 +1,382 @@
+===== Session start 2025-10-29T17:28:06.1608798+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\matth\Documents\GitHub\Loa2\LOA\log
+PersistentDataPath: C:/Users/matth/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:28:06.165] LOG: [FileLogger] Logging to: C:\Users\matth\Documents\GitHub\Loa2\LOA\log\PlayerLog_2025-10-29_17-28-06.txt
+[17:28:06.181] LOG: [RoomController] Connecting to Photon...
+[17:28:06.482] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/29/2025 16:28:06 UTC
+[17:28:06.485] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[17:28:06.485] LOG: [Launcher] Connexion en cours...
+[17:28:08.181] LOG: [1.700] SupportLogger OnConnected().
+[17:28:08.182] WARNING: [1.701] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "a7820d58-8fc4-4a25-9ac6-c6764b40f058" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 52692 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/29/2025 16:28:08 UTC
+[17:28:08.320] LOG: [1.839] SupportLogger OnConnectedToMaster().
+[17:28:08.321] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:28:08.323] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[17:28:08.324] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:28:10.586] LOG: [4.106] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[17:28:10.587] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[17:28:10.587] LOG: [RoomController] JoinedLobby => READY
+[17:28:10.588] LOG: [4.107] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+[17:28:12.204] LOG: [RoomController] CreateRoom('aaa') sent=True
+[17:28:12.456] LOG: [5.975] SupportLogger OnCreatedRoom(Room: 'aaa' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.101:5056
+[17:28:12.458] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[17:28:12.460] LOG: [5.980] SupportLogger OnJoinedRoom(Room: 'aaa' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.101:5056
+[17:28:12.461] LOG: [RoomController] Room rejointe ✅
+[17:28:12.918] LOG: [InputManager] Start: BoardManager found = True
+[17:28:12.932] LOG: [6.452] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:28:12.933] LOG: [6.453] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:28:12.982] LOG: [6.501] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:28:12.982] LOG: [6.501] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:28:13.854] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:13.854] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 1) -> 3 cases (boost de)
+[17:28:14.189] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 1) to=(3, 2)
+[17:28:14.189] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:14.189] LOG: [Move-MASTER] legalMoves=3 (using normal moves)
+[17:28:14.192] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:14.192] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:14.388] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:14.389] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 2) -> 4 cases (boost de)
+[17:28:14.389] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:14.389] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:14.390] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:14.390] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:14.390] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:14.656] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 2) to=(2, 2)
+[17:28:14.656] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:14.657] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:14.657] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:14.657] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:14.829] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:14.829] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (2, 2) -> 4 cases (boost de)
+[17:28:14.830] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:14.830] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:14.831] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:14.831] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:14.831] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.056] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(2, 2) to=(2, 3)
+[17:28:15.056] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:15.057] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:15.057] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:15.057] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:15.244] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:15.244] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (2, 3) -> 4 cases (boost de)
+[17:28:15.244] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.244] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.245] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.245] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.245] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.506] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(2, 3) to=(3, 3)
+[17:28:15.507] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:15.507] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:15.507] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:15.508] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:15.678] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:15.678] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 3) -> 4 cases (boost de)
+[17:28:15.678] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.679] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.679] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.679] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.679] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:15.890] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 3) to=(3, 4)
+[17:28:15.890] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:15.890] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:15.890] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:15.891] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:16.098] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:16.099] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 4) -> 4 cases (boost de)
+[17:28:16.099] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.099] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.099] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.099] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.099] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.361] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 4) to=(4, 4)
+[17:28:16.361] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:16.361] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:16.362] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:16.362] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:16.517] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:16.517] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (4, 4) -> 4 cases (boost de)
+[17:28:16.518] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.518] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.518] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.518] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.519] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:16.745] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 4) to=(4, 5)
+[17:28:16.745] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:16.746] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:16.746] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:16.746] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:17.020] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:17.020] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (4, 5) -> 4 cases (boost de)
+[17:28:17.020] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.020] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.020] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.021] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.021] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.311] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 5) to=(5, 5)
+[17:28:17.311] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:17.311] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:17.312] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:17.312] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:17.497] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:17.497] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 5) -> 4 cases (boost de)
+[17:28:17.498] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.498] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.498] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.498] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.498] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.777] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 5) to=(6, 5)
+[17:28:17.778] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:17.778] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:17.780] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:17.781] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:17.984] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:17.984] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (6, 5) -> 4 cases (boost de)
+[17:28:17.985] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.985] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.985] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.985] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:17.985] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:18.752] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:18.752] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (6, 5) -> 4 cases (boost de)
+[17:28:18.752] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:18.753] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:18.753] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:18.753] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:18.753] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:18.956] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(6, 5) to=(7, 5)
+[17:28:18.956] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:18.956] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:18.957] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:18.957] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:19.136] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:19.136] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (7, 5) -> 4 cases (boost de)
+[17:28:19.136] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.137] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.137] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.137] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.137] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.331] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(7, 5) to=(7, 6)
+[17:28:19.331] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:19.332] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:19.332] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:19.332] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:19.528] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:19.528] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (7, 6) -> 4 cases (boost de)
+[17:28:19.528] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.529] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.529] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.529] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.529] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.706] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(7, 6) to=(7, 7)
+[17:28:19.706] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:19.706] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:19.706] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:19.707] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:19.924] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:19.924] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (7, 7) -> 4 cases (boost de)
+[17:28:19.924] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.925] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.925] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.925] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:19.925] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.582] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:20.582] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (7, 7) -> 4 cases (boost de)
+[17:28:20.582] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.583] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.583] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.583] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.583] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.779] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(7, 7) to=(6, 7)
+[17:28:20.779] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:20.779] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:20.779] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:20.779] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:20.814] LOG: [14.332] SupportLogger Rtt(variance): 34(4). Since receive: 12ms. Longest send: 1ms. Stats elapsed: 8sec.
+Longest delta between Send: 190ms Dispatch: 477ms. Longest callback OnEv: 255=6ms OnResp: 227=5ms. Calls of Send: 262 Dispatch: 416. Ping min/max: 20/36
+[17:28:20.993] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:20.993] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (6, 7) -> 4 cases (boost de)
+[17:28:20.994] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.994] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.994] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.994] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:20.994] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:21.241] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(6, 7) to=(5, 7)
+[17:28:21.241] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:21.242] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:21.244] LOG: [BARON] +1 PO → total=1
+[17:28:21.245] LOG: [Move-MASTER] anyKill=True moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:21.246] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:21.247] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(5, 7) baseMoves=4 boostActive=False
+[17:28:21.247] LOG: [OGOUN] Check free-move -> hasEmptyTarget=True boostActive=False
+[17:28:21.248] LOG: [OGOUN] Extra-coup: rejouez la MÊME pièce (sur case vide). ViewID=12
+[17:28:21.248] LOG: [OGOUN] RPC_NotifyFreeMove piece=Spirit_Red(Clone) boostActive=False
+[17:28:21.248] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:21.248] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(5, 7) baseMoves=4 boostActive=False
+[17:28:21.249] LOG: [OGOUN] FreeMove pre-check -> hasEmptyTarget=True candidates=4
+[17:28:21.249] LOG: [OGOUN] ShowFreeMoveTargets piece=Spirit_Red(Clone) team=0 boostActive=False
+[17:28:21.250] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:21.250] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(5, 7) baseMoves=4 boostActive=False
+[17:28:21.250] LOG: [OGOUN] FreeMoveTargets count=4
+[17:28:21.250] LOG: [OGOUN] ShowFreeMoveTargets piece=Spirit_Red(Clone) team=0 boostActive=False
+[17:28:21.251] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:21.251] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(5, 7) baseMoves=4 boostActive=False
+[17:28:21.251] LOG: [OGOUN] FreeMoveTargets count=4
+[17:28:21.557] LOG: [OGOUN] ShowFreeMoveTargets piece=Spirit_Red(Clone) team=0 boostActive=False
+[17:28:21.557] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:21.558] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(5, 7) baseMoves=4 boostActive=False
+[17:28:21.558] LOG: [OGOUN] FreeMoveTargets count=4
+[17:28:22.415] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=True from=(5, 7) to=(5, 6)
+[17:28:22.415] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:22.415] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(5, 7) baseMoves=4 boostActive=False
+[17:28:22.416] LOG: [Move-MASTER] legalMoves=4 (using BOOST WRAPPER)
+[17:28:22.416] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=0 freeMovePieceId=12
+[17:28:22.417] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:22.670] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:22.670] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 6) -> 4 cases (boost de)
+[17:28:22.671] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:22.671] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:22.671] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:22.671] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:22.671] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:22.924] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 6) to=(5, 7)
+[17:28:22.924] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:22.924] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:22.925] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:22.925] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:23.134] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:23.134] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 7) -> 4 cases (boost de)
+[17:28:23.135] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:23.135] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:23.135] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:23.135] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:23.135] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:23.344] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 7) to=(4, 7)
+[17:28:23.344] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:23.344] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:23.345] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:23.345] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:23.576] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:23.577] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (4, 7) -> 4 cases (boost de)
+[17:28:23.577] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:23.577] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:23.577] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:23.578] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:23.578] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:24.271] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:24.271] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (4, 7) -> 4 cases (boost de)
+[17:28:24.271] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:24.272] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:24.272] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:24.273] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:24.273] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:24.483] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 7) to=(3, 7)
+[17:28:24.483] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:24.484] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:24.484] LOG: [BARON] +1 PO → total=2
+[17:28:24.485] LOG: [Move-MASTER] anyKill=True moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:24.485] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:24.485] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(3, 7) baseMoves=4 boostActive=False
+[17:28:24.485] LOG: [OGOUN] Check free-move -> hasEmptyTarget=True boostActive=False
+[17:28:24.485] LOG: [OGOUN] Extra-coup: rejouez la MÊME pièce (sur case vide). ViewID=12
+[17:28:24.486] LOG: [OGOUN] RPC_NotifyFreeMove piece=Spirit_Red(Clone) boostActive=False
+[17:28:24.486] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:24.486] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(3, 7) baseMoves=4 boostActive=False
+[17:28:24.486] LOG: [OGOUN] FreeMove pre-check -> hasEmptyTarget=True candidates=4
+[17:28:24.487] LOG: [OGOUN] ShowFreeMoveTargets piece=Spirit_Red(Clone) team=0 boostActive=False
+[17:28:24.487] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:24.487] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(3, 7) baseMoves=4 boostActive=False
+[17:28:24.487] LOG: [OGOUN] FreeMoveTargets count=4
+[17:28:24.487] LOG: [OGOUN] ShowFreeMoveTargets piece=Spirit_Red(Clone) team=0 boostActive=False
+[17:28:24.488] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:24.488] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(3, 7) baseMoves=4 boostActive=False
+[17:28:24.488] LOG: [OGOUN] FreeMoveTargets count=4
+[17:28:24.686] LOG: [OGOUN] ShowFreeMoveTargets piece=Spirit_Red(Clone) team=0 boostActive=False
+[17:28:24.686] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:24.687] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(3, 7) baseMoves=4 boostActive=False
+[17:28:24.687] LOG: [OGOUN] FreeMoveTargets count=4
+[17:28:24.932] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=True from=(3, 7) to=(3, 6)
+[17:28:24.932] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:24.933] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(3, 7) baseMoves=4 boostActive=False
+[17:28:24.933] LOG: [Move-MASTER] legalMoves=4 (using BOOST WRAPPER)
+[17:28:24.933] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=0 freeMovePieceId=12
+[17:28:24.933] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:25.152] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:25.152] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 6) -> 4 cases (boost de)
+[17:28:25.152] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.153] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.153] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.153] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.153] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.361] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 6) to=(3, 7)
+[17:28:25.361] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:25.361] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:25.361] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:25.362] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:25.549] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:25.549] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 7) -> 4 cases (boost de)
+[17:28:25.549] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.549] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.550] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.550] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.550] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.742] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 7) to=(4, 7)
+[17:28:25.742] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:25.742] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:25.743] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:25.743] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[17:28:25.914] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:25.914] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (4, 7) -> 4 cases (boost de)
+[17:28:25.915] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.915] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.915] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.915] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:25.915] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:28:26.125] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 7) to=(4, 8)
+[17:28:26.126] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:26.126] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[17:28:26.128] LOG: [BARON] +1 PO → total=3
+[17:28:26.129] LOG: [Move-MASTER] anyKill=True moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[17:28:26.129] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:26.129] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(4, 8) baseMoves=3 boostActive=False
+[17:28:26.129] LOG: [OGOUN] Check free-move -> hasEmptyTarget=True boostActive=False
+[17:28:26.130] WARNING: RaiseEvent(200) failed. Your event is not being sent! Check if your are in a Room
+[17:28:26.130] LOG: [OGOUN] Extra-coup: rejouez la MÊME pièce (sur case vide). ViewID=12
+[17:28:26.131] LOG: [OGOUN] RPC_NotifyFreeMove piece=Spirit_Red(Clone) boostActive=False
+[17:28:26.131] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:26.131] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(4, 8) baseMoves=3 boostActive=False
+[17:28:26.131] LOG: [OGOUN] FreeMove pre-check -> hasEmptyTarget=True candidates=3
+[17:28:26.132] LOG: [OGOUN] ShowFreeMoveTargets piece=Spirit_Red(Clone) team=0 boostActive=False
+[17:28:26.132] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:26.132] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(4, 8) baseMoves=3 boostActive=False
+[17:28:26.132] LOG: [OGOUN] FreeMoveTargets count=3
+[17:28:26.133] LOG: [OGOUN] ShowFreeMoveTargets piece=Spirit_Red(Clone) team=0 boostActive=False
+[17:28:26.133] LOG: [Range] Base: 1, TempBonus: 0
+[17:28:26.133] LOG: [OGOUN][BoostCalc] piece=Spirit_Red(Clone) origin=(4, 8) baseMoves=3 boostActive=False
+[17:28:26.133] LOG: [OGOUN] FreeMoveTargets count=3
+[17:28:26.173] LOG: [19.692] SupportLogger OnLeftRoom().
+[17:28:26.173] LOG: Joueur sorti de la room !
+[17:28:26.185] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+TurnManager.Update () (at Assets/Script/TurnManager.cs:52)
+
+[17:28:32.416] LOG: [25.935] SupportLogger OnConnected().
+[17:28:32.417] WARNING: [25.936] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "a7820d58-8fc4-4a25-9ac6-c6764b40f058" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 59000 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/29/2025 16:28:32 UTC
+[17:28:32.495] LOG: [26.15] SupportLogger OnConnectedToMaster().
+===== Session end 2025-10-29T17:28:35.4347863+01:00 =====

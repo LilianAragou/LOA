@@ -1,0 +1,64 @@
+===== Session start 2025-10-29T17:11:17.9747395+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\matth\Documents\GitHub\Loa2\LOA\log
+PersistentDataPath: C:/Users/matth/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:11:17.980] LOG: [FileLogger] Logging to: C:\Users\matth\Documents\GitHub\Loa2\LOA\log\PlayerLog_2025-10-29_17-11-17.txt
+[17:11:17.995] LOG: [RoomController] Connecting to Photon...
+[17:11:18.237] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/29/2025 16:11:18 UTC
+[17:11:18.240] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[17:11:18.240] LOG: [Launcher] Connexion en cours...
+[17:11:19.663] LOG: [1.427] SupportLogger OnConnected().
+[17:11:19.664] WARNING: [1.428] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "c57d131f-6f83-4138-93c5-406944feb794" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 56676 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/29/2025 16:11:19 UTC
+[17:11:19.754] LOG: [1.517] SupportLogger OnConnectedToMaster().
+[17:11:19.755] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:11:19.756] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[17:11:19.756] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:11:20.351] LOG: [2.115] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[17:11:20.351] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[17:11:20.352] LOG: [RoomController] JoinedLobby => READY
+[17:11:20.355] LOG: [2.119] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 1
+[17:11:21.600] LOG: [RoomController] CreateRoom('aa') sent=True
+[17:11:21.651] LOG: [3.415] SupportLogger OnCreateRoomFailed(32766,A game with the specified id already exist.).
+[17:11:21.652] ERROR: [RoomController] Échec création : code=32766 msg=A game with the specified id already exist.
+UnityEngine.Debug:LogError (object)
+RoomController:OnCreateRoomFailed (int16,string) (at Assets/Script/RoomController.cs:139)
+Photon.Realtime.MatchMakingCallbacksContainer:OnCreateRoomFailed (int16,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4429)
+Photon.Realtime.LoadBalancingClient:CallbackRoomEnterFailed (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2766)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:3018)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:11:21.652] LOG: [RoomController] Retry CreateRoom with 'aa-8174'
+[17:11:25.468] LOG: [7.232] SupportLogger OnCreatedRoom(Room: 'aa-8174' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.197:5056
+[17:11:25.470] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[17:11:25.472] LOG: [7.236] SupportLogger OnJoinedRoom(Room: 'aa-8174' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.197:5056
+[17:11:25.473] LOG: [RoomController] Room rejointe ✅
+[17:11:25.918] LOG: [InputManager] Start: BoardManager found = True
+[17:11:25.926] EXCEPTION: IndexOutOfRangeException: Index was outside the bounds of the array.
+BoardManager.SpawnNetworkOne (System.String prefabKey, UnityEngine.Vector2Int coord, System.Boolean isRed) (at Assets/Script/BoardManager.cs:186)
+BoardManager.SpawnPiecesNetwork () (at Assets/Script/BoardManager.cs:178)
+BoardManager.Start () (at Assets/Script/BoardManager.cs:102)
+
+[17:11:25.927] LOG: [7.691] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:11:25.928] LOG: [7.692] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+===== Session end 2025-10-29T17:11:32.6570053+01:00 =====

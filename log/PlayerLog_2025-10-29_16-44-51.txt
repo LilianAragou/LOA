@@ -1,0 +1,38 @@
+===== Session start 2025-10-29T16:44:51.6351629+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\matth\Documents\GitHub\Loa2\LOA\log
+PersistentDataPath: C:/Users/matth/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[16:44:51.640] LOG: [FileLogger] Logging to: C:\Users\matth\Documents\GitHub\Loa2\LOA\log\PlayerLog_2025-10-29_16-44-51.txt
+[16:44:52.811] WARNING: [0.0] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/29/2025 15:44:52 UTC
+[16:44:52.818] LOG: [InputManager] Start: BoardManager found = True
+[16:44:52.830] ERROR: PhotonView ID duplicate found: 1. New: View 1 on BoardManager(Clone) (scene) old: View 1 on BoardManager (scene). Maybe one wasn't destroyed on scene load?! Check for 'DontDestroyOnLoad'. Destroying old entry, adding new.
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:RegisterPhotonView (Photon.Pun.PhotonView) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs:1009)
+Photon.Pun.PhotonView:set_ViewID (int) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:319)
+Photon.Pun.PhotonView:Awake () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:346)
+UnityEngine.Object:Instantiate<UnityEngine.GameObject> (UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+BoardManager:GenerateTiles () (at Assets/Script/BoardManager.cs:167)
+BoardManager:Start () (at Assets/Script/BoardManager.cs:94)
+
+[16:44:52.842] EXCEPTION: InvalidOperationException: Duplicate key 1
+ExitGames.Client.Photon.NonAllocDictionary`2[K,V].Add (K key, V val) (at <26ffcac188be4e31b8c76416eae79748>:0)
+Photon.Pun.PhotonNetwork.RegisterPhotonView (Photon.Pun.PhotonView netView) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs:1020)
+Photon.Pun.PhotonView.set_ViewID (System.Int32 value) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:319)
+Photon.Pun.PhotonView.Awake () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:346)
+UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion, Transform)
+BoardManager:GenerateTiles() (at Assets/Script/BoardManager.cs:167)
+BoardManager:Start() (at Assets/Script/BoardManager.cs:94)
+
+[16:44:52.842] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.GenerateTiles () (at Assets/Script/BoardManager.cs:169)
+BoardManager.Start () (at Assets/Script/BoardManager.cs:94)
+
+[16:44:52.854] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+TurnManager.Update () (at Assets/Script/TurnManager.cs:52)
+
+[16:44:57.721] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+TurnManager.Update () (at Assets/Script/TurnManager.cs:52)
+
+===== Session end 2025-10-29T16:44:58.2829590+01:00 =====

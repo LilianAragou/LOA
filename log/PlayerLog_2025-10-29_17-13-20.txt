@@ -1,0 +1,52 @@
+===== Session start 2025-10-29T17:13:20.4864075+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\matth\Documents\GitHub\Loa2\LOA\log
+PersistentDataPath: C:/Users/matth/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:13:20.491] LOG: [FileLogger] Logging to: C:\Users\matth\Documents\GitHub\Loa2\LOA\log\PlayerLog_2025-10-29_17-13-20.txt
+[17:13:20.506] LOG: [RoomController] Connecting to Photon...
+[17:13:20.759] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/29/2025 16:13:20 UTC
+[17:13:20.763] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[17:13:20.763] LOG: [Launcher] Connexion en cours...
+[17:13:22.206] LOG: [1.448] SupportLogger OnConnected().
+[17:13:22.206] WARNING: [1.448] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "54b222fd-3534-4191-854e-372b21cb18eb" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 22038 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/29/2025 16:13:22 UTC
+[17:13:22.336] LOG: [1.578] SupportLogger OnConnectedToMaster().
+[17:13:22.337] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:13:22.338] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[17:13:22.339] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:13:23.103] LOG: [2.345] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[17:13:23.104] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[17:13:23.104] LOG: [RoomController] JoinedLobby => READY
+[17:13:23.107] LOG: [2.349] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 1
+[17:13:24.585] LOG: [RoomController] CreateRoom('aaa') sent=True
+[17:13:24.640] LOG: [3.882] SupportLogger OnCreateRoomFailed(32766,A game with the specified id already exist.).
+[17:13:24.641] ERROR: [RoomController] Échec création : code=32766 msg=A game with the specified id already exist.
+UnityEngine.Debug:LogError (object)
+RoomController:OnCreateRoomFailed (int16,string) (at Assets/Script/RoomController.cs:139)
+Photon.Realtime.MatchMakingCallbacksContainer:OnCreateRoomFailed (int16,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4429)
+Photon.Realtime.LoadBalancingClient:CallbackRoomEnterFailed (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2766)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:3018)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:13:24.642] LOG: [RoomController] Retry CreateRoom with 'aaa-8080'
+===== Session end 2025-10-29T17:13:26.9259346+01:00 =====

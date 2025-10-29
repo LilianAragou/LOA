@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGridPos: {x: 0, y: 0}
   isRed: 0
+  sourcePrefab: {fileID: 0}
 --- !u!114 &2126505603553368378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e44c078f5c9b46419d18387c2a70cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentGridPos: {x: 0, y: 0}
+  isRed: 0
+  sourcePrefab: {fileID: 0}
+  shadowPointsText: {fileID: 0}
+  shadowPoints: 0
+  position: {x: 0, y: 0}
+  poTiles: []
+  awardOncePerTile: 1

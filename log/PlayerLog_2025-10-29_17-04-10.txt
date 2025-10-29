@@ -1,0 +1,107 @@
+===== Session start 2025-10-29T17:04:10.5202206+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\matth\Documents\GitHub\Loa2\LOA\log
+PersistentDataPath: C:/Users/matth/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:04:10.526] LOG: [FileLogger] Logging to: C:\Users\matth\Documents\GitHub\Loa2\LOA\log\PlayerLog_2025-10-29_17-04-10.txt
+[17:04:10.541] LOG: [RoomController] Connecting to Photon...
+[17:04:10.795] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/29/2025 16:04:10 UTC
+[17:04:10.798] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[17:04:10.798] LOG: [Launcher] Connexion en cours...
+[17:04:12.260] LOG: [1.466] SupportLogger OnConnected().
+[17:04:12.260] WARNING: [1.466] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "4dfbbc6d-e566-400b-ba98-6ac5604fefa5" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 13390 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/29/2025 16:04:12 UTC
+[17:04:12.374] LOG: [1.580] SupportLogger OnConnectedToMaster().
+[17:04:12.375] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:04:12.376] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[17:04:12.376] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:04:15.166] LOG: [4.372] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[17:04:15.167] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[17:04:15.167] LOG: [RoomController] JoinedLobby => READY
+[17:04:15.168] LOG: [4.374] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+[17:04:16.394] LOG: [RoomController] CreateRoom('aaa') sent=True
+[17:04:16.730] LOG: [5.936] SupportLogger OnCreatedRoom(Room: 'aaa' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.16:5056
+[17:04:16.733] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[17:04:16.734] LOG: [5.940] SupportLogger OnJoinedRoom(Room: 'aaa' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.16:5056
+[17:04:16.735] LOG: [RoomController] Room rejointe ✅
+[17:04:17.177] LOG: [InputManager] Start: BoardManager found = True
+[17:04:17.188] LOG: [6.394] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:04:17.189] LOG: [6.395] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:04:17.258] LOG: [6.464] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:04:17.259] LOG: [6.465] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:04:18.814] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (4, -1) -> 1 cases (boost de)
+[17:04:18.816] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:18.816] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:18.816] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:18.816] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:18.816] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:25.417] LOG: [14.622] SupportLogger Rtt(variance): 40(7). Since receive: 812ms. Longest send: 1ms. Stats elapsed: 8sec.
+Longest delta between Send: 155ms Dispatch: 458ms. Longest callback OnEv: 255=6ms OnResp: 227=5ms. Calls of Send: 277 Dispatch: 437. Ping min/max: 16/40
+[17:04:35.413] LOG: [24.619] SupportLogger Rtt(variance): 38(6). Since receive: 317ms. Longest send: 1ms. Stats elapsed: 18sec.
+Longest delta between Send: 155ms Dispatch: 458ms. Longest callback OnEv: 255=6ms OnResp: 227=5ms. Calls of Send: 595 Dispatch: 937. Ping min/max: 16/40
+[17:04:45.413] LOG: [34.619] SupportLogger Rtt(variance): 38(10). Since receive: 878ms. Longest send: 1ms. Stats elapsed: 28sec.
+Longest delta between Send: 155ms Dispatch: 458ms. Longest callback OnEv: 255=6ms OnResp: 227=5ms. Calls of Send: 912 Dispatch: 1437. Ping min/max: 16/40
+[17:04:52.685] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, -1) to=(2, -1)
+[17:04:52.685] LOG: [Move-MASTER] legalMoves=1 (using normal moves)
+[17:04:52.686] LOG: [Move-MASTER] Rejeté: destination non légale
+[17:04:53.073] LOG: [Range] Base: 1, TempBonus: 0
+[17:04:53.073] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (2, -1) -> 1 cases (boost de)
+[17:04:53.073] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:53.073] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:53.073] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:53.074] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:53.074] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:53.484] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(2, -1) to=(3, 0)
+[17:04:53.484] LOG: [Range] Base: 1, TempBonus: 0
+[17:04:53.485] LOG: [Move-MASTER] legalMoves=1 (using normal moves)
+[17:04:53.485] LOG: [Move-MASTER] Rejeté: destination non légale
+[17:04:53.858] LOG: [Range] Base: 1, TempBonus: 0
+[17:04:53.858] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (2, -1) -> 1 cases (boost de)
+[17:04:53.859] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:53.859] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:53.859] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:53.859] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:53.859] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[17:04:54.621] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(2, -1) to=(2, 1)
+[17:04:54.621] LOG: [Range] Base: 1, TempBonus: 0
+[17:04:54.622] LOG: [Move-MASTER] legalMoves=1 (using normal moves)
+[17:04:54.622] LOG: [Move-MASTER] Rejeté: destination non légale
+[17:04:55.414] LOG: [44.621] SupportLogger Rtt(variance): 33(9). Since receive: 294ms. Longest send: 1ms. Stats elapsed: 38sec.
+Longest delta between Send: 155ms Dispatch: 458ms. Longest callback OnEv: 255=6ms OnResp: 227=5ms. Calls of Send: 1222 Dispatch: 1937. Ping min/max: 16/40
+[17:05:01.642] LOG: [Range] Base: 1, TempBonus: 0
+[17:05:01.642] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 0) -> 3 cases (boost de)
+[17:05:03.101] LOG: [Range] Base: 1, TempBonus: 0
+[17:05:03.101] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 0) -> 3 cases (boost de)
+[17:05:04.103] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 0) to=(4, -1)
+[17:05:04.104] LOG: [Range] Base: 1, TempBonus: 0
+[17:05:04.104] LOG: [Move-MASTER] legalMoves=3 (using normal moves)
+[17:05:04.104] LOG: [Move-MASTER] Rejeté: destination non légale
+[17:05:04.387] LOG: [Range] Base: 1, TempBonus: 0
+[17:05:04.387] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 0) -> 3 cases (boost de)
+[17:05:05.417] LOG: [54.623] SupportLogger Rtt(variance): 33(7). Since receive: 856ms. Longest send: 1ms. Stats elapsed: 48sec.
+Longest delta between Send: 155ms Dispatch: 458ms. Longest callback OnEv: 255=6ms OnResp: 227=5ms. Calls of Send: 1534 Dispatch: 2437. Ping min/max: 16/40
+[17:05:15.417] LOG: [1:4.4] SupportLogger Rtt(variance): 37(12). Since receive: 180ms. Longest send: 1ms. Stats elapsed: 58sec.
+Longest delta between Send: 155ms Dispatch: 458ms. Longest callback OnEv: 255=6ms OnResp: 227=5ms. Calls of Send: 1849 Dispatch: 2937. Ping min/max: 16/45
+[17:05:25.102] WARNING: Disconnecting PUN due to recompile. Exit PlayMode.
+[17:05:25.106] LOG: [1:14.14] SupportLogger OnLeftRoom().
+[17:05:25.107] LOG: Joueur sorti de la room !
+[17:05:25.108] LOG: [1:14.14] SupportLogger OnDisconnected(DisconnectByClientLogic).
+[17:05:25.109] WARNING: [1:14.14] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "4dfbbc6d-e566-400b-ba98-6ac5604fefa5" AuthType: None AuthMode: Auth PayloadEncryption State: Disconnected PeerID: 58890 NameServer: ns.photonengine.io Current Server: 80.93.214.16:5056 IP: 80.93.214.16:5056 Region: eu 10/29/2025 16:05:25 UTC
+[17:05:25.109] LOG: [1:14.14] SupportLogger Rtt(variance): 32(8). Since receive: 460ms. Longest send: 1ms. Stats elapsed: 68sec.
+Longest delta between Send: 155ms Dispatch: 732ms. Longest callback OnEv: 255=6ms OnResp: 227=5ms. Calls of Send: 2139 Dispatch: 3386. Ping min/max: 16/45
+===== Session end 2025-10-29T17:05:25.4953971+01:00 =====

@@ -1,0 +1,17 @@
+===== Session start 2025-10-29T16:45:36.2906268+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\matth\Documents\GitHub\Loa2\LOA\log
+PersistentDataPath: C:/Users/matth/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[16:45:36.297] LOG: [FileLogger] Logging to: C:\Users\matth\Documents\GitHub\Loa2\LOA\log\PlayerLog_2025-10-29_16-45-36.txt
+[16:45:37.449] WARNING: [0.0] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/29/2025 15:45:37 UTC
+[16:45:37.454] LOG: [InputManager] Start: BoardManager found = True
+[16:45:37.468] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.GenerateTiles () (at Assets/Script/BoardManager.cs:169)
+BoardManager.Start () (at Assets/Script/BoardManager.cs:94)
+
+[16:45:37.477] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+TurnManager.Update () (at Assets/Script/TurnManager.cs:52)
+
+===== Session end 2025-10-29T16:45:47.6686521+01:00 =====

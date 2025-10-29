@@ -1,0 +1,70 @@
+===== Session start 2025-10-29T17:14:45.4429047+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\matth\Documents\GitHub\Loa2\LOA\log
+PersistentDataPath: C:/Users/matth/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:14:45.448] LOG: [FileLogger] Logging to: C:\Users\matth\Documents\GitHub\Loa2\LOA\log\PlayerLog_2025-10-29_17-14-45.txt
+[17:14:45.464] LOG: [RoomController] Connecting to Photon...
+[17:14:45.727] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/29/2025 16:14:45 UTC
+[17:14:45.730] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[17:14:45.730] LOG: [Launcher] Connexion en cours...
+[17:14:47.204] LOG: [1.478] SupportLogger OnConnected().
+[17:14:47.205] WARNING: [1.479] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "a80a0f5f-0bf2-4b21-a752-623d5bc52857" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 43718 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/29/2025 16:14:47 UTC
+[17:14:47.341] LOG: [1.615] SupportLogger OnConnectedToMaster().
+[17:14:47.342] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:14:47.343] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[17:14:47.343] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:14:50.246] LOG: [4.520] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[17:14:50.247] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[17:14:50.247] LOG: [RoomController] JoinedLobby => READY
+[17:14:50.248] LOG: [4.522] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+[17:14:51.620] LOG: [RoomController] CreateRoom('ezaeza') sent=True
+[17:14:51.990] LOG: [6.265] SupportLogger OnCreatedRoom(Room: 'ezaeza' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.29:5056
+[17:14:51.993] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[17:14:51.994] LOG: [6.269] SupportLogger OnJoinedRoom(Room: 'ezaeza' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.29:5056
+[17:14:51.995] LOG: [RoomController] Room rejointe ✅
+[17:14:52.413] LOG: [InputManager] Start: BoardManager found = True
+[17:14:52.426] LOG: [6.701] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:14:52.427] LOG: [6.701] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:14:52.473] LOG: [6.747] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:14:52.474] LOG: [6.748] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:15:00.488] LOG: [14.761] SupportLogger Rtt(variance): 28(4). Since receive: 713ms. Longest send: 1ms. Stats elapsed: 8sec.
+Longest delta between Send: 177ms Dispatch: 435ms. Longest callback OnEv: 255=5ms OnResp: 227=4ms. Calls of Send: 271 Dispatch: 431. Ping min/max: 17/28
+[17:15:10.493] LOG: [24.767] SupportLogger Rtt(variance): 31(5). Since receive: 8ms. Longest send: 1ms. Stats elapsed: 18sec.
+Longest delta between Send: 177ms Dispatch: 435ms. Longest callback OnEv: 255=5ms OnResp: 227=4ms. Calls of Send: 581 Dispatch: 931. Ping min/max: 17/32
+[17:15:20.485] LOG: [34.759] SupportLogger Rtt(variance): 33(9). Since receive: 591ms. Longest send: 1ms. Stats elapsed: 28sec.
+Longest delta between Send: 177ms Dispatch: 435ms. Longest callback OnEv: 255=5ms OnResp: 227=4ms. Calls of Send: 889 Dispatch: 1431. Ping min/max: 17/33
+[17:15:30.487] LOG: [44.761] SupportLogger Rtt(variance): 32(6). Since receive: 107ms. Longest send: 1ms. Stats elapsed: 38sec.
+Longest delta between Send: 177ms Dispatch: 435ms. Longest callback OnEv: 255=5ms OnResp: 227=4ms. Calls of Send: 1207 Dispatch: 1931. Ping min/max: 17/33
+[17:15:40.486] LOG: [54.760] SupportLogger Rtt(variance): 34(9). Since receive: 680ms. Longest send: 1ms. Stats elapsed: 48sec.
+Longest delta between Send: 177ms Dispatch: 435ms. Longest callback OnEv: 255=5ms OnResp: 227=4ms. Calls of Send: 1511 Dispatch: 2431. Ping min/max: 17/34
+[17:15:50.481] LOG: [1:4.4] SupportLogger Rtt(variance): 35(7). Since receive: 187ms. Longest send: 1ms. Stats elapsed: 58sec.
+Longest delta between Send: 177ms Dispatch: 435ms. Longest callback OnEv: 255=5ms OnResp: 227=4ms. Calls of Send: 1827 Dispatch: 2931. Ping min/max: 17/35
+[17:16:00.482] LOG: [1:14.14] SupportLogger Rtt(variance): 37(9). Since receive: 695ms. Longest send: 1ms. Stats elapsed: 68sec.
+Longest delta between Send: 177ms Dispatch: 435ms. Longest callback OnEv: 255=5ms OnResp: 227=4ms. Calls of Send: 2142 Dispatch: 3431. Ping min/max: 17/38
+[17:16:10.484] LOG: [1:24.24] SupportLogger Rtt(variance): 32(6). Since receive: 177ms. Longest send: 1ms. Stats elapsed: 78sec.
+Longest delta between Send: 177ms Dispatch: 435ms. Longest callback OnEv: 255=5ms OnResp: 227=4ms. Calls of Send: 2455 Dispatch: 3931. Ping min/max: 17/38
+[17:16:13.025] WARNING: Disconnecting PUN due to recompile. Exit PlayMode.
+[17:16:13.028] LOG: [1:27.27] SupportLogger OnLeftRoom().
+[17:16:13.029] LOG: Joueur sorti de la room !
+[17:16:13.030] LOG: [1:27.27] SupportLogger OnDisconnected(DisconnectByClientLogic).
+[17:16:13.030] WARNING: [1:27.27] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "a80a0f5f-0bf2-4b21-a752-623d5bc52857" AuthType: None AuthMode: Auth PayloadEncryption State: Disconnected PeerID: 65476 NameServer: ns.photonengine.io Current Server: 80.93.214.29:5056 IP: 80.93.214.29:5056 Region: eu 10/29/2025 16:16:13 UTC
+[17:16:13.031] LOG: [1:27.27] SupportLogger Rtt(variance): 31(7). Since receive: 689ms. Longest send: 1ms. Stats elapsed: 81sec.
+Longest delta between Send: 177ms Dispatch: 750ms. Longest callback OnEv: 255=5ms OnResp: 227=4ms. Calls of Send: 2521 Dispatch: 4021. Ping min/max: 17/38
+===== Session end 2025-10-29T17:16:13.3473488+01:00 =====

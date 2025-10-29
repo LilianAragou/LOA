@@ -151,4 +151,7 @@ MonoBehaviour:
   isRed: 1
   sourcePrefab: {fileID: 0}
   shadowPointsText: {fileID: 0}
+  shadowPoints: 0
   position: {x: 0, y: 0}
+  poTiles: []
+  awardOncePerTile: 1
