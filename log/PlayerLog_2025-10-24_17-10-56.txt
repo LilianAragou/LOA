@@ -1,0 +1,95 @@
+===== Session start 2025-10-24T17:10:56.5546326+02:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:10:56.568] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-24_17-10-56.txt
+[17:10:57.844] WARNING: [0.0] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/24/2025 15:10:57 UTC
+[17:10:57.849] LOG: [InputManager] Start: BoardManager found = True
+[17:11:03.633] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:04.741] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:04.977] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:05.201] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:05.389] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:05.567] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:05.760] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:05.939] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:06.121] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:06.312] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:06.538] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:06.722] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:07.245] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:07.580] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:07.739] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:07.924] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:11:08.115] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+===== Session end 2025-10-24T17:11:10.3410560+02:00 =====

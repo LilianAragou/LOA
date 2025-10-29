@@ -1,0 +1,47 @@
+===== Session start 2025-10-27T17:07:15.9726830+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:07:15.983] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-27_17-07-15.txt
+[17:07:16.018] LOG: [RoomController] Connecting to Photon...
+[17:07:16.572] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/27/2025 16:07:16 UTC
+[17:07:16.576] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[17:07:16.576] LOG: [Launcher] Connexion en cours...
+[17:07:19.308] LOG: [2.740] SupportLogger OnConnected().
+[17:07:19.310] WARNING: [2.741] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "65e7f6bd-957a-4e9f-b3f5-4014ce56a128" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 38207 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/27/2025 16:07:19 UTC
+[17:07:19.442] LOG: [2.873] SupportLogger OnConnectedToMaster().
+[17:07:19.442] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:07:19.444] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[17:07:19.445] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:07:19.487] LOG: [2.918] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[17:07:19.488] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[17:07:19.489] LOG: [RoomController] JoinedLobby => READY
+[17:07:19.490] LOG: [2.922] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+[17:07:20.707] LOG: [RoomController] CreateRoom('aaa') sent=True
+[17:07:21.237] LOG: [4.668] SupportLogger OnCreatedRoom(Room: 'aaa' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.197:5056
+[17:07:21.240] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[17:07:21.245] LOG: [4.676] SupportLogger OnJoinedRoom(Room: 'aaa' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.197:5056
+[17:07:21.247] LOG: [RoomController] Room rejointe ✅
+[17:07:22.315] LOG: [InputManager] Start: BoardManager found = True
+[17:07:22.358] LOG: [5.790] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:07:22.361] LOG: [5.792] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:07:22.467] LOG: [5.897] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:07:22.467] LOG: [5.898] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+===== Session end 2025-10-27T17:07:24.7532657+01:00 =====

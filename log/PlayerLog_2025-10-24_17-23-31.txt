@@ -1,0 +1,11 @@
+===== Session start 2025-10-24T17:23:31.1674967+02:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:23:31.180] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-24_17-23-31.txt
+[17:23:31.215] LOG: [RoomController] Lancement en mode SINGLEPLAYER (Unity Editor)
+[17:23:32.933] WARNING: [0.0] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/24/2025 15:23:32 UTC
+[17:23:32.939] LOG: [InputManager] Start: BoardManager found = True
+===== Session end 2025-10-24T17:23:38.3191669+02:00 =====

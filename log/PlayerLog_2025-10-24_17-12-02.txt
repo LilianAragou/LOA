@@ -1,0 +1,15 @@
+===== Session start 2025-10-24T17:12:02.8351862+02:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:12:02.849] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-24_17-12-02.txt
+[17:12:04.045] WARNING: [0.0] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/24/2025 15:12:04 UTC
+[17:12:04.052] LOG: [InputManager] Start: BoardManager found = True
+[17:12:08.351] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+===== Session end 2025-10-24T17:12:09.7406538+02:00 =====

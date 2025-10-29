@@ -20,19 +20,15 @@ public class RoomController : MonoBehaviourPunCallbacks
     private bool isReady;         // prêt (connecté + dans un lobby)
     private bool isOpInFlight;    // opération Create/Join en cours (anti double-clic)
 
+
     // ---------- LIFECYCLE ----------
     private void Awake()
     {
         if (autoSyncScene) PhotonNetwork.AutomaticallySyncScene = true;
-
-        // GameVersion = filtre logique côté Photon (tous les joueurs doivent partager la même)
         PhotonNetwork.GameVersion = Application.version;
 
-        // Optionnel: fixer la région si souhaité
         if (!string.IsNullOrEmpty(fixedRegion))
-        {
             PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = fixedRegion;
-        }
 
         SetButtonsInteractable(false);
 
@@ -43,22 +39,20 @@ public class RoomController : MonoBehaviourPunCallbacks
         }
         else
         {
-            // Déjà connecté (retour au menu, etc.)
             TryJoinLobbyIfNeeded();
         }
 
-        // Sécurise si les références UI ne sont pas assignées dans l’inspector
         if (roomNameInput == null)
             roomNameInput = FindObjectOfType<TMP_InputField>();
 
         if (createBtn != null) createBtn.onClick.AddListener(OnCreateRoom);
-        if (joinBtn   != null) joinBtn.onClick.AddListener(OnJoinRoom);
+        if (joinBtn != null) joinBtn.onClick.AddListener(OnJoinRoom);
     }
 
     private void OnDestroy()
     {
         if (createBtn != null) createBtn.onClick.RemoveListener(OnCreateRoom);
-        if (joinBtn   != null) joinBtn.onClick.RemoveListener(OnJoinRoom);
+        if (joinBtn != null) joinBtn.onClick.RemoveListener(OnJoinRoom);
     }
 
     // ---------- UI HANDLERS ----------
@@ -130,15 +124,12 @@ public class RoomController : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("[RoomController] Room créée 🎉 (MasterClient)");
-        // Charge la scène de jeu côté Master; les autres suivront si AutomaticallySyncScene = true
         PhotonNetwork.LoadLevel("Game");
     }
 
     public override void OnJoinedRoom()
     {
         Debug.Log("[RoomController] Room rejointe ✅");
-        // Si vous JOIGNEZ une room déjà existante, et que le Master a déjà chargé "Game",
-        // AutomaticallySyncScene vous emmènera automatiquement. Sinon, à vous de gérer.
         isOpInFlight = false;
         SetButtonsInteractable(false);
     }
@@ -147,7 +138,6 @@ public class RoomController : MonoBehaviourPunCallbacks
     {
         Debug.LogError($"[RoomController] Échec création : code={returnCode} msg={message}");
 
-        // Gestion simple d’un nom déjà pris / collision : retente avec suffixe
         string baseName = (roomNameInput != null ? roomNameInput.text : "Room").Trim();
         string alt = $"{baseName}-{Random.Range(1000, 9999)}";
         var opts = BuildDefaultRoomOptions();
@@ -176,15 +166,12 @@ public class RoomController : MonoBehaviourPunCallbacks
     {
         Debug.Log("[RoomController] OnLeftRoom");
         isOpInFlight = false;
-        // On revient généralement à un menu : on veut pouvoir créer/rejoindre à nouveau
         SetButtonsInteractable(isReady);
     }
 
     // ---------- HELPERS ----------
     private void TryJoinLobbyIfNeeded()
     {
-        // Important : être dans un lobby avant d’utiliser les listes ou JoinRandom.
-        // Pour JoinRoom par nom exact, ce n’est pas obligatoire, mais rester cohérent évite des états bizarres.
         if (!PhotonNetwork.InLobby)
         {
             PhotonNetwork.JoinLobby(TypedLobby.Default);
@@ -203,14 +190,8 @@ public class RoomController : MonoBehaviourPunCallbacks
             MaxPlayers = maxPlayers,
             IsOpen = true,
             IsVisible = true,
-
-            // Évite les “ghost slots” si vous ne gérez pas ReconnectAndRejoin
             PlayerTtl = 0,
             EmptyRoomTtl = 0,
-
-            // Si vous filtrez par propriétés côté lobby, exposez-les aussi ici :
-            // CustomRoomProperties = new ExitGames.Client.Photon.Hashtable { {"mode","ranked"} },
-            // CustomRoomPropertiesForLobby = new string[] { "mode" }
         };
     }
 

@@ -1,0 +1,36 @@
+===== Session start 2025-10-24T17:39:09.5505746+02:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:39:09.567] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-24_17-39-09.txt
+[17:39:09.609] LOG: [0.0] SupportLogger OnConnectedToMaster().
+[17:39:09.610] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:39:09.616] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: PeerCreated
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+Photon.Pun.PhotonNetwork:JoinLobby () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2093)
+Launcher:OnConnectedToMaster () (at Assets/Script/Launcher.cs:23)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Pun.PhotonNetwork:set_OfflineMode (bool) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:466)
+RoomController:Awake () (at Assets/Script/RoomController.cs:33)
+
+[17:39:09.616] LOG: [RoomController] Lancement en mode SINGLEPLAYER (Unity Editor)
+[17:39:11.687] WARNING: [2.74] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/24/2025 15:39:11 UTC
+[17:39:11.693] LOG: [InputManager] Start: BoardManager found = True
+[17:39:14.712] LOG: [Range] Base: 1, TempBonus: 0
+[17:39:14.712] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 1) -> 3 cases (boost de)
+[17:39:15.015] WARNING: RPCs can only be sent in rooms. Call of "RPC_RequestMove_Master" gets executed locally only, if at all.
+[17:39:16.403] LOG: [Range] Base: 1, TempBonus: 0
+[17:39:16.404] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 1) -> 3 cases (boost de)
+[17:39:16.715] WARNING: RPCs can only be sent in rooms. Call of "RPC_RequestMove_Master" gets executed locally only, if at all.
+[17:39:55.166] WARNING: Disconnecting PUN due to recompile. Exit PlayMode.
+[17:39:55.177] LOG: [45.566] SupportLogger OnDisconnected(None).
+[17:39:55.178] WARNING: [45.568] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: Disconnected PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/24/2025 15:39:55 UTC
+[17:39:55.183] LOG: [45.570] SupportLogger Rtt(variance): 0(0). Since receive: 45705ms. Longest send: 0ms. Stats elapsed: 0sec.
+ Ping min/max: 0/0
+===== Session end 2025-10-24T17:39:55.4250774+02:00 =====

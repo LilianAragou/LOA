@@ -1,0 +1,91 @@
+===== Session start 2025-10-24T17:13:23.1080648+02:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[17:13:23.121] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-24_17-13-23.txt
+[17:13:23.163] LOG: [RoomController] Connecting to Photon...
+[17:13:23.924] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/24/2025 15:13:23 UTC
+[17:13:23.929] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[17:13:23.929] LOG: [Launcher] Connexion en cours...
+[17:13:26.876] LOG: [2.955] SupportLogger OnConnected().
+[17:13:26.877] WARNING: [2.956] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "a3c5f489-e923-4196-b109-e89dd9ab496d" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 20709 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/24/2025 15:13:26 UTC
+[17:13:27.056] LOG: [3.137] SupportLogger OnConnectedToMaster().
+[17:13:27.058] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[17:13:27.059] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[17:13:27.061] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:190)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:105)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[17:13:27.111] LOG: [3.190] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[17:13:27.111] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[17:13:27.113] LOG: [RoomController] JoinedLobby => READY
+[17:13:27.116] LOG: [3.196] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+[17:13:28.151] LOG: [RoomController] CreateRoom('aaaaa') sent=True
+[17:13:28.782] LOG: [4.862] SupportLogger OnCreatedRoom(Room: 'aaaaa' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.29:5056
+[17:13:28.787] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[17:13:28.793] LOG: [4.873] SupportLogger OnJoinedRoom(Room: 'aaaaa' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.29:5056
+[17:13:28.796] LOG: [RoomController] Room rejointe ✅
+[17:13:30.118] LOG: [InputManager] Start: BoardManager found = True
+[17:13:30.126] LOG: [6.206] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:13:30.128] LOG: [6.208] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:13:30.243] LOG: [6.323] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[17:13:31.159] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:13:31.909] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:13:32.115] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:13:32.307] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:13:32.482] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:13:32.849] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:13:33.069] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:13:33.253] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+[17:13:33.408] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.ClearHighlights () (at Assets/Script/BoardManager.cs:254)
+InputManager.Deselect () (at Assets/Script/InputManager.cs:374)
+InputManager.Update () (at Assets/Script/InputManager.cs:65)
+
+===== Session end 2025-10-24T17:13:36.7189297+02:00 =====

@@ -5,7 +5,6 @@ using ExitGames.Client.Photon;
 using System;
 using TMPro;
 
-
 [RequireComponent(typeof(PhotonView))]
 public class TurnManager : MonoBehaviourPunCallbacks
 {
@@ -14,54 +13,75 @@ public class TurnManager : MonoBehaviourPunCallbacks
 
     // 0 = RED, 1 = BLUE
     public int CurrentPlayer { get; private set; } = 0;
-    public int TurnIndex     { get; private set; } = 1;
+    public int TurnIndex { get; private set; } = 1;
     public TextMeshProUGUI turnText;
+    public int inRoom = 0;
+    public TextMeshProUGUI inRoomText;
 
-    // Nouveaux events
+    // Events
     public event Action OnTurnChanged;
     public event Action OnMatchStarted;
     public event Action OnMatchStopped;
-
-    // Événements de compat
     public event Action OnTurnStart;
     public event Action OnTurnEnd;
     public event Action<Piece, Piece> OnPieceCaptured;
     public event Action<Piece> OnPieceDestroyed;
 
     // Room props keys
-    const string KEY_STARTED   = "started";
+    const string KEY_STARTED = "started";
     const string KEY_TURN_TEAM = "turnTeam";
-    const string KEY_TURN_IDX  = "turnIndex";
+    const string KEY_TURN_IDX = "turnIndex";
     const string KEY_RED_ACTOR = "redActor";
     const string KEY_BLU_ACTOR = "blueActor";
 
-    private int  _lastKnownTeam = 0;
-    private bool _lastStarted   = false;
+    private int _lastKnownTeam = 0;
+    private bool _lastStarted = false;
 
     void Awake()
     {
-        if (turnText != null)
-        {
-            turnText.text = "Tour: Rouge";
-        }
+        if (turnText != null) turnText.text = "Tour: Rouge";
+
         var mask = FindFirstObjectByType<BaronSamediMaskPiece>();
-        if (POtext != null)
-        {
-            POtext.text = $"PO: 0";
-        }
+        if (POtext != null) POtext.text = $"PO: 0";
+
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
     }
-
+    void Update()
+    {
+        inRoom = PhotonNetwork.CurrentRoom.PlayerCount;
+        if (inRoomText != null)
+        {
+            inRoomText.text = $"Online : {inRoom}";
+        }
+    }
     #region Public API
 
-    public bool RoomReady =>
-        PhotonNetwork.InRoom &&
-        PhotonNetwork.CurrentRoom != null &&
-        PhotonNetwork.CurrentRoom.PlayerCount >= 2;
+    public bool RoomReady
+    {
+        get
+        {
+#if UNITY_EDITOR
+            return PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom != null;
+#else
+            return PhotonNetwork.InRoom &&
+                   PhotonNetwork.CurrentRoom != null &&
+                   PhotonNetwork.CurrentRoom.PlayerCount >= 2;
+#endif
+        }
+    }
 
+#if UNITY_EDITOR
+    // En solo dans l'éditeur on considère la partie comme démarrée pour faciliter le playtest
+    public bool Started => true;
+#else
     public bool Started => GetBoolProp(KEY_STARTED, false);
+#endif
 
+#if UNITY_EDITOR
+    // En éditeur solo on force le tour au joueur rouge (utile pour debug / playtest)
+    public bool IsMyTurn => true;
+#else
     public bool IsMyTurn
     {
         get
@@ -75,7 +95,11 @@ public class TurnManager : MonoBehaviourPunCallbacks
             return mineTeam == CurrentPlayer;
         }
     }
-
+#endif
+#if UNITY_EDITOR
+    // En éditeur solo on force le tour au joueur rouge (utile pour debug / playtest)
+    public int MyTeam = 0;
+#else
     public int MyTeam
     {
         get
@@ -89,48 +113,52 @@ public class TurnManager : MonoBehaviourPunCallbacks
             return -1;
         }
     }
+#endif
+    
 
     /// <summary>
-    /// Fin de tour demandée par un client. 
+    /// Fin de tour demandée par un client.
     /// - Si appelant = Master → on bypass IsMyTurn (le Master arbitre).
     /// - Sinon → on exige IsMyTurn et on envoie RPC au Master.
     /// </summary>
     public void RequestEndTurn()
     {
+#if UNITY_EDITOR
+        // En éditeur solo, on ne change pas le tour (toujours rouge)
+        Debug.Log("[TurnManager] RequestEndTurn ignored in editor solo (always red).");
+        return;
+#endif
+
         if (PhotonNetwork.IsMasterClient)
         {
-            // Bypass pour éviter les blocages quand c’est l’autre équipe qui vient d’agir
             Debug.Log("[TurnManager] Master force end-turn.");
-            RPC_EndTurn_Master(); // appel local direct
+            RPC_EndTurn_Master(); // Appel direct
             return;
         }
 
         if (!IsMyTurn)
         {
-            Debug.Log("[TurnManager] RequestEndTurn rejeté (pas mon tour côté client).");
+            Debug.Log("[TurnManager] RequestEndTurn rejeté (pas mon tour).");
             return;
         }
 
         photonView.RPC(nameof(RPC_EndTurn_Master), RpcTarget.MasterClient);
     }
 
-    // Compat
     public void EndTurn() => RequestEndTurn();
 
     public void NotifyCapture(Piece attacker, Piece victim)
         => OnPieceCaptured?.Invoke(attacker, victim);
 
-    // Nom historique utilisé dans certains scripts
     public void NotifyDestruction(Piece victim)
         => OnPieceDestroyed?.Invoke(victim);
 
-    // ALIAS demandé par BoardManager (évite l’erreur CS1061)
     public void NotifyDestroyed(Piece victim)
         => OnPieceDestroyed?.Invoke(victim);
 
     #endregion
 
-    #region Photon callbacks
+    #region Photon Callbacks
 
     public override void OnJoinedRoom()
     {
@@ -139,7 +167,13 @@ public class TurnManager : MonoBehaviourPunCallbacks
 
         SyncFromRoomProps();
         _lastKnownTeam = CurrentPlayer;
-        _lastStarted   = Started;
+        _lastStarted = Started;
+
+#if UNITY_EDITOR
+        // Si on est en éditeur et Master, s'assurer que les props existent (début du match en solo)
+        if (PhotonNetwork.IsMasterClient)
+            MasterEnsureSetup();
+#endif
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -159,8 +193,11 @@ public class TurnManager : MonoBehaviourPunCallbacks
         if (!RoomReady && Started)
             MasterSetStarted(false);
 
-        PhotonNetwork.CurrentRoom.IsOpen = true;
-        PhotonNetwork.CurrentRoom.IsVisible = true;
+        if (PhotonNetwork.CurrentRoom != null)
+        {
+            PhotonNetwork.CurrentRoom.IsOpen = true;
+            PhotonNetwork.CurrentRoom.IsVisible = true;
+        }
     }
 
     public override void OnRoomPropertiesUpdate(Hashtable propertiesThatChanged)
@@ -171,7 +208,6 @@ public class TurnManager : MonoBehaviourPunCallbacks
         SyncFromRoomProps();
         bool nowStart = Started;
 
-        // Start/Stop
         if (propertiesThatChanged.ContainsKey(KEY_STARTED))
         {
             if (nowStart && !prevStart) OnMatchStarted?.Invoke();
@@ -185,7 +221,6 @@ public class TurnManager : MonoBehaviourPunCallbacks
             }
         }
 
-        // Changement de tour
         if (propertiesThatChanged.ContainsKey(KEY_TURN_TEAM) ||
             propertiesThatChanged.ContainsKey(KEY_TURN_IDX))
         {
@@ -214,39 +249,32 @@ public class TurnManager : MonoBehaviourPunCallbacks
 
         var props = room.CustomProperties ?? new Hashtable();
 
-        // Attribution des équipes si absent
         bool needAssign = !props.ContainsKey(KEY_RED_ACTOR) || !props.ContainsKey(KEY_BLU_ACTOR);
         if (needAssign)
         {
             int red = -1, blu = -1;
             var players = PhotonNetwork.PlayerList;
-            if (players.Length > 0)
-            {
-                Array.Sort(players, (a, b) => a.ActorNumber.CompareTo(b.ActorNumber));
-                if (players.Length >= 1) red = players[0].ActorNumber;
-                if (players.Length >= 2) blu = players[1].ActorNumber;
-            }
+            if (players.Length > 0) red = players[0].ActorNumber;
+            if (players.Length > 1) blu = players[1].ActorNumber;
+            else blu = red; // Solo : le même acteur représente les deux équipes
 
-            room.SetCustomProperties(new Hashtable {
+            var newProps = new Hashtable {
                 { KEY_RED_ACTOR, red },
                 { KEY_BLU_ACTOR, blu }
-            });
+            };
+            room.SetCustomProperties(newProps);
         }
 
-        // Init tour si absent
         if (!props.ContainsKey(KEY_TURN_TEAM) || !props.ContainsKey(KEY_TURN_IDX))
         {
             room.SetCustomProperties(new Hashtable {
-                { KEY_TURN_TEAM, 0 }, // RED commence
-                { KEY_TURN_IDX,  1 }
+                { KEY_TURN_TEAM, 0 },
+                { KEY_TURN_IDX, 1 }
             });
         }
 
-        // Init started si absent
         if (!props.ContainsKey(KEY_STARTED))
-        {
             room.SetCustomProperties(new Hashtable { { KEY_STARTED, false } });
-        }
     }
 
     private void MasterSetStarted(bool started)
@@ -260,11 +288,7 @@ public class TurnManager : MonoBehaviourPunCallbacks
         {
             room.IsOpen = false;
             room.IsVisible = false;
-
-            room.SetCustomProperties(new Hashtable {
-                { KEY_TURN_TEAM, 0 },
-                { KEY_TURN_IDX,  1 }
-            });
+            room.SetCustomProperties(new Hashtable { { KEY_TURN_TEAM, 0 }, { KEY_TURN_IDX, 1 } });
         }
         else
         {
@@ -276,8 +300,12 @@ public class TurnManager : MonoBehaviourPunCallbacks
     [PunRPC]
     private void RPC_EndTurn_Master()
     {
-        if (!PhotonNetwork.IsMasterClient) return;
-        if (!Started) { Debug.Log("[TurnManager] EndTurn ignoré (non démarré)."); return; }
+#if UNITY_EDITOR
+        // En solo dans l'éditeur, on ne fait pas tourner le tour (toujours rouge)
+        return;
+#endif
+
+        if (!PhotonNetwork.IsMasterClient || !Started) return;
 
         var room = PhotonNetwork.CurrentRoom;
         if (room == null) return;
@@ -288,14 +316,7 @@ public class TurnManager : MonoBehaviourPunCallbacks
         int nextTeam = (team == 0) ? 1 : 0;
         int nextIndex = Mathf.Max(1, index + 1);
 
-        Debug.Log($"[TurnManager] EndTurn: {team} → {nextTeam} (turn #{nextIndex})");
-
-
-        room.SetCustomProperties(new Hashtable {
-            { KEY_TURN_TEAM, nextTeam },
-            { KEY_TURN_IDX,  nextIndex }
-        });
-        
+        room.SetCustomProperties(new Hashtable { { KEY_TURN_TEAM, nextTeam }, { KEY_TURN_IDX, nextIndex } });
     }
 
     #endregion
@@ -306,15 +327,13 @@ public class TurnManager : MonoBehaviourPunCallbacks
     {
         CurrentPlayer = GetIntProp(KEY_TURN_TEAM, 0);
         TurnIndex = GetIntProp(KEY_TURN_IDX, 1);
+
         if (turnText != null)
-        {
             turnText.text = $"Tour: {(CurrentPlayer == 0 ? "Rouge" : "Bleu")}";
-        }
+
         var mask = FindFirstObjectByType<BaronSamediMaskPiece>();
         if (POtext != null)
-        {
             POtext.text = $"PO: {mask?.GetShadowPoints()}";
-        }
     }
 
     private bool GetBoolProp(string key, bool fallback)

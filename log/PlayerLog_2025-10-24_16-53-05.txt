@@ -1,0 +1,23 @@
+===== Session start 2025-10-24T16:53:05.5377570+02:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[16:53:05.550] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-24_16-53-05.txt
+[16:53:06.853] WARNING: [0.0] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/24/2025 14:53:06 UTC
+[16:53:06.858] LOG: [InputManager] Start: BoardManager found = True
+[16:53:06.871] LOG: [TurnManager] Mode Éditeur détecté → passage en OfflineMode (solo).
+[16:53:06.874] LOG: [0.23] SupportLogger OnConnectedToMaster().
+[16:53:06.881] LOG: [0.30] SupportLogger OnCreatedRoom(Room: 'LocalEditorRoom' visible,open 1/0 players.).  GameServer:
+[16:53:06.884] LOG: [0.32] SupportLogger OnJoinedRoom(Room: 'LocalEditorRoom' visible,open 1/0 players.).  GameServer:
+[16:53:06.895] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+BoardManager.SpawnLocalOne (System.String prefabKey, UnityEngine.Vector2Int coord, System.Boolean isRed) (at Assets/Script/BoardManager.cs:208)
+BoardManager.SpawnPiecesLocal () (at Assets/Script/BoardManager.cs:200)
+BoardManager.OnJoinedRoom () (at Assets/Script/BoardManager.cs:129)
+Photon.Realtime.MatchMakingCallbacksContainer.OnJoinedRoom () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4419)
+Photon.Pun.PhotonNetwork.EnterOfflineRoom (System.String roomName, Photon.Realtime.RoomOptions roomOptions, System.Boolean createdRoom) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2068)
+Photon.Pun.PhotonNetwork.CreateRoom (System.String roomName, Photon.Realtime.RoomOptions roomOptions, Photon.Realtime.TypedLobby typedLobby, System.String[] expectedUsers) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1776)
+TurnManager.Start () (at Assets/Script/TurnManager.cs:62)
+
+===== Session end 2025-10-24T16:53:26.7662666+02:00 =====

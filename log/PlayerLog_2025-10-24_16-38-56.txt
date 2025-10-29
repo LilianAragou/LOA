@@ -1,0 +1,233 @@
+===== Session start 2025-10-24T16:38:56.9563692+02:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log
+PersistentDataPath: C:/Users/lilia/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[16:38:56.975] LOG: [FileLogger] Logging to: C:\Users\lilia\OneDrive\Bureau\IIM\Unity\LOA\log\PlayerLog_2025-10-24_16-38-56.txt
+[16:38:57.563] LOG: [TurnManager] Mode SOLO actif (Unity Editor). Pas de Photon requis.
+[16:38:58.287] WARNING: [0.0] SupportLogger Info: AppID: "" AppVersion: "" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: PeerCreated PeerID: 65535 NameServer: ns.photonengine.io Current Server:  IP:  Region:  10/24/2025 14:38:58 UTC
+[16:38:58.294] LOG: [InputManager] Start: BoardManager found = True
+[16:39:01.396] LOG: [Range] Base: 1, TempBonus: 0
+[16:39:01.397] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 1) -> 3 cases (boost de)
+[16:39:02.256] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+BoardManager:MovePiece (Piece,UnityEngine.Vector2Int) (at Assets/Script/BoardManager.cs:285)
+InputManager:TryMoveSelectedTo (UnityEngine.Vector2Int) (at Assets/Script/InputManager.cs:215)
+InputManager:HandleTileClick (Tile) (at Assets/Script/InputManager.cs:203)
+InputManager:Update () (at Assets/Script/InputManager.cs:101)
+
+[16:39:03.293] LOG: [Range] Base: 1, TempBonus: 0
+[16:39:03.294] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 1) -> 3 cases (boost de)
+[16:39:03.838] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+BoardManager:MovePiece (Piece,UnityEngine.Vector2Int) (at Assets/Script/BoardManager.cs:285)
+InputManager:TryMoveSelectedTo (UnityEngine.Vector2Int) (at Assets/Script/InputManager.cs:215)
+InputManager:HandleTileClick (Tile) (at Assets/Script/InputManager.cs:203)
+InputManager:Update () (at Assets/Script/InputManager.cs:101)
+
+[16:39:06.584] LOG: [Range] Base: 1, TempBonus: 0
+[16:39:06.585] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 1) -> 3 cases (boost de)
+[16:39:07.160] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+BoardManager:MovePiece (Piece,UnityEngine.Vector2Int) (at Assets/Script/BoardManager.cs:285)
+InputManager:TryMoveSelectedTo (UnityEngine.Vector2Int) (at Assets/Script/InputManager.cs:215)
+InputManager:HandleTileClick (Tile) (at Assets/Script/InputManager.cs:203)
+InputManager:Update () (at Assets/Script/InputManager.cs:101)
+
+[16:39:07.698] LOG: [Range] Base: 1, TempBonus: 0
+[16:39:07.699] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 1) -> 3 cases (boost de)
+[16:39:08.101] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+BoardManager:MovePiece (Piece,UnityEngine.Vector2Int) (at Assets/Script/BoardManager.cs:285)
+InputManager:TryMoveSelectedTo (UnityEngine.Vector2Int) (at Assets/Script/InputManager.cs:215)
+InputManager:HandleTileClick (Tile) (at Assets/Script/InputManager.cs:203)
+InputManager:Update () (at Assets/Script/InputManager.cs:101)
+
+[16:39:08.565] LOG: [Range] Base: 1, TempBonus: 0
+[16:39:08.565] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 1) -> 3 cases (boost de)
+[16:39:08.854] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+BoardManager:MovePiece (Piece,UnityEngine.Vector2Int) (at Assets/Script/BoardManager.cs:285)
+InputManager:TryMoveSelectedTo (UnityEngine.Vector2Int) (at Assets/Script/InputManager.cs:215)
+InputManager:HandleTileClick (Tile) (at Assets/Script/InputManager.cs:203)
+InputManager:Update () (at Assets/Script/InputManager.cs:101)
+
+[16:39:13.464] LOG: [Range] Base: 1, TempBonus: 0
+[16:39:13.465] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (2, 0) -> 2 cases (boost de)
+[16:39:13.466] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:13.467] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:13.469] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:13.469] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:13.470] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:14.356] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+BoardManager:MovePiece (Piece,UnityEngine.Vector2Int) (at Assets/Script/BoardManager.cs:285)
+InputManager:TryMoveSelectedTo (UnityEngine.Vector2Int) (at Assets/Script/InputManager.cs:215)
+InputManager:HandleTileClick (Tile) (at Assets/Script/InputManager.cs:203)
+InputManager:Update () (at Assets/Script/InputManager.cs:101)
+
+[16:39:16.490] LOG: [Range] Base: 1, TempBonus: 0
+[16:39:16.491] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (2, 0) -> 2 cases (boost de)
+[16:39:16.491] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:16.492] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:16.493] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:16.494] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:16.494] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[16:39:19.692] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+BoardManager:MovePiece (Piece,UnityEngine.Vector2Int) (at Assets/Script/BoardManager.cs:285)
+InputManager:TryMoveSelectedTo (UnityEngine.Vector2Int) (at Assets/Script/InputManager.cs:215)
+InputManager:HandleTileClick (Tile) (at Assets/Script/InputManager.cs:203)
+InputManager:Update () (at Assets/Script/InputManager.cs:101)
+
+[16:39:21.892] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:22.537] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:22.702] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:22.900] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:23.094] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:23.723] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:24.190] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:24.390] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:24.557] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:24.716] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:24.903] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:25.076] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:25.270] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:25.426] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:25.596] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[16:39:25.807] ERROR: Cannot send messages when not connected. Either connect to Photon OR use offline mode!
+UnityEngine.Debug:LogError (object)
+Photon.Pun.PhotonNetwork:VerifyCanUseNetwork () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:1452)
+Photon.Pun.PhotonNetwork:RPC (Photon.Pun.PhotonView,string,Photon.Pun.RpcTarget,bool,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2926)
+Photon.Pun.PhotonView:RPC (string,Photon.Pun.RpcTarget,object[]) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs:604)
+RitualSystem:OnOgounBoostClicked () (at Assets/Script/RitualSystem.cs:592)
+UnityEngine.EventSystems.EventSystem:Update () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+===== Session end 2025-10-24T16:41:24.3653395+02:00 =====

@@ -1485,6 +1485,9 @@ MonoBehaviour:
   roomNameInput: {fileID: 1084469222}
   createBtn: {fileID: 296111498}
   joinBtn: {fileID: 2047761107}
+  fixedRegion: eu
+  maxPlayers: 2
+  autoSyncScene: 1
 --- !u!1 &1665819656
 GameObject:
   m_ObjectHideFlags: 0
