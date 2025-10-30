@@ -1,0 +1,346 @@
+===== Session start 2025-10-30T15:07:16.3733394+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\eachi\Documents\GitHub\Loa-Game\LOA\log
+PersistentDataPath: C:/Users/eachi/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[15:07:16.376] LOG: [FileLogger] Logging to: C:\Users\eachi\Documents\GitHub\Loa-Game\LOA\log\PlayerLog_2025-10-30_15-07-16.txt
+[15:07:16.386] LOG: [RoomController] Connecting to Photon...
+[15:07:16.666] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/30/2025 14:07:16 UTC
+[15:07:16.667] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[15:07:16.667] LOG: [Launcher] Connexion en cours...
+[15:07:17.391] LOG: [0.724] SupportLogger OnConnected().
+[15:07:17.391] WARNING: [0.724] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "c36ef42d-73df-41ad-941e-aa9a1ad89ebb" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 17791 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/30/2025 14:07:17 UTC
+[15:07:17.512] LOG: [0.846] SupportLogger OnConnectedToMaster().
+[15:07:17.512] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[15:07:17.513] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[15:07:17.513] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[15:07:17.549] LOG: [0.883] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[15:07:17.549] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[15:07:17.549] LOG: [RoomController] JoinedLobby => READY
+[15:07:17.549] LOG: [0.884] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+[15:07:18.724] LOG: [RoomController] CreateRoom('Room-5702') sent=True
+[15:07:18.992] LOG: [2.325] SupportLogger OnCreatedRoom(Room: 'Room-5702' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.197:5056
+[15:07:18.993] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[15:07:18.994] LOG: [2.328] SupportLogger OnJoinedRoom(Room: 'Room-5702' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.197:5056
+[15:07:18.994] LOG: [RoomController] Room rejointe ✅
+[15:07:19.015] WARNING: Aucune LoaDefinition trouvée dans Resources/LoaDefinitions/
+[15:07:19.163] LOG: [2.497] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[15:07:19.163] LOG: [2.498] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[15:07:21.243] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:22.529] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:23.037] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:23.316] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:24.101] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:24.276] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:24.501] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:24.689] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:24.872] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:25.237] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:25.621] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:26.115] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:26.324] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:27.134] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:27.283] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:27.470] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:27.522] LOG: [10.855] SupportLogger Rtt(variance): 38(15). Since receive: 53ms. Longest send: 1ms. Stats elapsed: 8sec.
+Longest delta between Send: 143ms Dispatch: 172ms. Longest callback OnEv: 255=3ms OnResp: 227=2ms. Calls of Send: 282 Dispatch: 438. Ping min/max: 15/48
+[15:07:27.642] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:28.001] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:28.330] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:28.744] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:28.941] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:29.083] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:29.412] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:29.755] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:36.372] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:36.767] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:36.962] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+LoaSelectUI.OnClickLoa (System.String loaId) (at Assets/Script/UI/LoaSelectUI.cs:64)
+LoaSelectUI+<>c__DisplayClass10_0.<Start>b__0 () (at Assets/Script/UI/LoaSelectUI.cs:51)
+UnityEngine.Events.InvokableCall.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <612ea0208cc847f49d539e6511ed3cd5>:0)
+UnityEngine.UI.Button.Press () (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:70)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/UI/Core/Button.cs:114)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/ExecuteEvents.cs:272)
+UnityEngine.EventSystems.EventSystem:Update() (at ./Library/PackageCache/com.unity.ugui@9496653a3df6/Runtime/UGUI/EventSystem/EventSystem.cs:530)
+
+[15:07:37.521] LOG: [20.855] SupportLogger Rtt(variance): 31(8). Since receive: 661ms. Longest send: 1ms. Stats elapsed: 18sec.
+Longest delta between Send: 143ms Dispatch: 172ms. Longest callback OnEv: 255=3ms OnResp: 227=2ms. Calls of Send: 607 Dispatch: 938. Ping min/max: 15/48
+===== Session end 2025-10-30T15:07:38.0779503+01:00 =====

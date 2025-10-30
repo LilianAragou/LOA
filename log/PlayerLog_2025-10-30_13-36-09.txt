@@ -1,0 +1,566 @@
+===== Session start 2025-10-30T13:36:09.0905456+01:00 =====
+Unity 6000.0.42f1 | WindowsEditor | Jeu des Loa 1.0
+Company: DefaultCompany
+Build Log Dir: C:\Users\eachi\Documents\GitHub\Loa-Game\LOA\log
+PersistentDataPath: C:/Users/eachi/AppData/LocalLow/DefaultCompany/Jeu des Loa
+===============================================
+[13:36:09.094] LOG: [FileLogger] Logging to: C:\Users\eachi\Documents\GitHub\Loa-Game\LOA\log\PlayerLog_2025-10-30_13-36-09.txt
+[13:36:09.103] LOG: [RoomController] Connecting to Photon...
+[13:36:09.254] WARNING: [0.0] SupportLogger Info: AppID: "56f0e762***" AppVersion: "0.1_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "" AuthType: N/A AuthMode: Auth PayloadEncryption State: ConnectingToNameServer PeerID: 65535 NameServer: ns.photonengine.io Current Server: ns.photonengine.io:5058 IP: 216.120.180.19:5058 Region: eu 10/30/2025 12:36:09 UTC
+[13:36:09.257] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connecting
+[13:36:09.257] LOG: [Launcher] Connexion en cours...
+[13:36:10.249] LOG: [0.994] SupportLogger OnConnected().
+[13:36:10.249] WARNING: [0.995] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "e3ff3a31-c188-42e0-b995-8716f7e562ed" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 1872 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/30/2025 12:36:10 UTC
+[13:36:10.351] LOG: [1.97] SupportLogger OnConnectedToMaster().
+[13:36:10.351] LOG: [Launcher] Connecté au Master, j'essaie de rejoindre le lobby...
+[13:36:10.351] LOG: [RoomController] ConnectedToMaster (region=eu) -> JoinLobby
+[13:36:10.352] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: JoiningLobby
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:OnConnectedToMaster () (at Assets/Script/RoomController.cs:99)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster () (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4342)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2912)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[13:36:10.388] LOG: [1.134] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[13:36:10.388] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[13:36:10.388] LOG: [RoomController] JoinedLobby => READY
+[13:36:10.388] LOG: [1.135] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+[13:36:13.016] LOG: [RoomController] CreateRoom('hggh') sent=True
+[13:36:13.531] LOG: [4.277] SupportLogger OnCreatedRoom(Room: 'hggh' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.101:5056
+[13:36:13.532] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[13:36:13.533] LOG: [4.279] SupportLogger OnJoinedRoom(Room: 'hggh' visible,open 1/2 players.). lobby ''[Default] GameServer:80.93.214.101:5056
+[13:36:13.533] LOG: [RoomController] Room rejointe ✅
+[13:36:13.893] LOG: [InputManager] Start: BoardManager found = True
+[13:36:13.905] LOG: [4.651] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:36:13.906] LOG: [4.652] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:36:13.946] LOG: [4.692] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:36:13.947] LOG: [4.692] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:36:14.990] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:14.991] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 1) -> 3 cases (boost de)
+[13:36:15.568] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 1) to=(5, 2)
+[13:36:15.568] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:15.568] LOG: [Move-MASTER] legalMoves=3 (using normal moves)
+[13:36:15.569] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:36:15.569] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:15.972] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:15.972] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 2) -> 4 cases (boost de)
+[13:36:15.972] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:15.972] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:15.972] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:15.972] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:15.972] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:16.681] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 2) to=(6, 2)
+[13:36:16.681] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:16.681] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[13:36:16.681] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:36:16.681] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:17.836] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:17.836] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (6, 2) -> 4 cases (boost de)
+[13:36:17.838] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:17.838] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:17.838] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:17.838] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:17.838] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:20.561] LOG: [11.307] SupportLogger Rtt(variance): 23(7). Since receive: 706ms. Longest send: 1ms. Stats elapsed: 7sec.
+Longest delta between Send: 158ms Dispatch: 374ms. Longest callback OnEv: 255=3ms OnResp: 227=2ms. Calls of Send: 238 Dispatch: 368. Ping min/max: 15/200
+[13:36:21.573] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(6, 2) to=(5, 0)
+[13:36:21.573] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:21.573] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[13:36:21.574] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:21.844] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:21.844] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 0) -> 1 cases (boost de)
+[13:36:22.569] LOG: [EVO] Requête d'évolution envoyée pour 'Spirit_Red(Clone)' -> 'Manieur_Lame'.
+[13:36:22.571] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:23.214] LOG: [Moves] ShowPossibleMoves for Manieur_Lame(Clone) @ (5, 0) -> 2 cases (boost de)
+[13:36:23.215] LOG: [EVO][UI] Boutons désactivés: la pièce 'Manieur_Lame(Clone)' @ (5, 0) possède déjà EvolutionTag.
+[13:36:23.558] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 0) to=(4, 2)
+[13:36:23.558] LOG: [Move-MASTER] legalMoves=2 (using normal moves)
+[13:36:23.559] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:36:23.559] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:23.855] LOG: [Moves] ShowPossibleMoves for Manieur_Lame(Clone) @ (4, 2) -> 7 cases (boost de)
+[13:36:23.855] LOG: [EVO][UI] Boutons désactivés: la pièce 'Manieur_Lame(Clone)' @ (4, 2) possède déjà EvolutionTag.
+[13:36:24.377] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 2) to=(5, 3)
+[13:36:24.377] LOG: [Move-MASTER] legalMoves=7 (using normal moves)
+[13:36:24.377] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:25.024] LOG: [Moves] ShowPossibleMoves for Manieur_Lame(Clone) @ (4, 2) -> 7 cases (boost de)
+[13:36:25.024] LOG: [EVO][UI] Boutons désactivés: la pièce 'Manieur_Lame(Clone)' @ (4, 2) possède déjà EvolutionTag.
+[13:36:25.328] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 2) to=(6, 3)
+[13:36:25.329] LOG: [Move-MASTER] legalMoves=7 (using normal moves)
+[13:36:25.329] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:36:25.329] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:26.263] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:26.263] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 0) -> 0 cases (boost de)
+[13:36:26.265] LOG: [EVO] CanEvolve: doublon Ogoun interdit.
+[13:36:26.717] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 0) to=(3, 1)
+[13:36:26.717] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:26.718] LOG: [Move-MASTER] legalMoves=0 (using normal moves)
+[13:36:26.718] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:26.935] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:26.935] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 1) -> 3 cases (boost de)
+[13:36:26.935] LOG: [EVO] CanEvolve: doublon Ogoun interdit.
+[13:36:28.346] LOG: [EVO] Requête d'évolution envoyée pour 'Spirit_Red(Clone)' -> 'Sentinelle_Ecarlate'.
+[13:36:28.347] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:28.990] LOG: [Moves] ShowPossibleMoves for Sentinelle_Ecarlate(Clone) @ (3, 1) -> 0 cases (boost de)
+[13:36:28.991] LOG: [EVO][UI] Boutons désactivés: la pièce 'Sentinelle_Ecarlate(Clone)' @ (3, 1) possède déjà EvolutionTag.
+[13:36:29.626] LOG: [Moves] ShowPossibleMoves for Sentinelle_Ecarlate(Clone) @ (3, 1) -> 0 cases (boost de)
+[13:36:29.626] LOG: [EVO][UI] Boutons désactivés: la pièce 'Sentinelle_Ecarlate(Clone)' @ (3, 1) possède déjà EvolutionTag.
+[13:36:30.430] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 1) to=(3, 0)
+[13:36:30.430] LOG: [Move-MASTER] legalMoves=0 (using normal moves)
+[13:36:30.430] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:30.561] LOG: [21.307] SupportLogger Rtt(variance): 28(7). Since receive: 92ms. Longest send: 1ms. Stats elapsed: 17sec.
+Longest delta between Send: 158ms Dispatch: 374ms. Longest callback OnEv: 255=3ms OnResp: 227=2ms. Calls of Send: 562 Dispatch: 872. Ping min/max: 15/200
+[13:36:30.832] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (4, 0) -> 3 cases (boost de)
+[13:36:30.832] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:30.832] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:30.832] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:30.832] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:30.833] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:31.157] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 0) to=(4, 1)
+[13:36:31.157] LOG: [Move-MASTER] legalMoves=3 (using normal moves)
+[13:36:31.157] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:36:31.158] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:31.672] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (4, 1) -> 6 cases (boost de)
+[13:36:31.672] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:31.672] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:31.672] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:31.672] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:31.672] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:31.931] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 1) to=(5, 1)
+[13:36:31.931] LOG: [Move-MASTER] legalMoves=6 (using normal moves)
+[13:36:31.931] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:36:31.931] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:32.449] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:32.449] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (6, 2) -> 3 cases (boost de)
+[13:36:32.449] LOG: [EVO] CanEvolve: cap d'unités évoluées Ogoun atteint (2).
+[13:36:32.449] LOG: [EVO] CanEvolve: cap d'unités évoluées Ogoun atteint (2).
+[13:36:32.449] LOG: [EVO] CanEvolve: cap d'unités évoluées Ogoun atteint (2).
+[13:36:32.449] LOG: [EVO] CanEvolve: doublon Ogoun interdit.
+[13:36:32.449] LOG: [EVO] CanEvolve: doublon Ogoun interdit.
+[13:36:33.200] LOG: [Moves] ShowPossibleMoves for Manieur_Lame(Clone) @ (6, 3) -> 7 cases (boost de)
+[13:36:33.201] LOG: [EVO][UI] Boutons désactivés: la pièce 'Manieur_Lame(Clone)' @ (6, 3) possède déjà EvolutionTag.
+[13:36:33.857] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(6, 3) to=(5, 5)
+[13:36:33.857] LOG: [Move-MASTER] legalMoves=7 (using normal moves)
+[13:36:33.857] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:36:33.857] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:34.523] LOG: [Moves] ShowPossibleMoves for Sentinelle_Ecarlate(Clone) @ (3, 1) -> 0 cases (boost de)
+[13:36:34.524] LOG: [EVO][UI] Boutons désactivés: la pièce 'Sentinelle_Ecarlate(Clone)' @ (3, 1) possède déjà EvolutionTag.
+[13:36:36.157] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 1) to=(5, 1)
+[13:36:36.157] LOG: [Move-MASTER] legalMoves=0 (using normal moves)
+[13:36:36.157] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:36.703] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (5, 1) -> 6 cases (boost de)
+[13:36:36.703] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:36.703] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:36.703] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:36.703] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:36.703] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:38.383] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 1) to=(5, 4)
+[13:36:38.383] LOG: [Move-MASTER] legalMoves=6 (using normal moves)
+[13:36:38.383] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:38.599] LOG: [Moves] ShowPossibleMoves for Manieur_Lame(Clone) @ (5, 5) -> 8 cases (boost de)
+[13:36:38.599] LOG: [EVO][UI] Boutons désactivés: la pièce 'Manieur_Lame(Clone)' @ (5, 5) possède déjà EvolutionTag.
+[13:36:40.505] LOG: [Moves] ShowPossibleMoves for Sentinelle_Ecarlate(Clone) @ (3, 1) -> 0 cases (boost de)
+[13:36:40.505] LOG: [EVO][UI] Boutons désactivés: la pièce 'Sentinelle_Ecarlate(Clone)' @ (3, 1) possède déjà EvolutionTag.
+[13:36:40.561] LOG: [31.306] SupportLogger Rtt(variance): 29(6). Since receive: 418ms. Longest send: 1ms. Stats elapsed: 27sec.
+Longest delta between Send: 158ms Dispatch: 374ms. Longest callback OnEv: 255=3ms OnResp: 227=2ms. Calls of Send: 886 Dispatch: 1372. Ping min/max: 15/200
+[13:36:42.332] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 1) to=(6, 2)
+[13:36:42.333] LOG: [Move-MASTER] legalMoves=0 (using normal moves)
+[13:36:42.333] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:42.630] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (5, 1) -> 6 cases (boost de)
+[13:36:42.630] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:42.630] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:42.630] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:42.630] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:42.630] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:42.980] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 1) to=(4, 1)
+[13:36:42.980] LOG: [Move-MASTER] legalMoves=6 (using normal moves)
+[13:36:42.980] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:36:42.981] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:36:43.252] LOG: [Moves] ShowPossibleMoves for Sentinelle_Ecarlate(Clone) @ (3, 1) -> 0 cases (boost de)
+[13:36:43.252] LOG: [EVO][UI] Boutons désactivés: la pièce 'Sentinelle_Ecarlate(Clone)' @ (3, 1) possède déjà EvolutionTag.
+[13:36:46.293] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 1) to=(4, 3)
+[13:36:46.293] LOG: [Move-MASTER] legalMoves=0 (using normal moves)
+[13:36:46.293] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:46.617] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:46.617] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (6, 2) -> 4 cases (boost de)
+[13:36:46.617] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:46.617] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:46.617] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:46.617] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:46.617] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:47.464] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(6, 2) to=(8, 4)
+[13:36:47.464] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:47.464] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[13:36:47.464] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:48.554] LOG: [Moves] ShowPossibleMoves for Sentinelle_Ecarlate(Clone) @ (3, 1) -> 0 cases (boost de)
+[13:36:48.554] LOG: [EVO][UI] Boutons désactivés: la pièce 'Sentinelle_Ecarlate(Clone)' @ (3, 1) possède déjà EvolutionTag.
+[13:36:49.776] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 1) to=(5, 5)
+[13:36:49.776] LOG: [Move-MASTER] legalMoves=0 (using normal moves)
+[13:36:49.776] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:49.962] LOG: [Moves] ShowPossibleMoves for Manieur_Lame(Clone) @ (5, 5) -> 8 cases (boost de)
+[13:36:49.962] LOG: [EVO][UI] Boutons désactivés: la pièce 'Manieur_Lame(Clone)' @ (5, 5) possède déjà EvolutionTag.
+[13:36:50.563] LOG: [41.307] SupportLogger Rtt(variance): 27(8). Since receive: 227ms. Longest send: 1ms. Stats elapsed: 37sec.
+Longest delta between Send: 158ms Dispatch: 374ms. Longest callback OnEv: 255=3ms OnResp: 227=2ms. Calls of Send: 1210 Dispatch: 1872. Ping min/max: 15/200
+[13:36:51.924] LOG: [Moves] ShowPossibleMoves for Manieur_Lame(Clone) @ (5, 5) -> 8 cases (boost de)
+[13:36:51.924] LOG: [EVO][UI] Boutons désactivés: la pièce 'Manieur_Lame(Clone)' @ (5, 5) possède déjà EvolutionTag.
+[13:36:55.000] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 5) to=(8, 2)
+[13:36:55.001] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:36:55.001] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:55.485] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:55.485] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (6, 2) -> 4 cases (boost de)
+[13:36:55.486] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:55.486] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:55.486] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:55.486] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:55.486] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:56.620] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:56.620] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (3, 0) -> 1 cases (boost de)
+[13:36:56.620] LOG: [EVO] CanEvolve: cap d'unités évoluées Ogoun atteint (2).
+[13:36:56.620] LOG: [EVO] CanEvolve: cap d'unités évoluées Ogoun atteint (2).
+[13:36:56.620] LOG: [EVO] CanEvolve: cap d'unités évoluées Ogoun atteint (2).
+[13:36:56.621] LOG: [EVO] CanEvolve: doublon Ogoun interdit.
+[13:36:56.621] LOG: [EVO] CanEvolve: doublon Ogoun interdit.
+[13:36:57.706] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 0) to=(4, 3)
+[13:36:57.706] LOG: [Range] Base: 1, TempBonus: 0
+[13:36:57.708] LOG: [Move-MASTER] legalMoves=1 (using normal moves)
+[13:36:57.708] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:58.130] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (4, 1) -> 6 cases (boost de)
+[13:36:58.130] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:58.130] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:58.130] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:58.130] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:58.130] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:58.677] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 1) to=(5, 3)
+[13:36:58.677] LOG: [Move-MASTER] legalMoves=6 (using normal moves)
+[13:36:58.677] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:36:59.473] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (4, 1) -> 6 cases (boost de)
+[13:36:59.473] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:59.473] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:59.473] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:59.473] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:59.473] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:36:59.732] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 1) to=(5, 2)
+[13:36:59.732] LOG: [Move-MASTER] legalMoves=6 (using normal moves)
+[13:36:59.732] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:36:59.733] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:00.272] LOG: [Moves] ShowPossibleMoves for Manieur_Lame(Clone) @ (5, 5) -> 8 cases (boost de)
+[13:37:00.272] LOG: [EVO][UI] Boutons désactivés: la pièce 'Manieur_Lame(Clone)' @ (5, 5) possède déjà EvolutionTag.
+[13:37:00.563] LOG: [51.307] SupportLogger Rtt(variance): 27(3). Since receive: 771ms. Longest send: 1ms. Stats elapsed: 47sec.
+Longest delta between Send: 158ms Dispatch: 374ms. Longest callback OnEv: 255=3ms OnResp: 227=2ms. Calls of Send: 1534 Dispatch: 2372. Ping min/max: 15/200
+[13:37:00.817] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 5) to=(3, 6)
+[13:37:00.817] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:00.817] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:00.818] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:01.090] LOG: [Moves] ShowPossibleMoves for Manieur_Lame(Clone) @ (3, 6) -> 8 cases (boost de)
+[13:37:01.090] LOG: [EVO][UI] Boutons désactivés: la pièce 'Manieur_Lame(Clone)' @ (3, 6) possède déjà EvolutionTag.
+[13:37:01.633] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(3, 6) to=(4, 8)
+[13:37:01.633] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:01.633] LOG: [Manieur_De_Lame] Extra kill au coude (3, 8) -> Spirit_Blue(Clone)
+[13:37:01.633] LOG: [Move-MASTER] SpecialMove extraVictims=1
+[13:37:01.634] LOG: [BARON] +1 PO → total=1
+[13:37:01.635] LOG: [BARON] +1 PO → total=2
+[13:37:01.635] LOG: [Move-MASTER] anyKill=True moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:01.636] LOG: [OGOUN][BoostCalc] piece=Manieur_Lame(Clone) origin=(4, 8) baseMoves=4 boostActive=False
+[13:37:01.636] LOG: [OGOUN] Check free-move -> hasEmptyTarget=True boostActive=False
+[13:37:01.636] WARNING: RaiseEvent(200) failed. Your event is not being sent! Check if your are in a Room
+[13:37:01.637] LOG: [OGOUN] Extra-coup: rejouez la MÊME pièce (sur case vide). ViewID=21
+[13:37:01.637] LOG: [OGOUN] RPC_NotifyFreeMove piece=Manieur_Lame(Clone) boostActive=False
+[13:37:01.637] LOG: [OGOUN][BoostCalc] piece=Manieur_Lame(Clone) origin=(4, 8) baseMoves=4 boostActive=False
+[13:37:01.637] LOG: [OGOUN] FreeMove pre-check -> hasEmptyTarget=True candidates=4
+[13:37:01.638] LOG: [OGOUN] ShowFreeMoveTargets piece=Manieur_Lame(Clone) team=0 boostActive=False
+[13:37:01.638] LOG: [OGOUN][BoostCalc] piece=Manieur_Lame(Clone) origin=(4, 8) baseMoves=4 boostActive=False
+[13:37:01.638] LOG: [OGOUN] FreeMoveTargets count=4
+[13:37:01.638] LOG: [OGOUN] ShowFreeMoveTargets piece=Manieur_Lame(Clone) team=0 boostActive=False
+[13:37:01.638] LOG: [OGOUN][BoostCalc] piece=Manieur_Lame(Clone) origin=(4, 8) baseMoves=4 boostActive=False
+[13:37:01.638] LOG: [OGOUN] FreeMoveTargets count=4
+[13:37:01.683] LOG: [52.427] SupportLogger OnLeftRoom().
+[13:37:01.684] LOG: Joueur sorti de la room !
+[13:37:01.690] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+TurnManager.Update () (at Assets/Script/TurnManager.cs:52)
+
+[13:37:01.881] LOG: [52.625] SupportLogger OnConnected().
+[13:37:01.881] WARNING: [52.625] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "e3ff3a31-c188-42e0-b995-8716f7e562ed" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 12833 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/30/2025 12:37:01 UTC
+[13:37:02.002] LOG: [52.745] SupportLogger OnConnectedToMaster().
+[13:37:04.515] LOG: Tentative de JoinOrCreateRoom('hggh')
+[13:37:04.518] ERROR: Operation JoinLobby (229) not called because client is not connected or not ready yet, client state: Joining
+UnityEngine.Debug:LogError (object)
+Photon.Realtime.LoadBalancingClient:DebugReturn (ExitGames.Client.Photon.DebugLevel,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2739)
+Photon.Realtime.LoadBalancingClient:CheckIfOpCanBeSent (byte,Photon.Realtime.ServerConnection,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2650)
+Photon.Realtime.LoadBalancingClient:OpJoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:1646)
+Photon.Pun.PhotonNetwork:JoinLobby (Photon.Realtime.TypedLobby) (at Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs:2132)
+RoomController:TryJoinLobbyIfNeeded () (at Assets/Script/RoomController.cs:177)
+RoomController:Awake () (at Assets/Script/RoomController.cs:42)
+
+[13:37:04.641] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connected
+[13:37:04.641] LOG: [Launcher] Connexion en cours...
+[13:37:05.112] LOG: [55.857] SupportLogger OnCreatedRoom(Room: 'hggh' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.41:5056
+[13:37:05.114] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[13:37:05.114] LOG: [55.857] SupportLogger OnJoinedRoom(Room: 'hggh' visible,open 1/2 players.). lobby ''[Default] GameServer:85.234.65.41:5056
+[13:37:05.114] LOG: [RoomController] Room rejointe ✅
+[13:37:05.405] LOG: [InputManager] Start: BoardManager found = True
+[13:37:05.407] LOG: [56.151] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:37:05.407] LOG: [56.151] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:37:05.465] LOG: [56.209] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:37:05.466] LOG: [56.210] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:37:08.489] LOG: [Range] Base: 1, TempBonus: 0
+[13:37:08.489] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 1) -> 3 cases (boost de)
+[13:37:08.915] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 1) to=(5, 2)
+[13:37:08.915] LOG: [Range] Base: 1, TempBonus: 0
+[13:37:08.915] LOG: [Move-MASTER] legalMoves=3 (using normal moves)
+[13:37:08.915] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:08.915] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:09.904] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (4, 0) -> 2 cases (boost de)
+[13:37:09.904] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:09.904] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:09.905] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:09.905] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:09.905] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:10.326] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 0) to=(4, 1)
+[13:37:10.326] LOG: [Move-MASTER] legalMoves=2 (using normal moves)
+[13:37:10.326] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:10.326] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:10.694] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (4, 1) -> 4 cases (boost de)
+[13:37:10.694] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:10.694] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:10.694] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:10.694] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:10.694] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:11.066] LOG: [1:1.1] SupportLogger Rtt(variance): 28(5). Since receive: 68ms. Longest send: 1ms. Stats elapsed: 6sec.
+Longest delta between Send: 123ms Dispatch: 294ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 205 Dispatch: 318. Ping min/max: 15/200
+[13:37:11.138] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 1) to=(4, 2)
+[13:37:11.138] LOG: [Move-MASTER] legalMoves=4 (using normal moves)
+[13:37:11.138] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:11.138] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:11.738] LOG: [Moves] ShowPossibleMoves for Ogoun_Mask(Clone) @ (4, 2) -> 6 cases (boost de)
+[13:37:11.738] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:11.738] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:11.738] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:11.738] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:11.738] LOG: [EVO] CanEvolve: pas adjacent au masque.
+[13:37:12.128] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 2) to=(5, 2)
+[13:37:12.128] LOG: [Move-MASTER] legalMoves=6 (using normal moves)
+[13:37:12.128] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:37:12.266] LOG: [1:3.3] SupportLogger Rtt(variance): 27(6). Since receive: 60ms. Longest send: 1ms. Stats elapsed: 7sec.
+Longest delta between Send: 123ms Dispatch: 294ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 244 Dispatch: 378. Ping min/max: 15/200
+[13:37:12.289] LOG: [Range] Base: 1, TempBonus: 0
+[13:37:12.289] LOG: [Moves] ShowPossibleMoves for Spirit_Red(Clone) @ (5, 2) -> 3 cases (boost de)
+[13:37:13.545] LOG: [EVO] Requête d'évolution envoyée pour 'Spirit_Red(Clone)' -> 'Ravageur'.
+[13:37:13.546] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:14.076] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 2) -> 7 cases (boost de)
+[13:37:14.076] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 2) possède déjà EvolutionTag.
+[13:37:14.388] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 2) to=(5, 3)
+[13:37:14.388] LOG: [Move-MASTER] legalMoves=7 (using normal moves)
+[13:37:14.388] LOG: [Ravageur] pushes=0 kills=0
+[13:37:14.388] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:14.388] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:14.722] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 3) -> 7 cases (boost de)
+[13:37:14.722] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 3) possède déjà EvolutionTag.
+[13:37:15.073] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 3) to=(5, 4)
+[13:37:15.073] LOG: [Move-MASTER] legalMoves=7 (using normal moves)
+[13:37:15.073] LOG: [Ravageur] pushes=0 kills=0
+[13:37:15.073] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:15.074] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:15.392] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 4) -> 8 cases (boost de)
+[13:37:15.393] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 4) possède déjà EvolutionTag.
+[13:37:15.753] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 4) to=(4, 5)
+[13:37:15.753] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:15.753] LOG: [Ravageur] pushes=0 kills=0
+[13:37:15.753] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:15.753] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:16.300] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (4, 5) -> 8 cases (boost de)
+[13:37:16.300] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (4, 5) possède déjà EvolutionTag.
+[13:37:16.777] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 5) to=(5, 6)
+[13:37:16.777] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:16.777] LOG: [Ravageur] pushes=0 kills=0
+[13:37:16.777] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:16.777] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:19.758] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 6) -> 8 cases (boost de)
+[13:37:19.758] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 6) possède déjà EvolutionTag.
+[13:37:20.576] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 6) to=(5, 5)
+[13:37:20.576] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:20.576] LOG: [Ravageur] pushes=0 kills=0
+[13:37:20.576] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:20.576] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:21.066] LOG: [1:11.11] SupportLogger Rtt(variance): 26(4). Since receive: 106ms. Longest send: 1ms. Stats elapsed: 16sec.
+Longest delta between Send: 123ms Dispatch: 294ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 529 Dispatch: 820. Ping min/max: 15/200
+[13:37:21.218] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 5) -> 8 cases (boost de)
+[13:37:21.219] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 5) possède déjà EvolutionTag.
+[13:37:22.125] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 5) to=(4, 5)
+[13:37:22.125] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:22.125] LOG: [Ravageur] pushes=0 kills=0
+[13:37:22.125] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:22.126] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:22.267] LOG: [1:13.13] SupportLogger Rtt(variance): 26(3). Since receive: 115ms. Longest send: 1ms. Stats elapsed: 17sec.
+Longest delta between Send: 123ms Dispatch: 294ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 568 Dispatch: 880. Ping min/max: 15/200
+[13:37:22.395] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (4, 5) -> 8 cases (boost de)
+[13:37:22.395] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (4, 5) possède déjà EvolutionTag.
+[13:37:22.800] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(4, 5) to=(5, 6)
+[13:37:22.800] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:22.800] LOG: [Ravageur] pushes=0 kills=0
+[13:37:22.800] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:22.800] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:27.168] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 6) -> 8 cases (boost de)
+[13:37:27.168] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 6) possède déjà EvolutionTag.
+[13:37:27.853] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 6) to=(5, 5)
+[13:37:27.853] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:27.853] LOG: [Ravageur] pushes=0 kills=0
+[13:37:27.853] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:27.853] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:28.097] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 5) -> 8 cases (boost de)
+[13:37:28.098] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 5) possède déjà EvolutionTag.
+[13:37:28.558] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 5) to=(5, 6)
+[13:37:28.559] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:28.559] LOG: [Ravageur] pushes=0 kills=1
+[13:37:28.559] LOG: [BARON] +1 PO → total=1
+[13:37:28.559] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:28.560] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:29.333] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 6) -> 8 cases (boost de)
+[13:37:29.335] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 6) possède déjà EvolutionTag.
+[13:37:31.068] LOG: [1:21.21] SupportLogger Rtt(variance): 28(9). Since receive: 385ms. Longest send: 1ms. Stats elapsed: 26sec.
+Longest delta between Send: 123ms Dispatch: 294ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 853 Dispatch: 1322. Ping min/max: 15/200
+[13:37:32.267] LOG: [1:23.23] SupportLogger Rtt(variance): 27(9). Since receive: 564ms. Longest send: 1ms. Stats elapsed: 27sec.
+Longest delta between Send: 123ms Dispatch: 294ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 892 Dispatch: 1382. Ping min/max: 15/200
+[13:37:34.658] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 6) to=(5, 7)
+[13:37:34.660] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:34.660] LOG: [Ravageur] pushes=0 kills=1
+[13:37:34.660] LOG: [BARON] +1 PO → total=2
+[13:37:34.660] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:34.660] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:35.643] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 7) -> 8 cases (boost de)
+[13:37:35.643] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 7) possède déjà EvolutionTag.
+[13:37:37.506] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 7) to=(6, 7)
+[13:37:37.506] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:37.506] LOG: [Ravageur] pushes=0 kills=0
+[13:37:37.506] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:37.506] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:38.135] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (6, 7) -> 8 cases (boost de)
+[13:37:38.135] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (6, 7) possède déjà EvolutionTag.
+[13:37:40.299] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(6, 7) to=(7, 7)
+[13:37:40.299] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:40.299] LOG: [Ravageur] pushes=0 kills=0
+[13:37:40.299] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:40.299] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:40.558] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (7, 7) -> 8 cases (boost de)
+[13:37:40.558] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (7, 7) possède déjà EvolutionTag.
+[13:37:40.873] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(7, 7) to=(6, 7)
+[13:37:40.873] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:40.874] LOG: [Ravageur] pushes=0 kills=0
+[13:37:40.874] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:40.874] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:41.067] LOG: [1:31.31] SupportLogger Rtt(variance): 23(8). Since receive: 179ms. Longest send: 1ms. Stats elapsed: 36sec.
+Longest delta between Send: 123ms Dispatch: 294ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 1178 Dispatch: 1824. Ping min/max: 15/200
+[13:37:41.281] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (6, 7) -> 8 cases (boost de)
+[13:37:41.281] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (6, 7) possède déjà EvolutionTag.
+[13:37:41.563] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(6, 7) to=(5, 7)
+[13:37:41.564] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:41.564] LOG: [Ravageur] pushes=0 kills=0
+[13:37:41.564] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:41.564] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:41.976] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 7) -> 8 cases (boost de)
+[13:37:41.976] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 7) possède déjà EvolutionTag.
+[13:37:42.267] LOG: [1:33.33] SupportLogger Rtt(variance): 23(7). Since receive: 579ms. Longest send: 1ms. Stats elapsed: 37sec.
+Longest delta between Send: 123ms Dispatch: 294ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 1217 Dispatch: 1884. Ping min/max: 15/200
+[13:37:42.398] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 7) to=(7, 7)
+[13:37:42.398] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:42.398] LOG: [Move-MASTER] Rejeté: destination non légale
+[13:37:43.177] LOG: [Moves] ShowPossibleMoves for Ravageur(Clone) @ (5, 7) -> 8 cases (boost de)
+[13:37:43.178] LOG: [EVO][UI] Boutons désactivés: la pièce 'Ravageur(Clone)' @ (5, 7) possède déjà EvolutionTag.
+[13:37:43.403] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=False from=(5, 7) to=(6, 8)
+[13:37:43.403] LOG: [Move-MASTER] legalMoves=8 (using normal moves)
+[13:37:43.403] LOG: [Ravageur] pushes=0 kills=0
+[13:37:43.405] LOG: [BARON] +1 PO → total=3
+[13:37:43.405] LOG: [Move-MASTER] anyKill=True moverDiesBySentinel=False freeMoveTeam=-1 freeMovePieceId=0
+[13:37:43.405] LOG: [OGOUN][BoostCalc] piece=Ravageur(Clone) origin=(6, 8) baseMoves=5 boostActive=False
+[13:37:43.405] LOG: [OGOUN] Check free-move -> hasEmptyTarget=True boostActive=False
+[13:37:43.405] LOG: [OGOUN] Extra-coup: rejouez la MÊME pièce (sur case vide). ViewID=21
+[13:37:43.405] LOG: [OGOUN] RPC_NotifyFreeMove piece=Ravageur(Clone) boostActive=False
+[13:37:43.405] LOG: [OGOUN][BoostCalc] piece=Ravageur(Clone) origin=(6, 8) baseMoves=5 boostActive=False
+[13:37:43.405] LOG: [OGOUN] FreeMove pre-check -> hasEmptyTarget=True candidates=5
+[13:37:43.406] LOG: [OGOUN] ShowFreeMoveTargets piece=Ravageur(Clone) team=0 boostActive=False
+[13:37:43.406] LOG: [OGOUN][BoostCalc] piece=Ravageur(Clone) origin=(6, 8) baseMoves=5 boostActive=False
+[13:37:43.408] LOG: [OGOUN] FreeMoveTargets count=5
+[13:37:43.408] LOG: [OGOUN] ShowFreeMoveTargets piece=Ravageur(Clone) team=0 boostActive=False
+[13:37:43.408] LOG: [OGOUN][BoostCalc] piece=Ravageur(Clone) origin=(6, 8) baseMoves=5 boostActive=False
+[13:37:43.408] LOG: [OGOUN] FreeMoveTargets count=5
+[13:37:44.147] LOG: [OGOUN] ShowFreeMoveTargets piece=Ravageur(Clone) team=0 boostActive=False
+[13:37:44.147] LOG: [OGOUN][BoostCalc] piece=Ravageur(Clone) origin=(6, 8) baseMoves=5 boostActive=False
+[13:37:44.147] LOG: [OGOUN] FreeMoveTargets count=5
+[13:37:45.926] LOG: [Move-MASTER] steal=-1 reqTeam=0 pieceTeam=0 curTeam=0 isNormal=True isSteal=False isExtraFreeMove=True from=(6, 8) to=(5, 8)
+[13:37:45.926] LOG: [OGOUN][BoostCalc] piece=Ravageur(Clone) origin=(6, 8) baseMoves=5 boostActive=False
+[13:37:45.926] LOG: [Move-MASTER] legalMoves=5 (using BOOST WRAPPER)
+[13:37:45.926] LOG: [Ravageur] pushes=0 kills=1
+[13:37:45.926] LOG: [BARON] +1 PO → total=4
+[13:37:45.926] LOG: [Move-MASTER] anyKill=False moverDiesBySentinel=False freeMoveTeam=0 freeMovePieceId=21
+[13:37:45.926] WARNING: RaiseEvent(200) failed. Your event is not being sent! Check if your are in a Room
+[13:37:45.926] LOG: [TurnManager] RequestEndTurn ignored in editor solo (always red).
+[13:37:45.967] LOG: [1:36.36] SupportLogger OnLeftRoom().
+[13:37:45.967] LOG: Joueur sorti de la room !
+[13:37:45.971] EXCEPTION: NullReferenceException: Object reference not set to an instance of an object
+TurnManager.Update () (at Assets/Script/TurnManager.cs:52)
+
+[13:37:46.185] LOG: [1:36.36] SupportLogger OnConnected().
+[13:37:46.185] WARNING: [1:36.36] SupportLogger Info: AppID: "56f0e762***" AppVersion: "v1.0_2.51" Client: v4.1.8.16 (NetStandard20) Build: 6000.0.42f1, WindowsEditor, ENABLE_MONO, DEBUG, NET_STANDARD_2_0, UNITY_64 Socket: SocketUdp UserId: "e3ff3a31-c188-42e0-b995-8716f7e562ed" AuthType: None AuthMode: Auth PayloadEncryption State: ConnectingToMasterServer PeerID: 22551 NameServer: ns.photonengine.io Current Server: 5.189.203.202:5055 IP: 5.189.203.202:5055 Region: eu 10/30/2025 12:37:46 UTC
+[13:37:46.265] LOG: [1:37.37] SupportLogger OnConnectedToMaster().
+[13:37:51.184] LOG: [1:41.41] SupportLogger Rtt(variance): 31(13). Since receive: 742ms. Longest send: 1ms. Stats elapsed: 5sec.
+Longest delta between Send: 34ms Dispatch: 21ms. Longest callback OnEv: 0=0ms OnResp: 0=1ms. Calls of Send: 166 Dispatch: 259. Ping min/max: 31/36
+[13:37:52.384] LOG: [1:43.43] SupportLogger Rtt(variance): 31(11). Since receive: 890ms. Longest send: 1ms. Stats elapsed: 6sec.
+Longest delta between Send: 34ms Dispatch: 21ms. Longest callback OnEv: 0=0ms OnResp: 0=1ms. Calls of Send: 205 Dispatch: 320. Ping min/max: 31/36
+[13:37:56.185] LOG: [1:46.46] SupportLogger Rtt(variance): 30(7). Since receive: 504ms. Longest send: 1ms. Stats elapsed: 10sec.
+Longest delta between Send: 34ms Dispatch: 21ms. Longest callback OnEv: 0=0ms OnResp: 0=1ms. Calls of Send: 328 Dispatch: 510. Ping min/max: 30/36
+[13:38:01.185] LOG: [1:51.51] SupportLogger Rtt(variance): 27(9). Since receive: 282ms. Longest send: 1ms. Stats elapsed: 15sec.
+Longest delta between Send: 34ms Dispatch: 21ms. Longest callback OnEv: 0=0ms OnResp: 0=1ms. Calls of Send: 490 Dispatch: 760. Ping min/max: 27/36
+[13:38:02.384] LOG: [1:53.53] SupportLogger Rtt(variance): 27(7). Since receive: 447ms. Longest send: 1ms. Stats elapsed: 16sec.
+Longest delta between Send: 34ms Dispatch: 24ms. Longest callback OnEv: 0=0ms OnResp: 0=1ms. Calls of Send: 529 Dispatch: 820. Ping min/max: 27/36
+[13:38:04.702] WARNING: ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: Connected
+[13:38:04.702] LOG: [Launcher] Connexion en cours...
+[13:38:04.738] LOG: [1:55.55] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[13:38:04.738] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[13:38:04.738] LOG: [RoomController] JoinedLobby => READY
+[13:38:04.738] LOG: [1:55.55] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+[13:38:06.298] LOG: [1:57.57] SupportLogger Rtt(variance): 25(6). Since receive: 518ms. Longest send: 1ms. Stats elapsed: 20sec.
+Longest delta between Send: 128ms Dispatch: 144ms. Longest callback OnEv: 0=0ms OnResp: 0=1ms. Calls of Send: 653 Dispatch: 1012. Ping min/max: 25/36
+[13:38:06.563] WARNING: [RoomController] JoinRoom: nom vide.
+[13:38:10.119] LOG: [RoomController] JoinRoom('000') sent=True
+[13:38:10.178] LOG: [2:0.0] SupportLogger OnJoinRoomFailed(32758,Game does not exist).
+[13:38:10.178] ERROR: [RoomController] Échec jointure : code=32758 msg=Game does not exist
+UnityEngine.Debug:LogError (object)
+RoomController:OnJoinRoomFailed (int16,string) (at Assets/Script/RoomController.cs:160)
+Photon.Realtime.MatchMakingCallbacksContainer:OnJoinRoomFailed (int16,string) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:4449)
+Photon.Realtime.LoadBalancingClient:CallbackRoomEnterFailed (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2762)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse (ExitGames.Client.Photon.OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:3018)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback (ExitGames.Client.Photon.StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands ()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands ()
+Photon.Pun.PhotonHandler:Dispatch () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:236)
+Photon.Pun.PhotonHandler:FixedUpdate () (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:156)
+
+[13:38:10.658] WARNING: [RoomController] Pas dans un lobby, on y va d’abord.
+[13:38:10.718] LOG: [2:1.1] SupportLogger OnJoinedLobby(lobby ''[Default]).
+[13:38:10.718] LOG: [Launcher] Lobby rejoint, l'UI de création/join est activée.
+[13:38:10.718] LOG: [RoomController] JoinedLobby => READY
+[13:38:10.718] LOG: [2:1.1] SupportLogger OnRoomListUpdate(roomList). roomList.Count: 0
+[13:38:11.298] LOG: [2:2.2] SupportLogger Rtt(variance): 25(8). Since receive: 595ms. Longest send: 1ms. Stats elapsed: 25sec.
+Longest delta between Send: 128ms Dispatch: 144ms. Longest callback OnEv: 0=0ms OnResp: 0=1ms. Calls of Send: 815 Dispatch: 1265. Ping min/max: 25/36
+[13:38:12.098] LOG: [RoomController] CreateRoom('000') sent=True
+[13:38:12.378] LOG: [2:3.3] SupportLogger OnCreatedRoom(Room: '000' visible,open 1/2 players.). lobby ''[Default] GameServer:5.189.203.196:5056
+[13:38:12.378] LOG: [RoomController] Room créée 🎉 (MasterClient)
+[13:38:12.378] LOG: [2:3.3] SupportLogger OnJoinedRoom(Room: '000' visible,open 1/2 players.). lobby ''[Default] GameServer:5.189.203.196:5056
+[13:38:12.378] LOG: [RoomController] Room rejointe ✅
+[13:38:12.688] LOG: [InputManager] Start: BoardManager found = True
+[13:38:12.690] LOG: [2:3.3] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:38:12.691] LOG: [2:3.3] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:38:12.720] LOG: [2:3.3] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:38:12.720] LOG: [2:3.3] SupportLogger OnRoomPropertiesUpdate(propertiesThatChanged).
+[13:38:12.780] LOG: [2:3.3] SupportLogger Rtt(variance): 20(3). Since receive: 67ms. Longest send: 1ms. Stats elapsed: 0sec.
+Longest delta between Send: 141ms Dispatch: 313ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 17 Dispatch: 30. Ping min/max: 20/36
+[13:38:16.580] LOG: [2:7.7] SupportLogger Rtt(variance): 24(7). Since receive: 683ms. Longest send: 1ms. Stats elapsed: 4sec.
+Longest delta between Send: 141ms Dispatch: 313ms. Longest callback OnEv: 255=1ms OnResp: 0=1ms. Calls of Send: 141 Dispatch: 220. Ping min/max: 20/36
+===== Session end 2025-10-30T13:38:17.1794495+01:00 =====

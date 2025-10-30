@@ -91,6 +91,7 @@ public class BoardManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
+        
         GenerateTiles();
 
         if (!PhotonNetwork.IsConnected || PhotonNetwork.OfflineMode)

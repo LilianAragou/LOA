@@ -10774,8 +10774,10 @@ MonoBehaviour:
   - {x: 3, y: 7}
   - {x: 5, y: 7}
   baronBonusTiles:
-  - {x: 7, y: 5}
-  - {x: 1, y: 5}
+  - {x: 7, y: 6}
+  - {x: 1, y: 6}
+  - {x: 2, y: 5}
+  - {x: 6, y: 5}
   baronBonusPerTile: 1
 --- !u!4 &1684964876
 Transform:

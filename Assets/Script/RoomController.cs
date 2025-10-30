@@ -124,7 +124,7 @@ public class RoomController : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("[RoomController] Room créée 🎉 (MasterClient)");
-        PhotonNetwork.LoadLevel("Game");
+        PhotonNetwork.LoadLevel("Select");
     }
 
     public override void OnJoinedRoom()

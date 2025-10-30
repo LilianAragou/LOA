@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed2183aacaa6f8488c162e523566e9d, type: 3}
+  m_Name: Baron
+  m_EditorClassIdentifier: 
+  loaId: 1
+  displayName: Baron
+  description: 
+  icon: {fileID: 0}
+  maskPrefab: {fileID: 1910810297372126815, guid: 4dca775ecdc4e2b4597d268277c0590e, type: 3}
+  spiritPrefab: {fileID: 3524856371256354914, guid: 63afc082945083a448825af53eebac59, type: 3}
+  startingSpiritCount: 6
+  sfxSelect: {fileID: 0}
+  themeColor: {r: 0.4740572, g: 0, b: 1, a: 1}
